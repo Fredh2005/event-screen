@@ -1,7 +1,6 @@
 """Live quotes for the screen, from Yahoo Finance.
 
-Same source as the morning brief and the VWRP screener, so there is no API key
-to keep alive. Everything is defensive: a page built with one stale price is
+No API key to keep alive. Everything is defensive: a page built with one stale price is
 better than no page. When Yahoo will not answer for a symbol, the build keeps
 the last verified snapshot from screen.json and says so on the card.
 """

@@ -9,10 +9,6 @@ like an app.
 
 **Live at:** https://fredh2005.github.io/event-screen/
 
-Sister to [morning-brief](https://github.com/Fredh2005/morning-brief) and
-[vwrp-screener](https://github.com/Fredh2005/vwrp-screener1), built the same
-way.
-
 ## How it works
 
 | Piece | What it does |

@@ -1,4 +1,4 @@
-# Pinned deliberately, same as the morning brief: a major pandas release is not
+# Pinned deliberately: a major pandas release is not
 # something to discover on a scheduled run. Widen on purpose, never by accident.
 yfinance>=1.2,<1.3
 pandas>=2.2,<3.0

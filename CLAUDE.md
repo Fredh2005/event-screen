@@ -5,9 +5,9 @@ opportunity and risk scores. Built for a UK-based investor running a small
 satellite sleeve alongside a VWRP core, trading a days-to-six-weeks event-driven
 horizon.
 
-Sister project to `vwrp-screener` (reverse-DCF on VWRP constituents). Same
-analytical frame — Rappaport, *Expectations Investing*: read the expectations
-embedded in the price rather than forecasting a target.
+Standalone project with its own repo, workflow and site. Analytical frame —
+Rappaport, *Expectations Investing*: read the expectations embedded in the
+price rather than forecasting a target.
 
 ## Files
 
@@ -23,8 +23,8 @@ embedded in the price rather than forecasting a target.
 - `.github/workflows/screen.yml` — rebuilds on a weekday schedule and on push;
   deploys to GitHub Pages at https://fredh2005.github.io/event-screen/
 
-Run locally with `python3 build.py` (needs yfinance + pandas; the
-`~/vwrp-screener/venv` has them). Output goes to `site/`, which is gitignored.
+Run locally with `pip install -r requirements.txt` then `python3 build.py`.
+Output goes to `site/`, which is gitignored.
 
 ## The rules that matter
 

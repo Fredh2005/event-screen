@@ -215,7 +215,7 @@
 
   <div class="intro">
     <p>Dated, binary events over the next ten weeks, ranked. Every name has a <b>fixed or guided date</b> on which something resolves. Scores are computed from the four inputs shown on each card — open the methodology at the bottom to see the weights.</p>
-    <p>The levels are <b>reference prices, not targets</b>: an offer price, an undisturbed price, a net asset value, a 52-week extreme. Each is labelled with what it actually is. The screen gives you the payoffs; <b>you supply the probability</b> — that's the judgement, and it's the half worth having.</p>
+    <p>The levels are <b>reference prices, not targets</b>: an offer price, an undisturbed price, a net asset value, a 52-week extreme. Each is labelled with what it actually is. Read the three levels on each card as <b>downside reference · where you'd enter now · upside reference</b>. The screen gives you the payoffs; <b>you supply the probability</b> — that's the judgement, and it's the half worth having.</p>
   </div>
 
   <div class="bar">
@@ -243,7 +243,7 @@
       <p><b>Opportunity</b> = <code>asymmetry×0.35 + date clarity×0.20 + uncrowdedness×0.25 + reference quality×0.20</code>, each input scored 0–10.</p>
       <p><b>Asymmetry</b>: the gap between the downside and upside reference relative to where it trades now. <b>Date clarity</b>: a Rule 2.6 deadline or a PDUFA date scores 10; "by end of October" scores 6. <b>Uncrowdedness</b>: position in the 52-week range and how much has already moved — a name up 400% into its catalyst scores near zero. <b>Reference quality</b>: whether there's a hard, computable anchor (an offer price, a published NDV) or only a soft one.</p>
       <p><b>Risk</b> = <code>illiquidity×0.20 + single-point-of-failure×0.30 + downside×0.30 + slip risk×0.20</code>. High is bad. A name resting on one FDA decision scores 10 on single-point-of-failure; one with three staggered readouts scores lower.</p>
-      <p>These are my judgements on a consistent scale, not measurements. The point of showing the four inputs is that you can disagree with one of them specifically rather than with a black-box number. <b>A high opportunity score is not a recommendation</b> — note that the two highest here also carry the two highest risk scores, which is the honest shape of event-driven trading.</p>
+      <p>These are my judgements on a consistent scale, not measurements. The point of showing the four inputs is that you can disagree with one of them specifically rather than with a black-box number. <b>A high opportunity score is not a recommendation</b> — note that the highest-opportunity names here also carry the highest risk scores, which is the honest shape of event-driven trading.</p>
       <p>Prices are snapshots from the timestamp above, not live. Nothing here is advice, and the ten-week window means every one of these resolves — up or down — inside your holding period.</p>
     </div>
   </details>
@@ -315,6 +315,7 @@
           '<div class="lvl">'+d.levels.map(function(L){
             return '<div><span class="k">'+esc(L.k)+'</span><span class="n mono '+(L.c||"")+'">'+esc(L.v)+'</span><span class="w">'+esc(L.w)+'</span></div>';
           }).join("")+'</div>'+
+          '<div class="blk"><h4>About the company</h4><p>'+esc(d.about)+'</p></div>'+
           '<div class="blk"><h4>The event</h4><p>'+esc(d.ev)+'</p></div>'+
           '<div class="blk implied"><h4>What the price implies</h4><p>'+esc(d.implied)+'</p></div>'+
           '<div class="blk"><h4>Setup</h4><p>'+esc(d.setup)+'</p></div>'+
@@ -380,7 +381,7 @@
   }).join("");
 
   document.getElementById("stamp").innerHTML=
-    DATA.length+" scored · "+WATCH.length+" watch<br>Prices 18 Sep 2026, 16:00 BST";
+    DATA.length+" scored · "+WATCH.length+" watch<br>Prices 18 Sep 2026, 16:30 BST";
 
   // Marks persist in the artifact runtime's shared store when it exists, and
   // fall back to this browser's localStorage when the page is served standalone.

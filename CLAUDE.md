@@ -26,7 +26,9 @@ These are not style preferences. Breaking them makes the tool actively harmful.
 design premise is that a "target: 214p" column is a made-up number wearing a
 suit. Every price on the page is a *reference level* that exists independently:
 
-- an offer price from a Rule 2.7 announcement
+- an offer price from a Rule 2.7 announcement, a tender offer, or a scheme
+  implementation deed (mixed consideration is computed from the stated ratio
+  and the acquirer's timestamped price)
 - an undisturbed price (computed from the pre-approach close or back-solved from
   the announcement-day move)
 - a published NAV or EPRA NDV, with its as-at date
@@ -34,6 +36,10 @@ suit. Every price on the page is a *reference level* that exists independently:
 
 Each level carries a `w` field saying what it actually is. If you cannot name
 what a level *is*, it does not go on the page.
+
+The three levels on a card are read as downside reference · current price
+(the level you would enter at) · upside reference. They are the nearest honest
+thing to "entry and exit" — never invent a target to fill the slot.
 
 **The user supplies the probability.** The screen supplies payoffs and the
 evidence. Do not write "70% chance of approval" anywhere.
@@ -80,6 +86,7 @@ with a black-box number. Keep that property.
   px:"297.5p", cap:"£361m", rng:"137.2–324.0p", pos:86, adv:"3.5m sh",
   date:"2026-10-07",              // ISO, drives the countdown
   when:"5.00pm, 7 Oct 2026",      // human-readable, matches the announcement
+  about:"…",                      // what the company is, 2–4 sentences, plain facts
   ev:"…",                         // the event, one line
   o:{asym,clarity,crowd,evid}, r:{liq,spof,down,slip},
   levels:[ {k,v,w,c:"dn"|"up"|undefined} × 3 ],

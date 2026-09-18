@@ -1,0 +1,14 @@
+{
+ "name": "Event Screen",
+ "short_name": "Event Screen",
+ "id": "/event-screen/",
+ "start_url": "/event-screen/",
+ "scope": "/event-screen/",
+ "display": "standalone",
+ "background_color": "#131519",
+ "theme_color": "#131519",
+ "icons": [
+  {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
+  {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+ ]
+}

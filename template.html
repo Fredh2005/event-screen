@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Event Screen</title>
+<meta name="description" content="Dated, binary catalysts on listed shares, with the entry price, the two exit references and the dates — rebuilt on live prices every weekday.">
+<meta name="theme-color" content="#F6F7F5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131519" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Event Screen">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="icon-192.png">
+<script>
+try {
+  var saved = localStorage.getItem("event-screen-theme");
+  if (saved === "dark" || saved === "light") document.documentElement.setAttribute("data-theme", saved);
+} catch (e) {}
+</script>
+<style>
+:root {
+  --bg:#F6F7F5; --panel:#FFFFFF; --panel-2:#EEF1EE; --ink:#1B1F1E; --soft:#5C6663; --faint:#8E9895;
+  --line:#DDE3E0; --accent:#0E6E6E; --accent-2:#DCEDEC; --up:#1F7A4D; --up-2:#E3F2E9;
+  --down:#B23A2F; --down-2:#F8E7E4; --warn:#8A5A08; --cool:#2C5F8A;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme=light]) {
+    --bg:#131519; --panel:#1B1E24; --panel-2:#22262D; --ink:#EDEFF2; --soft:#A2AAB5; --faint:#79818C;
+    --line:#2C3138; --accent:#4FB5B0; --accent-2:#13322F; --up:#6DBE8E; --up-2:#16301F;
+    --down:#E87A70; --down-2:#39211E; --warn:#D9A244; --cool:#72A8D4;
+  }
+}
+:root[data-theme=dark] {
+  --bg:#131519; --panel:#1B1E24; --panel-2:#22262D; --ink:#EDEFF2; --soft:#A2AAB5; --faint:#79818C;
+  --line:#2C3138; --accent:#4FB5B0; --accent-2:#13322F; --up:#6DBE8E; --up-2:#16301F;
+  --down:#E87A70; --down-2:#39211E; --warn:#D9A244; --cool:#72A8D4;
+}
+* { box-sizing:border-box; -webkit-text-size-adjust:100%; }
+body {
+  margin:0; background:var(--bg); color:var(--ink);
+  font:17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+.wrap { max-width:760px; margin:0 auto; padding:26px 18px 72px; }
+.num { font-variant-numeric:tabular-nums; }
+
+header.top { position:relative; margin-bottom:22px; }
+.themebtn { position:absolute; top:2px; right:0; background:var(--panel); color:var(--faint); border:1px solid var(--line);
+  border-radius:6px; padding:6px 12px; font-size:12px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; font-family:inherit; cursor:pointer; }
+.themebtn:hover { color:var(--accent); border-color:var(--accent); }
+h1 { font:600 15px/1 inherit; letter-spacing:.09em; text-transform:uppercase; color:var(--accent); margin:0 0 10px; }
+.title { font-size:30px; font-weight:700; letter-spacing:-.02em; margin:0; }
+.stamp { color:var(--faint); font-size:14px; margin:6px 0 0; }
+
+.lead { color:var(--soft); font-size:16px; margin:0 0 14px; max-width:64ch; }
+.lead b { color:var(--ink); font-weight:600; }
+.how { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px 18px; margin:18px 0 26px; font-size:15.5px; color:var(--soft); }
+.how b { color:var(--ink); }
+.how .k { display:inline-block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; padding:2px 7px; border-radius:4px; margin-right:4px; }
+.how .k.e { background:var(--accent-2); color:var(--accent); }
+.how .k.u { background:var(--up-2); color:var(--up); }
+.how .k.d { background:var(--down-2); color:var(--down); }
+
+h2 { font:700 13px/1 inherit; letter-spacing:.1em; text-transform:uppercase; color:var(--faint); margin:40px 0 12px; padding-bottom:8px; border-bottom:1px solid var(--line); }
+
+.nextup { list-style:none; margin:0 0 8px; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:8px; }
+.nextup a { display:block; background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:10px 12px; text-decoration:none; color:var(--ink); }
+.nextup a b { display:block; font-size:15px; }
+.nextup a span { color:var(--soft); font-size:13.5px; }
+
+.controls { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 16px; position:sticky; top:0; z-index:5; background:var(--bg); padding:10px 0; }
+.controls .lbl { font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--faint); font-weight:700; margin-right:2px; }
+.chip { font:600 14px/1 inherit; padding:9px 14px; border-radius:999px; border:1px solid var(--line); background:var(--panel); color:var(--soft); cursor:pointer; }
+.chip[aria-pressed=true] { background:var(--accent); border-color:var(--accent); color:#fff; }
+.controls .sep { width:1px; height:22px; background:var(--line); margin:0 4px; }
+
+.cards { display:flex; flex-direction:column; gap:14px; }
+.card { background:var(--panel); border:1px solid var(--line); border-left:5px solid var(--line); border-radius:12px; padding:18px 18px 14px; }
+.card[data-heat=hot] { border-left-color:var(--down); }
+.card[data-heat=warm] { border-left-color:var(--warn); }
+.card[data-heat=cool] { border-left-color:var(--cool); }
+.card[data-marked=passed] { opacity:.55; }
+.card[data-marked=entered] { border-color:var(--accent); }
+
+.card-head .who { display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+.rank { color:var(--faint); font-weight:700; font-size:15px; min-width:22px; }
+.card h3 { margin:0; font-size:23px; font-weight:700; letter-spacing:-.015em; }
+.tag { font-size:11px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; padding:3px 8px; border-radius:4px; background:var(--panel-2); color:var(--soft); }
+.tag.bid { background:#E3EDF5; color:#2C5F8A; } .tag.clin { background:var(--down-2); color:var(--down); } .tag.reg { background:#FAF0DC; color:#8A5A08; }
+:root[data-theme=dark] .tag.bid, :root:not([data-theme=light]) .tag.bid { background:#1A2B38; color:#72A8D4; }
+:root[data-theme=dark] .tag.reg, :root:not([data-theme=light]) .tag.reg { background:#352A14; color:#D9A244; }
+@media (prefers-color-scheme: light) { :root:not([data-theme=dark]) .tag.bid { background:#E3EDF5; color:#2C5F8A; } :root:not([data-theme=dark]) .tag.reg { background:#FAF0DC; color:#8A5A08; } }
+.meta { margin:4px 0 0; color:var(--soft); font-size:14.5px; }
+
+.levels { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:16px 0 6px; }
+@media (max-width:560px) { .levels { grid-template-columns:1fr; } .controls { position:static; } }
+.lvl { border-radius:10px; padding:12px 13px 11px; background:var(--panel-2); border:1px solid var(--line); }
+.lvl.entry { background:var(--accent-2); border-color:transparent; }
+.lvl.up { background:var(--up-2); border-color:transparent; }
+.lvl.dn { background:var(--down-2); border-color:transparent; }
+.lvl .k { display:block; font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; color:var(--soft); }
+.lvl.entry .k { color:var(--accent); } .lvl.up .k { color:var(--up); } .lvl.dn .k { color:var(--down); }
+.lvl .v { display:block; font-size:28px; font-weight:700; letter-spacing:-.02em; margin:4px 0 2px; font-variant-numeric:tabular-nums; line-height:1.1; }
+.lvl .v small { font-size:15px; font-weight:600; color:var(--soft); margin-left:4px; }
+.lvl.up .v small { color:var(--up); } .lvl.dn .v small { color:var(--down); }
+.lvl .w { display:block; font-size:13.5px; color:var(--soft); line-height:1.4; }
+.stale { color:var(--warn); font-weight:600; }
+.ref { margin:2px 0 10px; font-size:14.5px; color:var(--soft); }
+
+.scores { display:flex; gap:22px; margin:12px 0 14px; }
+.score .v { display:block; font-size:34px; font-weight:700; line-height:1; letter-spacing:-.02em; font-variant-numeric:tabular-nums; }
+.score .k { display:block; font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--faint); font-weight:700; margin-top:3px; }
+.score.opp .v { color:var(--accent); } .score.risk .v { color:var(--down); }
+
+.timeline { list-style:none; margin:0 0 12px; padding:0 0 0 2px; border-left:2px solid var(--line); }
+.timeline li { position:relative; padding:0 0 10px 18px; font-size:15px; }
+.timeline li:last-child { padding-bottom:0; }
+.timeline .dot { position:absolute; left:-7px; top:7px; width:10px; height:10px; border-radius:50%; background:var(--panel); border:2px solid var(--accent); }
+.timeline li:nth-child(2) .dot { background:var(--accent); }
+.timeline li:last-child .dot { border-color:var(--down); }
+.timeline b { display:block; font-weight:700; }
+.timeline span:not(.dot) { color:var(--soft); }
+
+.event { margin:0 0 10px; font-size:15.5px; }
+details.case { border-top:1px solid var(--line); padding-top:10px; }
+details.case summary { cursor:pointer; font-weight:600; color:var(--accent); font-size:15px; list-style:none; }
+details.case summary::-webkit-details-marker { display:none; }
+details.case summary::before { content:"▸ "; } details.case[open] summary::before { content:"▾ "; }
+.case-body { padding-top:8px; }
+.case-body h4 { margin:14px 0 4px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--faint); }
+.case-body h4.implied { color:var(--accent); } .case-body h4.kill { color:var(--down); }
+.case-body p { margin:0; font-size:15.5px; }
+.case-body p.implied-p { background:var(--accent-2); padding:10px 12px; border-radius:8px; }
+.bars { display:grid; grid-template-columns:1fr 1fr; gap:10px 22px; margin-top:16px; padding-top:12px; border-top:1px solid var(--line); }
+@media (max-width:560px) { .bars { grid-template-columns:1fr; } }
+.bars h5 { margin:0 0 6px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--faint); }
+.bar { display:grid; grid-template-columns:150px 1fr 24px; gap:8px; align-items:center; margin-bottom:5px; font-size:13.5px; color:var(--soft); }
+.bar .track { height:6px; background:var(--line); border-radius:3px; overflow:hidden; }
+.bar .fill { display:block; height:100%; border-radius:3px; } .fill.opp { background:var(--accent); } .fill.risk { background:var(--down); }
+.bar b { text-align:right; color:var(--faint); font-weight:600; }
+.fine { color:var(--faint) !important; font-size:13.5px !important; margin-top:10px !important; }
+
+.marks { display:flex; gap:8px; align-items:center; margin-top:12px; padding-top:10px; border-top:1px solid var(--line); flex-wrap:wrap; }
+.marks button { font:600 14px/1 inherit; padding:8px 13px; border-radius:8px; border:1px solid var(--line); background:var(--panel); color:var(--soft); cursor:pointer; }
+.marks button[aria-pressed=true] { background:var(--accent); border-color:var(--accent); color:#fff; }
+.mark-note { margin-left:auto; color:var(--faint); font-size:13px; }
+
+.watch { list-style:none; padding:0; margin:0; background:var(--panel); border:1px solid var(--line); border-radius:12px; }
+.watch li { display:flex; gap:14px; padding:12px 16px; border-bottom:1px solid var(--line); font-size:15px; }
+.watch li:last-child { border-bottom:none; }
+.watch .wd { min-width:46px; text-align:center; color:var(--faint); font-size:11px; text-transform:uppercase; letter-spacing:.06em; }
+.watch .wd b { display:block; font-size:19px; color:var(--ink); letter-spacing:0; }
+.watch small { display:block; color:var(--soft); font-size:14px; margin-top:2px; }
+
+details.meth { margin-top:32px; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:0 16px; }
+details.meth summary { padding:14px 0; cursor:pointer; font-weight:600; }
+details.meth .body { padding:0 0 14px; color:var(--soft); font-size:15px; }
+details.meth code { background:var(--panel-2); padding:1px 5px; border-radius:4px; font-size:13.5px; color:var(--ink); }
+.note { color:var(--faint); font-size:13.5px; line-height:1.55; margin-top:40px; padding-top:18px; border-top:1px solid var(--line); }
+.note a { color:var(--faint); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <button id="theme" class="themebtn" type="button" aria-label="Switch theme"></button>
+  <h1>Event Screen</h1>
+  <p class="title">{{COUNT}} dated setups</p>
+  <p class="stamp">{{STAMP}}</p>
+</header>
+
+<p class="lead">Every name here has a <b>fixed date</b> on which something binary happens — a bid deadline, an FDA decision, a trial readout. The cards show the price you'd enter at today, the two prices you'd exit at depending on the result, and when.</p>
+<div class="how">
+  <span class="k e">Entry</span> is simply the current price. <span class="k u">Exit if it works</span> and <span class="k d">Exit if it fails</span> are <b>reference prices that exist independently</b> — an offer price, an undisturbed price, a 52-week extreme — never a forecast. Each one says what it is. The page gives you the payoff either way; <b>the probability is yours to supply</b>, and that is the whole judgement.
+</div>
+
+<h2>Next up</h2>
+{{NEXTUP}}
+
+<h2>The screen</h2>
+<div class="controls">
+  <span class="lbl">Sort</span>
+  <button class="chip" data-sort="opp" aria-pressed="true">Opportunity</button>
+  <button class="chip" data-sort="days" aria-pressed="false">Soonest</button>
+  <button class="chip" data-sort="risk" aria-pressed="false">Lowest risk</button>
+  <span class="sep"></span>
+  <span class="lbl">Show</span>
+  <button class="chip" data-filter="all" aria-pressed="true">All</button>
+  <button class="chip" data-filter="bid" aria-pressed="false">Bids</button>
+  <button class="chip" data-filter="clin" aria-pressed="false">Clinical</button>
+  <button class="chip" data-filter="reg" aria-pressed="false">Regulatory</button>
+</div>
+<div class="cards" id="cards">
+{{CARDS}}
+</div>
+
+{{PASSED}}
+
+<h2>Dated, not scored</h2>
+<p class="lead">Hard dates on names too large to move much on them, or without a verified price this run. Useful for the calendar, not for the sleeve.</p>
+{{WATCH}}
+
+{{RESOLVED}}
+
+<details class="meth">
+  <summary>How the scores are built</summary>
+  <div class="body">
+    <p><b>Opportunity</b> = <code>asymmetry×0.35 + date clarity×0.20 + uncrowdedness×0.25 + reference quality×0.20</code>, each 0–10, then ×10.</p>
+    <p><b>Risk</b> = <code>illiquidity×0.20 + single point of failure×0.30 + downside to floor×0.30 + slip risk×0.20</code>. High is bad.</p>
+    <p>Four inputs are computed from the live price on every build: <b>asymmetry</b> (the gap to the upside reference against the gap to the downside one — equal gaps score 5), <b>uncrowdedness</b> (position in the 52-week range, less a penalty for a big one-month run), <b>downside to floor</b> (distance to the downside reference) and <b>illiquidity</b> (daily value traded). The other four are judgements made when the name was added and are shown as bars so you can disagree with one specifically.</p>
+    <p>A high opportunity score is not a recommendation. The highest-opportunity names here also carry the highest risk scores, and that is the honest shape of event-driven trading.</p>
+  </div>
+</details>
+
+<div class="note">Prices, 52-week ranges and volumes from Yahoo Finance, delayed. Catalyst dates verified against primary announcements — Investegate RNS for Takeover Code dates, SEC filings and company releases for FDA dates — with the analysis last refreshed on {{ASOF}}. Foreign-currency and share-based offers are converted at the build's exchange rate and acquirer price. Marks (Watch, Passed, Entered) are saved in this browser only. Nothing here is investment advice.</div>
+</div>
+<script>
+(function () {
+  var root = document.documentElement, btn = document.getElementById("theme");
+  var labels = { auto: "Auto", light: "Light", dark: "Dark" };
+  var store = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+                set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+  var mode = store.get("event-screen-theme") || "auto"; if (!labels[mode]) mode = "auto";
+  function apply() { if (mode === "auto") root.removeAttribute("data-theme"); else root.setAttribute("data-theme", mode);
+    btn.textContent = labels[mode]; store.set("event-screen-theme", mode); }
+  btn.onclick = function () { mode = mode === "auto" ? "dark" : mode === "dark" ? "light" : "auto"; apply(); };
+  apply();
+
+  var cards = document.getElementById("cards");
+  var sortMode = "opp", filterMode = "all";
+  function render() {
+    var list = Array.prototype.slice.call(cards.querySelectorAll(".card"));
+    list.forEach(function (c) { c.style.display = (filterMode === "all" || c.dataset.type === filterMode) ? "" : "none"; });
+    list.sort(function (a, b) {
+      if (sortMode === "opp") return b.dataset.opp - a.dataset.opp;
+      if (sortMode === "risk") return a.dataset.risk - b.dataset.risk;
+      return a.dataset.days - b.dataset.days;
+    });
+    var n = 0;
+    list.forEach(function (c) { cards.appendChild(c); if (c.style.display !== "none") c.querySelector(".rank").textContent = ++n; });
+  }
+  document.querySelector(".controls").addEventListener("click", function (e) {
+    var c = e.target.closest(".chip"); if (!c) return;
+    var key = c.hasAttribute("data-sort") ? "sort" : "filter";
+    if (key === "sort") sortMode = c.dataset.sort; else filterMode = c.dataset.filter;
+    this.querySelectorAll("[data-" + key + "]").forEach(function (b) { b.setAttribute("aria-pressed", b === c); });
+    render();
+  });
+
+  var marks = {}; try { marks = JSON.parse(store.get("event-screen-marks") || "{}") || {}; } catch (e) {}
+  function paintMarks() {
+    document.querySelectorAll(".card").forEach(function (c) {
+      var m = marks[c.dataset.id] || "";
+      c.setAttribute("data-marked", m);
+      c.querySelectorAll("[data-mark]").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.mark === m); });
+      c.querySelector(".mark-note").textContent = m ? "Marked " + m + " on this device" : "";
+    });
+  }
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-mark]"); if (!b) return;
+    var c = b.closest(".card"), id = c.dataset.id;
+    marks[id] = marks[id] === b.dataset.mark ? "" : b.dataset.mark;
+    store.set("event-screen-marks", JSON.stringify(marks)); paintMarks();
+  });
+  document.querySelectorAll(".card").forEach(function (c) { c.id = c.dataset.id; });
+  render(); paintMarks();
+})();
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(function () {});
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+name: Build the event screen
+
+# Rebuilds the page on live prices three times each weekday - after the UK
+# open, after the London close and after the US close - and on every push to
+# main, so an edit to screen.json is live within a couple of minutes. GitHub's
+# scheduler is best-effort and often late; for a price refresh that does not
+# matter, so there is no guard here, just enough slots that one dropped firing
+# costs a stale hour rather than a stale day.
+on:
+  schedule:
+    - cron: "15 6 * * 1-5"    # 07:15 UK in BST / 06:15 in GMT
+    - cron: "45 16 * * 1-5"   # 17:45 UK in BST / 16:45 in GMT - after the LSE close
+    - cron: "15 21 * * 1-5"   # 22:15 UK in BST / 21:15 in GMT - after the US close
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install --quiet -r requirements.txt
+
+      - name: Show what actually got installed
+        run: |
+          python -c "import sys, pandas, yfinance; print('python', sys.version.split()[0]); print('pandas', pandas.__version__); print('yfinance', yfinance.__version__)"
+          python -c "from zoneinfo import ZoneInfo; from datetime import datetime; print('London time:', datetime.now(ZoneInfo('Europe/London')))"
+
+      - name: Build the screen
+        run: python -W ignore build.py
+
+      - name: Fail if the page came back thin
+        run: |
+          BYTES=$(wc -c < site/index.html)
+          echo "index.html is $BYTES bytes"
+          if [ "$BYTES" -lt 40000 ]; then
+            echo "::error::index.html is only $BYTES bytes - not publishing."
+            exit 1
+          fi
+          for f in manifest.webmanifest sw.js icon-192.png apple-touch-icon.png; do
+            [ -s "site/$f" ] || { echo "::error::site/$f missing or empty"; exit 1; }
+          done
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -11,12 +11,20 @@ embedded in the price rather than forecasting a target.
 
 ## Files
 
-- `index.html` — the page. Layout, scoring functions, rendering. Rarely changes.
-- `data.js` — the screen contents. Sets `window.__SCREEN__ = {names, watch}`.
+- `screen.json` — the analysis. Names, events, dates, reference levels with
+  their `w` labels, the four judgement scores, and the written case.
   **This is the file a refresh edits.**
+- `build.py` — computes days-to-event, 52-week position and the four
+  price-driven score inputs from live quotes, then renders `site/index.html`
+  from `template.html`. Rarely changes.
+- `prices.py` — Yahoo Finance quotes, FX pairs and acquirer prices. Defensive:
+  a missing quote falls back to the name's `snapshot` and is flagged on the card.
+- `template.html` — layout. Rarely changes.
+- `.github/workflows/screen.yml` — rebuilds on a weekday schedule and on push;
+  deploys to GitHub Pages at https://fredh2005.github.io/event-screen/
 
-No build step, no dependencies. Open `index.html` directly, or
-`python3 -m http.server` from this directory.
+Run locally with `python3 build.py` (needs yfinance + pandas; the
+`~/vwrp-screener/venv` has them). Output goes to `site/`, which is gitignored.
 
 ## The rules that matter
 
@@ -78,38 +86,51 @@ These are judgements on a consistent scale, not measurements. The four inputs
 are displayed as bars so a reader can disagree with one specifically rather than
 with a black-box number. Keep that property.
 
-## Entry shape
+## Entry shape (screen.json → names[])
 
-```js
+```json
 {
-  t:"LSE: STEM", n:"SThree", type:"bid"|"clin"|"reg", mkt:"UK"|"US",
-  px:"297.5p", cap:"£361m", rng:"137.2–324.0p", pos:86, adv:"3.5m sh",
-  date:"2026-10-07",              // ISO, drives the countdown
-  when:"5.00pm, 7 Oct 2026",      // human-readable, matches the announcement
-  about:"…",                      // what the company is, 2–4 sentences, plain facts
-  ev:"…",                         // the event, one line
-  o:{asym,clarity,crowd,evid}, r:{liq,spof,down,slip},
-  levels:[ {k,v,w,c:"dn"|"up"|undefined} × 3 ],
-  implied:"…",  // what the current price implies. The most important field.
-  setup:"…", bull:"…", bear:"…", kill:"…", angle:"…"
+  "id":"stem", "ticker":"LSE: STEM", "name":"SThree", "type":"bid|clin|reg", "market":"UK",
+  "symbol":"STEM.L", "unit":"GBp",            // Yahoo symbol and its price unit
+  "snapshot":{"price":297.5,"high52":324,"low52":137.2,"adv":458000,"cap":"£361m","asof":"…"},
+  "date":"2026-10-07", "when":"5.00pm, 7 Oct 2026",
+  "event":"…",                                // one line
+  "close":"…",                                // when the position is over, and on what
+  "down":{"v":276,"w":"Undisturbed price, implied by …"},   // exit if it fails
+  "up":{"v":324,"w":"Offer-period high"},                    // exit if it works
+  "ref":{"v":177.5,"w":"…"},                  // optional third reference (an offer, an NDV)
+  "judgement":{"clarity":10,"evid":9,"spof":8,"slip":5},
+  "about":"…","implied":"…","setup":"…","bull":"…","bear":"…","kill":"…","angle":"…"
 }
 ```
 
-`kill` must be a specific checkable fact, not "the thesis breaks down".
-`angle` is the point worth making in a buy-side interview — usually a mechanism
-(Rule 9 conversion, cash confirmation, a conference front-running a PDUFA)
-rather than a view.
+A level's `v` is a number in the name's own unit, or a formula the build
+resolves from live quotes:
+`{"usd":5.214,"fx":"GBPUSD=X","to":"GBp"}` for a dollar offer on a sterling
+line, `{"cash":30,"ratio":0.1574,"of":"BCO"}` for cash plus acquirer shares.
+
+`asym`, `crowd`, `down` and `liq` are **not** in the file: the build computes
+them from price each run. Only `clarity`, `evid`, `spof` and `slip` are
+judgements. `kill` must be a specific checkable fact. `close` says what ends
+the trade — a decision, a document, a deadline — so the reader knows when to
+stop looking.
+
+Resolved names go into `resolved[]` as `{"date","name","outcome","note"}` and
+come out of `names[]`. The build parks any name whose date has passed in a
+"Date passed" section until that is done.
 
 ## Refreshing
 
-1. Re-price every name. Update `px`, `cap`, `rng`, `pos`, `adv`.
+1. Prices refresh themselves. Update each name's `snapshot` anyway so the
+   fallback is not stale, and check the `stale` flag on the built page.
 2. Search for news since the last run: Rule 2.7/2.8 announcements, offer
    revisions, acceptance levels, Panel rulings, FDA decisions, CRLs, guidance
    changes.
-3. Resolved catalysts come out of `names` and go into `watch` as a one-line
+3. Resolved catalysts come out of `names` and go into `resolved` with the
    outcome, so the user can score their own call.
 4. Dates that moved: update, then revisit `clarity` and `slip`.
-5. Revisit `crowd` on everything.
+5. `crowd` and `asym` recompute themselves; revisit `spof` and `evid` if the
+   structure of the event changed.
 6. Add new names with a genuine dated event inside ten weeks, a verified price
    and a computable reference. Target 20–25 scored. Build the list up over runs
    rather than padding it to a round number.
@@ -120,8 +141,6 @@ the user trades a Trading 212 ISA and cannot transact meaningfully in them.
 
 ## Deployment note
 
-`index.html` checks for `window.claude.use("db")` and uses it when present (the
-Claude artifact runtime, where marks are shared server-side). Served anywhere
-else that call is absent and marks fall back to `localStorage`, which is
-per-browser and per-device. If this is deployed somewhere real and the marks
-need to persist properly, that is the seam to replace with a backend.
+GitHub Pages via `screen.yml`; Pages source must be set to GitHub Actions.
+Marks are per-browser localStorage. The original Claude artifact of this
+project is abandoned in favour of the site.

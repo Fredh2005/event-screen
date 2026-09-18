@@ -17,9 +17,13 @@
 try {
   // Dark by default. If a theme was chosen here, or in the other apps on this
   // same origin, follow that instead.
-  var saved = localStorage.getItem("event-screen-theme")
-           || localStorage.getItem("morning-brief-theme")
-           || localStorage.getItem("vwrp-theme") || "dark";
+  // The key is versioned: the first release stored "auto" for everyone, and
+  // that must not override the new default. From the other apps only an
+  // explicit dark/light counts.
+  var pick = function (v) { return v === "dark" || v === "light" ? v : null; };
+  var saved = localStorage.getItem("event-screen-theme-v2")
+           || pick(localStorage.getItem("morning-brief-theme"))
+           || pick(localStorage.getItem("vwrp-theme")) || "dark";
   if (saved === "dark" || saved === "light") document.documentElement.setAttribute("data-theme", saved);
 } catch (e) {}
 </script>
@@ -234,10 +238,11 @@ details.meth code { background:var(--panel-2); padding:1px 5px; border-radius:4p
   var labels = { auto: "Auto", light: "Light", dark: "Dark" };
   var store = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
                 set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
-  var mode = store.get("event-screen-theme") || store.get("morning-brief-theme") || store.get("vwrp-theme") || "dark";
+  var pick = function (v) { return v === "dark" || v === "light" ? v : null; };
+  var mode = store.get("event-screen-theme-v2") || pick(store.get("morning-brief-theme")) || pick(store.get("vwrp-theme")) || "dark";
   if (!labels[mode]) mode = "dark";
   function apply() { if (mode === "auto") root.removeAttribute("data-theme"); else root.setAttribute("data-theme", mode);
-    btn.textContent = "Theme: " + labels[mode]; store.set("event-screen-theme", mode); }
+    btn.textContent = "Theme: " + labels[mode]; store.set("event-screen-theme-v2", mode); }
   btn.onclick = function () { mode = mode === "dark" ? "light" : mode === "light" ? "auto" : "dark"; apply(); };
   apply();
 

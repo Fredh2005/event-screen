@@ -145,6 +145,13 @@ def enrich(name, quotes, today):
     risk_in = {"liq": liq_score(adv, px, unit), "spof": j["spof"],
                "down": down_score(dn_pct), "slip": j["slip"]}
 
+    # Breakeven: the probability of the good outcome at which entering here has
+    # zero expected return, from the two exit references alone. It is the
+    # number the price implies, not anyone's forecast of the odds.
+    be = None
+    if up_pct is not None and dn_pct is not None and up_pct > 0 and dn_pct > 0:
+        be = dn_pct / (up_pct + dn_pct)
+
     event_day = date.fromisoformat(name["date"])
     days = (event_day - today).days
 
@@ -153,7 +160,7 @@ def enrich(name, quotes, today):
         up_v=up_v, dn_v=dn_v, ref_v=ref_v, up_pct=up_pct, dn_pct=dn_pct, pos=pos,
         opp_in=opp_in, risk_in=risk_in,
         opp=weighted(opp_in, OPP_W), risk=weighted(risk_in, RISK_W),
-        days=days, event_day=event_day,
+        be=be, days=days, event_day=event_day,
     )
 
 
@@ -187,7 +194,7 @@ def card(n, rank):
     m1 = "" if n["m1"] is None else f' · 1-month {n["m1"]:+.0f}%'
 
     return f'''
-<article class="card" data-id="{esc(n["id"])}" data-type="{esc(n["type"])}" data-opp="{n["opp"]}" data-risk="{n["risk"]}" data-days="{n["days"]}" data-heat="{heat}">
+<article class="card" data-id="{esc(n["id"])}" data-type="{esc(n["type"])}" data-opp="{n["opp"]}" data-risk="{n["risk"]}" data-days="{n["days"]}" data-heat="{heat}" data-up="{'' if n["up_pct"] is None else round(n["up_pct"]*100, 2)}" data-dn="{'' if n["dn_pct"] is None else round(n["dn_pct"]*100, 2)}">
   <header class="card-head">
     <div class="who">
       <span class="rank">{rank}</span>
@@ -221,6 +228,14 @@ def card(n, rank):
     <div class="score opp"><span class="v">{n["opp"]}</span><span class="k">Opportunity</span></div>
     <div class="score risk"><span class="v">{n["risk"]}</span><span class="k">Risk</span></div>
     <div class="score days"><span class="v">{n["days"] if n["days"] >= 0 else "—"}</span><span class="k">Days to event</span></div>
+    <div class="score be"><span class="v">{"—" if n["be"] is None else f"{n['be']*100:.0f}%"}</span><span class="k">Breakeven odds</span></div>
+  </div>
+  <p class="be-note">{be_note(n)}</p>
+
+  <div class="odds">
+    <label>Your odds it works <output class="odds-v">—</output></label>
+    <input type="range" min="0" max="100" step="5" value="50" data-set="0" aria-label="Your probability the good outcome happens">
+    <p class="odds-out">Drag to set your probability. The page will show the expected move at your number.</p>
   </div>
 
   <ol class="timeline">
@@ -260,6 +275,17 @@ def card(n, rank):
     <span class="mark-note"></span>
   </div>
 </article>'''
+
+
+def be_note(n):
+    if n["be"] is None:
+        return ("No breakeven can be computed: one of the exit references sits on the wrong side "
+                "of the price, so the payoff is not a simple up-or-down.")
+    up = f"{n['up_pct']*100:+.0f}%"
+    dn = f"{-n['dn_pct']*100:.0f}%"
+    return (f"With {esc(up)} to the good exit and {esc(dn)} to the bad one, the good outcome "
+            f"needs to be more likely than {n['be']*100:.0f}% for entering here to pay. "
+            f"Above that is edge; below it, the price is already generous.")
 
 
 def next_up(names):

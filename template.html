@@ -15,7 +15,11 @@
 <link rel="icon" href="icon-192.png">
 <script>
 try {
-  var saved = localStorage.getItem("event-screen-theme");
+  // Dark by default. If a theme was chosen here, or in the other apps on this
+  // same origin, follow that instead.
+  var saved = localStorage.getItem("event-screen-theme")
+           || localStorage.getItem("morning-brief-theme")
+           || localStorage.getItem("vwrp-theme") || "dark";
   if (saved === "dark" || saved === "light") document.documentElement.setAttribute("data-theme", saved);
 } catch (e) {}
 </script>
@@ -109,10 +113,17 @@ h2 { font:700 13px/1 inherit; letter-spacing:.1em; text-transform:uppercase; col
 .stale { color:var(--warn); font-weight:600; }
 .ref { margin:2px 0 10px; font-size:14.5px; color:var(--soft); }
 
-.scores { display:flex; gap:22px; margin:12px 0 14px; }
+.scores { display:flex; gap:22px; margin:12px 0 10px; flex-wrap:wrap; }
 .score .v { display:block; font-size:34px; font-weight:700; line-height:1; letter-spacing:-.02em; font-variant-numeric:tabular-nums; }
 .score .k { display:block; font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--faint); font-weight:700; margin-top:3px; }
-.score.opp .v { color:var(--accent); } .score.risk .v { color:var(--down); }
+.score.opp .v { color:var(--accent); } .score.risk .v { color:var(--down); } .score.be .v { color:var(--warn); }
+.be-note { margin:-4px 0 12px; color:var(--soft); font-size:14.5px; }
+.odds { background:var(--panel-2); border:1px solid var(--line); border-radius:10px; padding:12px 14px; margin:0 0 14px; }
+.odds label { display:flex; justify-content:space-between; font-size:12px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; color:var(--soft); }
+.odds output { font-size:15px; letter-spacing:0; text-transform:none; color:var(--ink); font-variant-numeric:tabular-nums; }
+.odds input[type=range] { width:100%; margin:8px 0 6px; accent-color:var(--accent); }
+.odds-out { margin:0; font-size:15px; color:var(--soft); }
+.odds-out b { color:var(--ink); } .odds-out b.pos { color:var(--up); } .odds-out b.neg { color:var(--down); }
 
 .timeline { list-style:none; margin:0 0 12px; padding:0 0 0 2px; border-left:2px solid var(--line); }
 .timeline li { position:relative; padding:0 0 10px 18px; font-size:15px; }
@@ -173,7 +184,7 @@ details.meth code { background:var(--panel-2); padding:1px 5px; border-radius:4p
 
 <p class="lead">Every name here has a <b>fixed date</b> on which something binary happens — a bid deadline, an FDA decision, a trial readout. The cards show the price you'd enter at today, the two prices you'd exit at depending on the result, and when.</p>
 <div class="how">
-  <span class="k e">Entry</span> is simply the current price. <span class="k u">Exit if it works</span> and <span class="k d">Exit if it fails</span> are <b>reference prices that exist independently</b> — an offer price, an undisturbed price, a 52-week extreme — never a forecast. Each one says what it is. The page gives you the payoff either way; <b>the probability is yours to supply</b>, and that is the whole judgement.
+  <span class="k e">Entry</span> is simply the current price. <span class="k u">Exit if it works</span> and <span class="k d">Exit if it fails</span> are <b>reference prices that exist independently</b> — an offer price, an undisturbed price, a 52-week extreme — never a forecast. Each one says what it is. The page gives you the payoff either way. <b>Breakeven odds</b> is the one probability the page computes: how likely the good outcome has to be for entering at today's price to pay, given those two exits. <b>Your odds</b> is the slider — set what you believe and the card shows the expected move at your number.
 </div>
 
 <h2>Next up</h2>
@@ -210,11 +221,12 @@ details.meth code { background:var(--panel-2); padding:1px 5px; border-radius:4p
     <p><b>Opportunity</b> = <code>asymmetry×0.35 + date clarity×0.20 + uncrowdedness×0.25 + reference quality×0.20</code>, each 0–10, then ×10.</p>
     <p><b>Risk</b> = <code>illiquidity×0.20 + single point of failure×0.30 + downside to floor×0.30 + slip risk×0.20</code>. High is bad.</p>
     <p>Four inputs are computed from the live price on every build: <b>asymmetry</b> (the gap to the upside reference against the gap to the downside one — equal gaps score 5), <b>uncrowdedness</b> (position in the 52-week range, less a penalty for a big one-month run), <b>downside to floor</b> (distance to the downside reference) and <b>illiquidity</b> (daily value traded). The other four are judgements made when the name was added and are shown as bars so you can disagree with one specifically.</p>
+    <p><b>Breakeven odds</b> = <code>downside% ÷ (upside% + downside%)</code>, from the two exit references and the current price. It is the probability of the good outcome at which the expected move is zero — the number the price is implying, not a forecast. The slider's expected move is <code>p × upside% − (1 − p) × downside%</code>, saved in this browser only.</p>
     <p>A high opportunity score is not a recommendation. The highest-opportunity names here also carry the highest risk scores, and that is the honest shape of event-driven trading.</p>
   </div>
 </details>
 
-<div class="note">Prices, 52-week ranges and volumes from Yahoo Finance, delayed. Catalyst dates verified against primary announcements — Investegate RNS for Takeover Code dates, SEC filings and company releases for FDA dates — with the analysis last refreshed on {{ASOF}}. Foreign-currency and share-based offers are converted at the build's exchange rate and acquirer price. Marks (Watch, Passed, Entered) are saved in this browser only. Nothing here is investment advice.</div>
+<div class="note">Prices, 52-week ranges and volumes from Yahoo Finance, delayed. Catalyst dates verified against primary announcements — Investegate RNS for Takeover Code dates, SEC filings and company releases for FDA dates — with the analysis last refreshed on {{ASOF}}. Foreign-currency and share-based offers are converted at the build's exchange rate and acquirer price. Marks (Watch, Passed, Entered) and your odds are saved in this browser only. Nothing here is investment advice.</div>
 </div>
 <script>
 (function () {
@@ -222,10 +234,11 @@ details.meth code { background:var(--panel-2); padding:1px 5px; border-radius:4p
   var labels = { auto: "Auto", light: "Light", dark: "Dark" };
   var store = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
                 set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
-  var mode = store.get("event-screen-theme") || "auto"; if (!labels[mode]) mode = "auto";
+  var mode = store.get("event-screen-theme") || store.get("morning-brief-theme") || store.get("vwrp-theme") || "dark";
+  if (!labels[mode]) mode = "dark";
   function apply() { if (mode === "auto") root.removeAttribute("data-theme"); else root.setAttribute("data-theme", mode);
-    btn.textContent = labels[mode]; store.set("event-screen-theme", mode); }
-  btn.onclick = function () { mode = mode === "auto" ? "dark" : mode === "dark" ? "light" : "auto"; apply(); };
+    btn.textContent = "Theme: " + labels[mode]; store.set("event-screen-theme", mode); }
+  btn.onclick = function () { mode = mode === "dark" ? "light" : mode === "light" ? "auto" : "dark"; apply(); };
   apply();
 
   var cards = document.getElementById("cards");
@@ -264,7 +277,23 @@ details.meth code { background:var(--panel-2); padding:1px 5px; border-radius:4p
     marks[id] = marks[id] === b.dataset.mark ? "" : b.dataset.mark;
     store.set("event-screen-marks", JSON.stringify(marks)); paintMarks();
   });
-  document.querySelectorAll(".card").forEach(function (c) { c.id = c.dataset.id; });
+  var odds = {}; try { odds = JSON.parse(store.get("event-screen-odds") || "{}") || {}; } catch (e) {}
+  function paintOdds(c) {
+    var input = c.querySelector(".odds input"), out = c.querySelector(".odds-out"), v = c.querySelector(".odds-v");
+    var up = parseFloat(c.dataset.up), dn = parseFloat(c.dataset.dn), p = odds[c.dataset.id];
+    if (p === undefined) { v.textContent = "—"; input.value = 50; return; }
+    input.value = p; v.textContent = p + "%";
+    if (isNaN(up) || isNaN(dn)) { out.textContent = "No expected move: the exits do not bracket the price."; return; }
+    var ev = (p / 100) * up - (1 - p / 100) * dn;
+    out.innerHTML = "At " + p + "%, the expected move is <b class=\"" + (ev >= 0 ? "pos" : "neg") + "\">" +
+      (ev >= 0 ? "+" : "") + ev.toFixed(1) + "%</b> — " + (ev >= 0 ? "your odds are above breakeven." : "your odds are below breakeven; the price is not paying you for the risk.");
+  }
+  document.addEventListener("input", function (e) {
+    var i = e.target; if (!i.matches(".odds input")) return;
+    var c = i.closest(".card"); odds[c.dataset.id] = parseInt(i.value, 10);
+    store.set("event-screen-odds", JSON.stringify(odds)); paintOdds(c);
+  });
+  document.querySelectorAll(".card").forEach(function (c) { c.id = c.dataset.id; paintOdds(c); });
   render(); paintMarks();
 })();
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(function () {});

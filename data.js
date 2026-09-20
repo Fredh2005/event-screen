@@ -82,11 +82,11 @@ window.__SCREEN__ = {
     "slip": 4
    },
    "about": "Plymouth Meeting, Pennsylvania DNA-medicines company with a two-decade history of clinical programmes and no approved product. Lead asset INO-3107 for recurrent respiratory papillomatosis is under FDA review via the Accelerated Approval Program. $86m market cap and a balance sheet that is itself a near-term question.",
-   "implied": "An $86m market cap on a company whose single near-term value driver resolves in weeks. At 31% of its 52-week range the price does not embed approval — the market is discounting a company that has been here before and missed. The process markers point the other way: late-cycle review meeting complete, FDA inspections scheduled, label negotiations expected from September.",
-   "setup": "BLA under review via the Accelerated Approval Program for RRP, a rare HPV-6/11 disease affecting an estimated 14,000 people in the US. Competitor Papzimeos (Precigen) was approved in August 2025 and already serves the indication.",
+   "implied": "An $86m market cap on a company whose single near-term value driver resolves in weeks. At 31% of its 52-week range the price does not embed approval — the market is discounting a company that has been here before and missed. The process markers point the other way: late-cycle review meeting complete, pre-licensure inspections done with one observation the company says it has resolved, label negotiations expected from September. The open question the price is not obviously pricing is whether the agency still doubts the application's eligibility for accelerated approval.",
+   "setup": "BLA under review via the Accelerated Approval Program for RRP, a rare HPV-6/11 disease affecting an estimated 14,000 people in the US. Competitor Papzimeos (Precigen) was approved in August 2025 and already serves the indication. Pre-licensure inspections are complete with a single observation the company says it has resolved, and label negotiations were expected to open in September.",
    "bull": "Label negotiations beginning is a meaningful late-stage signal — the agency does not usually negotiate labels on applications it intends to reject. A January 2026 position paper in The Laryngoscope recommends HPV-specific immunotherapy as preferred first-line, naming INO-3107 alongside the approved competitor.",
-   "bear": "Inovio has a long history of missed timelines and dilution, and at $86m the balance sheet is the second binary. Papzimeos is already approved and entrenched, so approval alone doesn't guarantee commercial traction.",
-   "kill": "Any announcement of an extension to the review period, a late-cycle inspection finding, or an equity raise before the date — a financing into a PDUFA usually says management isn't confident of a partner-funded launch.",
+   "bear": "The FDA's file acceptance letter raised a preliminary concern that the application may not be eligible for the Accelerated Approval Program. The agency refused Inovio's Type A meeting request and, at an informal clinical meeting in July, declined to comment on the review pathway because the review was too far advanced — so the question is still open weeks from the date. Inovio also has a long history of missed timelines and dilution, with cash runway only into late Q1 2027, and Papzimeos is already entrenched.",
+   "kill": "Label negotiations failing to open, or any FDA communication confirming the accelerated-approval eligibility concern raised in the file acceptance letter. Either says the pathway question is unresolved with weeks to go. An equity raise before the date says the same thing about the balance sheet.",
    "angle": "This is the highest-variance name on the screen and the smallest. Whatever you conclude about direction, the position-sizing answer is the interesting half: an $86m company with one decision in six weeks is where the sleeve rule earns its keep.",
    "endpointBasis": "indicative",
    "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
@@ -219,7 +219,7 @@ window.__SCREEN__ = {
    },
    "about": "Waltham, Massachusetts precision-oncology company developing bezuclastinib, a selective KIT inhibitor, across gastrointestinal stromal tumours and systemic mastocytosis. Three NDAs filed or accepted, no approved product yet, $5.5bn market cap.",
    "implied": "Up 152% over twelve months but down 14% in the past month and 10% year to date — the market has been taking risk off into the decisions rather than adding. Three staggered PDUFAs across KIT-driven diseases means this is a sequence, not a single binary, which is why the risk score sits below the other regulatory names despite a similar setup.",
-   "setup": "NDAs under review for bezuclastinib across three indications: GIST with a 30 Nov target date, Non-Advanced Systemic Mastocytosis on 30 Dec, and Advanced Systemic Mastocytosis newly accepted in September.",
+   "setup": "NDAs under review for bezuclastinib across three indications: GIST with a 30 Nov target date, Non-Advanced Systemic Mastocytosis on 30 Dec, and Advanced Systemic Mastocytosis, accepted on 15 Sep with a 29 Jun 2027 date and, per the company, no advisory committee planned and no review issues identified.",
    "bull": "Three shots rather than one. A GIST approval de-risks the platform ahead of the larger NonAdvSM indication a month later, and the pullback into the date has already removed some of the froth.",
    "bear": "A $5.5bn valuation on a company with no approved product means a lot is already assumed. A miss on the first of three would re-rate the other two at the same time.",
    "kill": "Any FDA communication extending a review or requesting an advisory committee — either would push the sequence past your window.",
@@ -290,10 +290,10 @@ window.__SCREEN__ = {
    "date": "2026-12-31",
    "when": "Scheme timetable, into 2027",
    "event": "Court-sanctioned scheme on Accel-KKR's 235p cash offer",
-   "close": "At scheme completion, or on any break. There is no earlier catalyst — this is the control case.",
+   "close": "At scheme completion, or on any break. The only interim marker is the scheme document, due by 8 Oct; this is the control case.",
    "down": {
-    "v": 135,
-    "w": "Pre-bid level, before the 70% single-day move"
+    "v": 134.5,
+    "w": "Closing price on 9 Sep 2026, the day before the Rule 2.7 announcement"
    },
    "up": {
     "v": 235,
@@ -305,12 +305,12 @@ window.__SCREEN__ = {
     "spof": 3,
     "slip": 7
    },
-   "about": "AIM-listed construction and engineering software group (Asta, Veeuze, Elecosoft) with subscription revenue across the UK, Germany, Sweden and the US. Board-recommended 235p cash offer from Accel-KKR announced this summer; the scheme runs into 2027.",
-   "implied": "A 2.5% gross spread to terms. Over a scheme timetable stretching into next year that is a thin annualised return, and the market is telling you completion risk is low but not zero. The asymmetry is poor in the classic arb shape: small premium, large break risk back toward 135p.",
-   "setup": "Board-recommended all-cash offer from Accel-KKR at 235p, valuing the equity at about £207.6m. Shares rose 70% on the announcement. The process now runs through scheme documentation, a shareholder vote and court sanction.",
+   "about": "AIM-listed construction and engineering software group (Asta, Veeuze, Elecosoft) with subscription revenue across the UK, Germany, Sweden and the US. Board-recommended 235p cash offer from Accel-KKR announced on 10 September 2026; the scheme runs into 2027.",
+   "implied": "A 2.5% gross spread to terms. Over a scheme timetable stretching into next year that is a thin annualised return, and the market is telling you completion risk is low but not zero. The asymmetry is poor in the classic arb shape: small premium, large break risk back toward 134.5p.",
+   "setup": "Board-recommended all-cash offer from Accel-KKR's Avocet Bidco at 235p, announced under Rule 2.7 on 10 Sep and valuing the equity at about £207.6m. Shares rose 70% on the announcement from a 134.5p close. The scheme document is due within 28 days of the announcement, so by 8 Oct. Irrevocable undertakings and letters of intent reached 49.2% of the share capital on 17 Sep, up from the 45.2% disclosed on announcement.",
    "bull": "A recommended cash offer from an established software buyer with no obvious competition or regulatory obstacle. Spreads on clean UK schemes usually grind in as the court date approaches.",
    "bear": "On an AIM line trading 191k shares a day, getting size on is slow and getting out on a break is slower. Two and a half percent does not pay for that.",
-   "kill": "Any condition being invoked, a financing wobble, or the court date slipping materially past the guided window.",
+   "kill": "Any condition being invoked, a financing wobble, or the scheme document missing its 8 Oct deadline without a Panel-consented extension.",
    "angle": "Worth having on the screen precisely because it scores badly. It's the control case: a near-certain outcome with almost no payoff, which is what most of the merger-arb universe looks like once you price the liquidity.",
    "endpointBasis": "contractual",
    "basisNote": "Accel-KKR's 235p recommended cash offer vs the pre-bid level"
@@ -360,50 +360,6 @@ window.__SCREEN__ = {
    "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
   },
   {
-   "id": "mrna",
-   "ticker": "NASDAQ: MRNA",
-   "name": "Moderna",
-   "type": "clin",
-   "market": "US",
-   "symbol": "MRNA",
-   "unit": "USD",
-   "snapshot": {
-    "price": 155.43,
-    "high52": 176.66,
-    "low52": 22.28,
-    "adv": 13500000.0,
-    "cap": "$61.7bn",
-    "asof": "2026-09-18T16:30:00+01:00"
-   },
-   "date": "2026-10-23",
-   "when": "23–27 Oct 2026, ESMO Madrid",
-   "event": "Full intismeran autogene dataset, with a Phase 3 melanoma interim in H2",
-   "close": "On the ESMO presentation, 23–27 Oct.",
-   "down": {
-    "v": 22.28,
-    "w": "52-week low — where this run started"
-   },
-   "up": {
-    "v": 176.66,
-    "w": "52-week high, set this month"
-   },
-   "judgement": {
-    "clarity": 7,
-    "evid": 5,
-    "spof": 6,
-    "slip": 5
-   },
-   "about": "Cambridge, Massachusetts mRNA platform company whose COVID and RSV vaccines fund a large oncology and rare-disease pipeline. The stock is up more than 400% this year on the intismeran autogene personalised cancer vaccine, partnered with Merck, ahead of the full dataset at ESMO in October.",
-   "implied": "Up 427% year to date and 147% in a single month into a dated conference. Whatever intismeran autogene is worth, a very large amount of it is now in the price. This scores near zero on uncrowdedness for a reason — the interesting expression of a positive view was three months ago, and what's left is a stock that has to deliver to hold its level.",
-   "setup": "The full dataset for the personalised cancer vaccine developed with Merck is expected at ESMO in Madrid, 23–27 October. Management expects the Phase 3 adjuvant melanoma interim analysis in H2 2026, and dedicated commercial manufacturing is already being built in Massachusetts.",
-   "bull": "A positive interim could unlock estimate revisions across both partners' oncology franchises, and the manufacturing build signals internal confidence.",
-   "bear": "After a 5x move, a good result is the base case and anything short of excellent is a sell. Note the quoted spread on this line is wide despite the size — $147.40 bid against $163.96 ask at the time of the snapshot.",
-   "kill": "The Phase 3 interim slipping out of 2026, or ESMO data that is presented without the adjuvant melanoma readout attached.",
-   "angle": "The most useful name here for demonstrating discipline: correctly identifying something as a great business and a bad entry is a more convincing answer than another bullish pitch.",
-   "endpointBasis": "indicative",
-   "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
-  },
-  {
    "id": "ivvd",
    "ticker": "NASDAQ: IVVD",
    "name": "Invivyd",
@@ -439,9 +395,9 @@ window.__SCREEN__ = {
    },
    "about": "Waltham, Massachusetts antibody developer (formerly Adagio). One commercial product, Pemgarda, a COVID-19 pre-exposure antibody under EUA, and one pivotal programme, VYD2311, a next-generation monoclonal designed to support a BLA. $218m market cap, down 70% year to date, trading below $1.",
    "implied": "At 8% of its range and a $218m market cap, the price embeds a failed or commercially irrelevant readout. The trial was upsized in April after a blinded sample-size re-estimation and fully enrolled in June, so the event is real and near. Whatever the science, a sub-$1 stock into a pivotal readout is a lottery ticket with a listing-compliance clock attached.",
-   "setup": "DECLARATION is a placebo-controlled pivotal study of VYD2311 designed to support a BLA. Topline guided to 'later in Q3 2026'. A second Phase 3, LIBERTY, comparing the antibody with an mRNA vaccine on safety and immunology, reads out on the same schedule.",
+   "setup": "DECLARATION is a placebo-controlled pivotal study of VYD2311 designed to support a BLA. Topline guided to around the end of Q3 2026. Invivyd said on 1 Sep that it will either unblind DECLARATION in full and file for traditional approval, or unblind it partially — leaving clinical events blinded — and file for Accelerated Approval on antiviral activity and safety, with statistical power made up in a post-approval cohort. Marc Elia moved from chairman to chief executive the same day. A second Phase 3, LIBERTY, comparing the antibody with an mRNA vaccine on safety and immunology, reads out on the same schedule.",
    "bull": "A clean efficacy hit on a fully enrolled, upsized trial with an FDA-agreed BLA path. The 52-week high is 4x the current price and the prior product already has an EUA, so the commercial channel exists.",
-   "bear": "COVID prophylaxis demand has collapsed, the company has burned through most of its cash and the Nasdaq $1 minimum bid rule is in play. A win may be sold into if the market decides the addressable market is too small to fund a launch.",
+   "bear": "COVID prophylaxis demand has collapsed, the company has burned through most of its cash and the Nasdaq $1 minimum bid rule is in play. The readout may also not be the clean binary it looks like: the partial-unblinding route reports antiviral activity and safety without the clinical events, which is a thinner result to re-rate on. A win may be sold into if the market decides the addressable market is too small to fund a launch.",
    "kill": "Any further slip in the DECLARATION timeline past Q3, a reverse split announcement before the data, or a financing announced ahead of the readout.",
    "angle": "The purest example on this screen of why position sizing is the answer rather than the view. A name that can go to zero or 4x inside two weeks belongs at a size where either outcome is survivable — say why that number is what it is.",
    "endpointBasis": "indicative",
@@ -883,10 +839,10 @@ window.__SCREEN__ = {
    },
    "about": "Newbury, England cloud communications provider — hosted voice, SIP trunking, connectivity and collaboration software sold mostly through channel partners across the UK and Europe. H1 2026 revenue £330m, net debt near zero. Recommended a £1.02bn cash offer from Epiris at 1,120p on 1 Sep 2026, days after confirming talks with Waterland, which had planned a break-up with Giacom.",
    "implied": "A stock a few pence above a recommended cash offer, having touched 1,207p in the offer period. The 52-week high is the more interesting number: the market was prepared to pay 8% above the eventual offer at one point, when a Waterland–Giacom break-up bid looked live. That premium has mostly left the price, which says the market now doubts a counter, without being sure.",
-   "setup": "Epiris's Bradbury Bidco announced a Rule 2.7 firm offer at 1,120p on 1 Sep, a 53% premium to the 732p undisturbed price and 41% to the one-month average. Directors have committed their shares. Scheme document within 28 days, shareholder vote at least 21 days later; completion guided for H1 2027 subject to antitrust and regulatory clearances.",
-   "bull": "A second named bidder with a strategic partner and a stated plan. If Waterland returns with a break-up structure, the reference is the 1,207p offer-period high. If not, you hold a recommended cash offer at a 0.4% premium — a small cost for the option.",
-   "bear": "H1 2027 completion is a long timetable to earn nothing, and an FTSE 250 telecoms deal has both CMA and Ofcom-adjacent clearance risk. A break takes the stock toward 732p.",
-   "kill": "A Rule 2.8 no-intention statement from Waterland, or the scheme document showing irrevocables that lock out a counterbid.",
+   "setup": "Epiris's Bradbury Bidco announced a Rule 2.7 firm offer at 1,120p on 1 Sep, a 53% premium to the 732p undisturbed price and 41% to the one-month average. Directors have committed their shares. Waterland confirmed on 11 Sep that it is no longer acting in concert with Giacom, that it continues to consider its interest and that there is no certainty of an offer. Scheme document within 28 days, shareholder vote at least 21 days later; completion guided for H1 2027 subject to antitrust and regulatory clearances.",
+   "bull": "Waterland is still a named potential offeror and says it is still looking. If it comes back, the reference is the 1,207p offer-period high. If it does not, you hold a recommended cash offer at a 0.4% premium — a small cost for the option.",
+   "bear": "The break-up structure that made a Waterland bid interesting went when it stopped acting in concert with Giacom on 11 Sep, and the stock has drifted back toward terms since. H1 2027 completion is a long timetable to earn nothing, and an FTSE 250 telecoms deal has both CMA and Ofcom-adjacent clearance risk. A break takes the stock toward 732p.",
+   "kill": "A Rule 2.8 no-intention statement from Waterland, or the scheme document showing irrevocables that lock out a counterbid. Waterland dropping Giacom on 11 Sep already removed the partner that made a break-up bid fundable.",
    "angle": "Compare with Bodycote: two UK schemes, both trading above terms, one with a counterbidder that has already bid once (CVC) and one with a counterbidder that only ever talked (Waterland). The difference in premium above terms — 1.4% versus 0.4% — is the market grading the two counterbids. Explain that.",
    "ref": {
     "v": 1120,
@@ -894,62 +850,6 @@ window.__SCREEN__ = {
    },
    "endpointBasis": "indicative",
    "basisNote": "Upside is the offer-period high, not Epiris's 1,120p"
-  },
-  {
-   "id": "cne",
-   "ticker": "LSE: CNE",
-   "name": "Capricorn Energy",
-   "type": "bid",
-   "market": "UK",
-   "symbol": "CNE.L",
-   "unit": "GBp",
-   "snapshot": {
-    "price": 382,
-    "high52": 390,
-    "low52": 181.8,
-    "adv": 176000.0,
-    "cap": "£262m",
-    "asof": "2026-09-18T16:30:00+01:00"
-   },
-   "date": "2026-09-29",
-   "when": "Scheme document by 29 Sep",
-   "event": "DNO scheme document; Genel's rival scheme has not formally lapsed",
-   "close": "On Genel's response to DNO's scheme document (due by 29 Sep) — a raise, or a formal withdrawal.",
-   "down": {
-    "v": 266,
-    "w": "Undisturbed close on 10 Mar 2026, before the offer period"
-   },
-   "up": {
-    "v": {
-     "usd": 5.214,
-     "fx": "GBPUSD=X",
-     "to": "GBp"
-    },
-    "w": "DNO's $5.214 all-cash offer, converted at today's rate (sterling election available)"
-   },
-   "judgement": {
-    "clarity": 8,
-    "evid": 10,
-    "spof": 5,
-    "slip": 5
-   },
-   "about": "Edinburgh-based oil and gas producer, formerly Cairn Energy, whose remaining core asset is a producing position in Egypt's Western Desert. Agreed in July to be bought by Genel Energy at $4.74 a share, then switched its recommendation to DNO's $5.214 cash offer on 1 Sep 2026. DNO amended the terms to all-cash on 17 Sep. 41 employees.",
-   "implied": "A 1.6% spread to a recommended, cash-funded offer from a bidder with the money on its balance sheet, in a situation that has already been contested once. The market treats Genel's $4.74 scheme as dead but not buried — Capricorn said it does not currently intend to ask the court to sanction it, which is not the same as lapsing. The spread is mostly Egyptian government approval and a small currency term.",
-   "setup": "Genel agreed a $4.74 deal in July. DNO's Bidco announced a recommended $5.214 offer on 1 Sep — originally $4.224 cash plus a $0.99 special dividend — and on 17 Sep restructured it to $5.214 entirely in cash so payment no longer depends on Capricorn declaring the dividend. Scheme document by 29 Sep; completion targeted for Q4 2026 or Q1 2027, subject to Egyptian approvals.",
-   "bull": "Cash from existing resources, a bidder that wants Egypt as a third core region and has just shown it will improve terms for certainty. Genel, having been snubbed by DNO in its own approach, has both motive and a live scheme to come back with.",
-   "bear": "A £262m oil company with 176k shares a day: the spread is thin and the exit on a break is not. Egyptian approvals are the kind of condition that slips quietly.",
-   "kill": "Genel formally withdrawing, which removes the only source of upside above 388p, or DNO's scheme document disclosing a regulatory condition with no timetable.",
-   "angle": "The all-cash amendment is the detail: DNO removed dividend-execution risk from its own offer to make it cleaner than a rival's. That is a bidder behaving like it expects a fight, and it is the kind of thing an interviewer wants to hear you noticed.",
-   "ref": {
-    "v": {
-     "usd": 4.74,
-     "fx": "GBPUSD=X",
-     "to": "GBp"
-    },
-    "w": "Genel's earlier $4.74 agreed offer — not formally lapsed"
-   },
-   "endpointBasis": "contractual",
-   "basisNote": "DNO's $5.214 all-cash offer vs the 10 Mar undisturbed close"
   },
   {
    "id": "rgr",
@@ -1142,6 +1042,16 @@ window.__SCREEN__ = {
    "date": "2026-10-05",
    "title": "Spire Healthcare — scheme document on the 250p Tulip offer due (28 days from 7 Sep)",
    "note": "Firm, recommended, irrevocables over half the register; the Panel has barred a price revision. Timetable only."
+  },
+  {
+   "date": "2026-09-29",
+   "title": "Capricorn Energy — DNO scheme document due",
+   "note": "Genel withdrew from the process after Capricorn switched its recommendation on 1 Sep; with no counterbidder left and a spread inside 2% to DNO's all-cash $5.214, it is a formality and Eleco already fills the control-case slot."
+  },
+  {
+   "date": "2026-10-23",
+   "title": "Moderna — detailed INTerpath-001 adjuvant melanoma data",
+   "note": "The Phase 3 interim already read out on 19 Aug, meeting RFS and DMFS. Merck and Moderna say only that detailed data go to 'an upcoming international medical meeting' — no meeting has been named, so there is no verified date."
   }
  ],
  "resolved": [

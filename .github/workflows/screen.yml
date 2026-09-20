@@ -46,15 +46,16 @@ jobs:
       - name: Build the screen
         run: python -W ignore build.py
 
-      - name: Fail if the page came back thin
+      - name: Fail if the build came back thin
         run: |
-          BYTES=$(wc -c < site/index.html)
-          echo "index.html is $BYTES bytes"
-          if [ "$BYTES" -lt 40000 ]; then
-            echo "::error::index.html is only $BYTES bytes - not publishing."
+          BYTES=$(wc -c < site/data.js)
+          echo "site/data.js is $BYTES bytes"
+          if [ "$BYTES" -lt 30000 ]; then
+            echo "::error::site/data.js is only $BYTES bytes - not publishing."
             exit 1
           fi
-          for f in manifest.webmanifest sw.js icon-192.png apple-touch-icon.png; do
+          grep -q '"quotes"' site/data.js || { echo "::error::site/data.js carries no quotes"; exit 1; }
+          for f in index.html manifest.webmanifest sw.js icon-192.png apple-touch-icon.png; do
             [ -s "site/$f" ] || { echo "::error::site/$f missing or empty"; exit 1; }
           done
 

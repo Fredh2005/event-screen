@@ -11,17 +11,23 @@ price rather than forecasting a target.
 
 ## Files
 
-- `screen.json` — the analysis. Names, events, dates, reference levels with
-  their `w` labels, the four judgement scores, and the written case.
-  **This is the file a refresh edits.**
-- `build.py` — computes days-to-event, 52-week position and the four
-  price-driven score inputs from live quotes, then renders `site/index.html`
-  from `template.html`. Rarely changes.
-- `prices.py` — Yahoo Finance quotes, FX pairs and acquirer prices. Defensive:
-  a missing quote falls back to the name's `snapshot` and is flagged on the card.
-- `template.html` — layout. Rarely changes.
+- `data.js` — the analysis. Sets `window.__SCREEN__ = {asof, names, watch,
+  resolved}` as a JSON literal. **This is the only file a refresh edits.**
+- `index.html` — layout, scoring and rendering, all in the browser. It reads
+  `data.js` with a plain `<script src>` and works opened straight from the
+  filesystem with no server (it then uses each name's `snapshot` prices and
+  says so). Rarely changes.
+- `build.py` — fetches live quotes, FX rates and acquirer prices, writes them
+  into `site/data.js` next to the analysis, copies `index.html` and the assets
+  into `site/`. It renders nothing and never edits the analysis.
+- `prices.py` — Yahoo Finance quotes. Defensive: a missing quote leaves the
+  name on its `snapshot`, flagged on the card.
 - `.github/workflows/screen.yml` — rebuilds on a weekday schedule and on push;
-  deploys to GitHub Pages at https://fredh2005.github.io/event-screen/
+  deploys `site/` to GitHub Pages at https://fredh2005.github.io/event-screen/
+
+Do not inline the data back into `index.html` and do not move the rendering
+into Python. The split is deliberate: the page must open from a file, and a
+refresh must be a one-file edit that cannot break the layout.
 
 Run locally with `pip install -r requirements.txt` then `python3 build.py`.
 Output goes to `site/`, which is gitignored.
@@ -45,12 +51,39 @@ suit. Every price on the page is a *reference level* that exists independently:
 Each level carries a `w` field saying what it actually is. If you cannot name
 what a level *is*, it does not go on the page.
 
-The three levels on a card are read as downside reference · current price
-(the level you would enter at) · upside reference. They are the nearest honest
-thing to "entry and exit" — never invent a target to fill the slot.
+The three levels on a card are read as **Price now · If it works · If it fails**.
+The two outcome levels are references, never targets — never invent a price to
+fill the slot, and never present one as a forecast.
 
 **The user supplies the probability.** The screen supplies payoffs and the
 evidence. Do not write "70% chance of approval" anywhere.
+
+**Any number derived from two outcome prices is only as honest as those
+prices.** Breakeven odds, expected move, payoff ratio — all of them. So:
+
+- Every entry carries `endpointBasis`, either `"contractual"` or
+  `"indicative"`, and a one-line `basisNote` saying why.
+- `"contractual"` only when **both** endpoints are observable outcomes of the
+  specific event: a real offer price (or a computable consideration) against a
+  real undisturbed price in a bid situation. Nothing else qualifies.
+- `"indicative"` everywhere else. A 52-week high or low is a **historical
+  reference**; it is never, by itself, an outcome of a specific catalyst. An
+  offer-period high in a contested bid is a hope, not a price on the table.
+  Every clinical and regulatory entry is indicative unless a real contractual
+  pair exists for it.
+- The page marks indicative breakevens (a `~` and a one-line caveat) and lets
+  the reader **edit both endpoints** on every card, with a reset. Breakeven
+  and expected move follow the reader's endpoints. Do not remove that.
+- **Downside bias:** the 52-week low understates the failure case for a name
+  that has already fallen, because its low sits close to spot; the lowest
+  breakevens on the page are otherwise just the most beaten-down small caps.
+  Where an entry is indicative and the price is in the bottom quarter of its
+  52-week range, the page flags it and asks the reader for their own floor.
+  It never adjusts the number silently. `index.html` computes this from the
+  live position; there is nothing to set in `data.js`.
+- The level labels are **Price now / If it works / If it fails**, with the
+  small print saying what each price is. Nothing on the page tells the
+  reader to enter or exit.
 
 **Verify every date and figure against a primary source.** Takeover Code dates
 come from the RNS announcement (Investegate). FDA dates come from the company's
@@ -86,7 +119,7 @@ These are judgements on a consistent scale, not measurements. The four inputs
 are displayed as bars so a reader can disagree with one specifically rather than
 with a black-box number. Keep that property.
 
-## Entry shape (screen.json → names[])
+## Entry shape (data.js → names[])
 
 ```json
 {
@@ -96,9 +129,11 @@ with a black-box number. Keep that property.
   "date":"2026-10-07", "when":"5.00pm, 7 Oct 2026",
   "event":"…",                                // one line
   "close":"…",                                // when the position is over, and on what
-  "down":{"v":276,"w":"Undisturbed price, implied by …"},   // exit if it fails
-  "up":{"v":324,"w":"Offer-period high"},                    // exit if it works
+  "down":{"v":276,"w":"Undisturbed price, implied by …"},   // if it fails
+  "up":{"v":324,"w":"Offer-period high"},                    // if it works
   "ref":{"v":177.5,"w":"…"},                  // optional third reference (an offer, an NDV)
+  "endpointBasis":"contractual|indicative",   // see the rule above
+  "basisNote":"…",                            // one line: why
   "judgement":{"clarity":10,"evid":9,"spof":8,"slip":5},
   "about":"…","implied":"…","setup":"…","bull":"…","bear":"…","kill":"…","angle":"…"
 }
@@ -142,5 +177,6 @@ the user trades a Trading 212 ISA and cannot transact meaningfully in them.
 ## Deployment note
 
 GitHub Pages via `screen.yml`; Pages source must be set to GitHub Actions.
+The live page is `site/index.html` + `site/data.js` (the analysis plus quotes).
 Marks are per-browser localStorage. The original Claude artifact of this
 project is abandoned in favour of the site.

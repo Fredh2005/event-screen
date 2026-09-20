@@ -2,7 +2,7 @@
 
 This is the checklist the weekly refresh follows. It is written for an agent
 starting with zero context, in a clean clone of this repo. The only file a
-refresh edits is `screen.json`. Read `CLAUDE.md` first — its rules (no invented
+refresh edits is `data.js`. Read `CLAUDE.md` first — its rules (no invented
 prices, no probabilities, verify every date against a primary source) are not
 optional.
 
@@ -13,8 +13,9 @@ pip install -r requirements.txt
 python3 build.py          # must succeed before you start and after you finish
 ```
 
-`build.py` prints the top names and writes `site/index.html`. If it fails at
-the end of your edits, you have broken `screen.json`; fix it before committing.
+`build.py` fetches quotes and writes `site/data.js`. If it fails at the end of
+your edits, you have broken `data.js` (it must stay a valid JSON literal after
+`window.__SCREEN__ =`); fix it before committing. Do not touch `index.html`.
 Today's date is whatever `date` says; the window is the next **ten weeks**.
 
 ## 1. Resolve what has happened
@@ -66,7 +67,8 @@ For every remaining name:
   cash, an AdCom was called): update `event`, `close`, `up`/`down`/`ref`
   and the case text. A new offer price is a new `up` or `ref` level.
 - Refresh `snapshot` (price, high52, low52, adv, cap, asof) from the live
-  build output (`site/quotes.json`) so the fallback is not stale.
+  build output (the `quotes` object in `site/data.js`) so the fallback is
+  not stale.
 - Re-read `implied`, `bull`, `bear`, `kill`: if a sentence is no longer true,
   rewrite it. `kill` must remain a specific checkable fact.
 
@@ -99,8 +101,10 @@ decision date. Weight toward names with the largest plausible moves — US
 small-cap biotech and UK bids — and toward names the market has stopped
 watching (flat into the date, low in the 52-week range).
 
-Write the entry in the shape shown in `CLAUDE.md`. Set only the four
-judgement scores (`clarity`, `evid`, `spof`, `slip`) on the scale used by the
+Write the entry in the shape shown in `CLAUDE.md`. Set `endpointBasis`
+honestly — `"contractual"` only for a real offer against a real undisturbed
+price; every 52-week-extreme pair is `"indicative"` — with a one-line
+`basisNote`. Set only the four judgement scores (`clarity`, `evid`, `spof`, `slip`) on the scale used by the
 existing entries; the build computes the rest. Write `about`, `implied`,
 `setup`, `bull`, `bear`, `kill`, `angle` and `close` in the same register as
 the existing cards: plain, specific, no hype, no probabilities.

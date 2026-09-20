@@ -1,5 +1,7 @@
-{
- "asof": "2026-09-18",
+// The screen. This is the only file a refresh edits. index.html renders it;
+// build.py adds live quotes on the way to site/.
+window.__SCREEN__ = {
+ "asof": "2026-09-20",
  "names": [
   {
    "id": "stem",
@@ -41,7 +43,9 @@
    "bull": "A financed Rule 2.7 announcement before the deadline, or the approach flushes out a credible trade or PE bidder in a market where 50-plus UK companies have been bid for this year.",
    "bear": "No cash confirmation. Rule 2.7 requires the financial adviser to confirm funds are available in full; the bidder is roughly a tenth of the target's size. It walks, Rule 2.8 locks it out for six months, and the premium unwinds.",
    "kill": "Any Rule 2.8 statement of no intention to bid. Or a Panel-consented extension with still no evidence of committed financing — an extension without a funding update reads bearish, not bullish.",
-   "angle": "Cash confirmation is the binding constraint, not board willingness. That distinction is the whole trade here and takes thirty seconds to explain."
+   "angle": "Cash confirmation is the binding constraint, not board willingness. That distinction is the whole trade here and takes thirty seconds to explain.",
+   "endpointBasis": "indicative",
+   "basisNote": "No firm offer yet; the upside is the offer-period high, not a price anyone has committed to pay"
   },
   {
    "id": "ino",
@@ -83,7 +87,9 @@
    "bull": "Label negotiations beginning is a meaningful late-stage signal — the agency does not usually negotiate labels on applications it intends to reject. A January 2026 position paper in The Laryngoscope recommends HPV-specific immunotherapy as preferred first-line, naming INO-3107 alongside the approved competitor.",
    "bear": "Inovio has a long history of missed timelines and dilution, and at $86m the balance sheet is the second binary. Papzimeos is already approved and entrenched, so approval alone doesn't guarantee commercial traction.",
    "kill": "Any announcement of an extension to the review period, a late-cycle inspection finding, or an equity raise before the date — a financing into a PDUFA usually says management isn't confident of a partner-funded launch.",
-   "angle": "This is the highest-variance name on the screen and the smallest. Whatever you conclude about direction, the position-sizing answer is the interesting half: an $86m company with one decision in six weeks is where the sleeve rule earns its keep."
+   "angle": "This is the highest-variance name on the screen and the smallest. Whatever you conclude about direction, the position-sizing answer is the interesting half: an $86m company with one decision in six weeks is where the sleeve rule earns its keep.",
+   "endpointBasis": "indicative",
+   "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
   },
   {
    "id": "capr",
@@ -125,7 +131,9 @@
    "bull": "CBER accepted the amendment citing significant unmet need in Duchenne, and the Phase 3 results were published in The Lancet after peer review. Continued separation at 24 months would make the narrowed indication harder to refuse.",
    "bear": "A 9–3 AdCom against efficacy is a very hard starting position. A securities class action alleges the statistical analysis plan was changed without FDA agreement before resubmission — that goes directly at the credibility of the p-values the case rests on.",
    "kill": "Any disclosure that the FDA has not accepted the refined upper-limb indication, or 24-month data that fails to separate on the primary endpoint.",
-   "angle": "Two dated events, and the near one is the less-watched one. Knowing a conference presentation can front-run a PDUFA by seven weeks is calendar awareness that reads as filing-level work rather than headline-level."
+   "angle": "Two dated events, and the near one is the less-watched one. Knowing a conference presentation can front-run a PDUFA by seven weeks is calendar awareness that reads as filing-level work rather than headline-level.",
+   "endpointBasis": "indicative",
+   "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
   },
   {
    "id": "hwg",
@@ -171,7 +179,9 @@
    "ref": {
     "v": 177.5,
     "w": "Peel's cash offer; the stock trades above it"
-   }
+   },
+   "endpointBasis": "indicative",
+   "basisNote": "Upside is a published NAV, not the offer; the stock already trades above Peel's 177.5p"
   },
   {
    "id": "cogt",
@@ -213,7 +223,9 @@
    "bull": "Three shots rather than one. A GIST approval de-risks the platform ahead of the larger NonAdvSM indication a month later, and the pullback into the date has already removed some of the froth.",
    "bear": "A $5.5bn valuation on a company with no approved product means a lot is already assumed. A miss on the first of three would re-rate the other two at the same time.",
    "kill": "Any FDA communication extending a review or requesting an advisory committee — either would push the sequence past your window.",
-   "angle": "The useful contrast with Capricor and Inovio: same regulatory structure, but staggered dates change the risk profile materially. Being able to say why is more interesting than having a view on the drug."
+   "angle": "The useful contrast with Capricor and Inovio: same regulatory structure, but staggered dates change the risk profile materially. Being able to say why is more interesting than having a view on the drug.",
+   "endpointBasis": "indicative",
+   "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
   },
   {
    "id": "pgen",
@@ -255,7 +267,9 @@
    "bull": "Inovio gets a CRL, Papzimeos keeps the market to itself, and a crowded long stays crowded. First-mover advantage in a rare disease with an established prescriber base is real.",
    "bear": "An Inovio approval introduces a directly competing product into a 14,000-patient US market, and does so into a stock priced at the top of its range. This is the mirror of the Inovio trade and the two shouldn't both be owned.",
    "kill": "An Inovio approval, or Papzimeos launch metrics that show slower uptake than the re-rate implies.",
-   "angle": "A genuine pair. One decision on one day moves two listed companies in opposite directions, and the smaller one is priced for failure while the larger is priced for continued monopoly. That's a cleaner way to express a view on the FDA than owning either outright."
+   "angle": "A genuine pair. One decision on one day moves two listed companies in opposite directions, and the smaller one is priced for failure while the larger is priced for continued monopoly. That's a cleaner way to express a view on the FDA than owning either outright.",
+   "endpointBasis": "indicative",
+   "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
   },
   {
    "id": "elco",
@@ -297,49 +311,9 @@
    "bull": "A recommended cash offer from an established software buyer with no obvious competition or regulatory obstacle. Spreads on clean UK schemes usually grind in as the court date approaches.",
    "bear": "On an AIM line trading 191k shares a day, getting size on is slow and getting out on a break is slower. Two and a half percent does not pay for that.",
    "kill": "Any condition being invoked, a financing wobble, or the court date slipping materially past the guided window.",
-   "angle": "Worth having on the screen precisely because it scores badly. It's the control case: a near-certain outcome with almost no payoff, which is what most of the merger-arb universe looks like once you price the liquidity."
-  },
-  {
-   "id": "spi",
-   "ticker": "LSE: SPI",
-   "name": "Spire Healthcare",
-   "type": "bid",
-   "market": "UK",
-   "symbol": "SPI.L",
-   "unit": "GBp",
-   "snapshot": {
-    "price": 245.5,
-    "high52": 256.5,
-    "low52": 140.8,
-    "adv": 2300000.0,
-    "cap": "£983m",
-    "asof": "2026-09-18T16:30:00+01:00"
-   },
-   "date": "2026-11-30",
-   "when": "Offer ongoing — no fixed close",
-   "event": "Toscafund-led 250p offer, under a Takeover Panel restriction",
-   "close": "On a Rule 2.7 firm offer or a Rule 2.8 walk. Each PUSU extension is the marker to re-check.",
-   "down": {
-    "v": 140.8,
-    "w": "52-week low — the no-deal case"
-   },
-   "up": {
-    "v": 250,
-    "w": "Toscafund consortium's 250p proposal"
-   },
-   "judgement": {
-    "clarity": 4,
-    "evid": 10,
-    "spof": 4,
-    "slip": 8
-   },
-   "about": "Britain's largest independent private hospital group — 39 hospitals and clinics, growing NHS and self-pay volumes, £1.5bn of revenue. In an offer period since May with a 250p proposal from a Toscafund-led consortium that has needed repeated deadline extensions and is now under a Takeover Panel restriction.",
-   "implied": "A 1.8% spread, with the deadline extended repeatedly since June. The unusual feature is the sanction: a concert party sold 5.57% of the company without Panel consent and without 24 hours' notice, and the Panel ruled that neither Bidco nor its concert parties may acquire further shares, and that Bidco may not revise its offer except in exceptional circumstances with prior consent.",
-   "setup": "Tulip UK Bidco, owned by funds managed by Toscafund, THCP and Ares, offering 250p. Due diligence completed; the put-up-or-shut-up deadline has been extended several times through the summer on financing.",
-   "bull": "Due diligence is done and financing was described as near-final. A completed deal pays the spread from here.",
-   "bear": "A bidder that has needed four extensions to finalise financing, now barred from improving its price without Panel consent. If it walks, the reference is a stock that traded at 140.8p within the year.",
-   "kill": "A Rule 2.8 statement, or another extension without a financing confirmation.",
-   "angle": "The Panel sanction is the detail worth knowing. A bidder that can't revise its offer has lost its main tool for getting a deal done, which is why the spread hasn't closed further despite completed diligence."
+   "angle": "Worth having on the screen precisely because it scores badly. It's the control case: a near-certain outcome with almost no payoff, which is what most of the merger-arb universe looks like once you price the liquidity.",
+   "endpointBasis": "contractual",
+   "basisNote": "Accel-KKR's 235p recommended cash offer vs the pre-bid level"
   },
   {
    "id": "pcvx",
@@ -381,7 +355,9 @@
    "bull": "A fully enrolled 6,191-patient programme with a large safety database and an FDA-aligned design. OPUS-2 and OPUS-3 follow in H1 2027, so a clean OPUS-1 de-risks a sequence rather than a single print.",
    "bear": "Priced near highs, so even a clean hit can be sold. A miss on any single serotype's immunogenicity in a 31-valent construct re-rates the whole platform, not just this trial.",
    "kill": "Guidance slipping back from 'end of October' to Q4. A schedule slip on a fully enrolled, fully dosed trial is information in itself.",
-   "angle": "Put beside Capricor this answers 'how do you think about risk?' cleanly: two binaries, one at 16% of its range and one at 82%, same ten-week window. The trade is the gap between the odds and the price, not the science."
+   "angle": "Put beside Capricor this answers 'how do you think about risk?' cleanly: two binaries, one at 16% of its range and one at 82%, same ten-week window. The trade is the gap between the odds and the price, not the science.",
+   "endpointBasis": "indicative",
+   "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
   },
   {
    "id": "mrna",
@@ -423,7 +399,9 @@
    "bull": "A positive interim could unlock estimate revisions across both partners' oncology franchises, and the manufacturing build signals internal confidence.",
    "bear": "After a 5x move, a good result is the base case and anything short of excellent is a sell. Note the quoted spread on this line is wide despite the size — $147.40 bid against $163.96 ask at the time of the snapshot.",
    "kill": "The Phase 3 interim slipping out of 2026, or ESMO data that is presented without the adjuvant melanoma readout attached.",
-   "angle": "The most useful name here for demonstrating discipline: correctly identifying something as a great business and a bad entry is a more convincing answer than another bullish pitch."
+   "angle": "The most useful name here for demonstrating discipline: correctly identifying something as a great business and a bad entry is a more convincing answer than another bullish pitch.",
+   "endpointBasis": "indicative",
+   "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
   },
   {
    "id": "ivvd",
@@ -465,7 +443,9 @@
    "bull": "A clean efficacy hit on a fully enrolled, upsized trial with an FDA-agreed BLA path. The 52-week high is 4x the current price and the prior product already has an EUA, so the commercial channel exists.",
    "bear": "COVID prophylaxis demand has collapsed, the company has burned through most of its cash and the Nasdaq $1 minimum bid rule is in play. A win may be sold into if the market decides the addressable market is too small to fund a launch.",
    "kill": "Any further slip in the DECLARATION timeline past Q3, a reverse split announcement before the data, or a financing announced ahead of the readout.",
-   "angle": "The purest example on this screen of why position sizing is the answer rather than the view. A name that can go to zero or 4x inside two weeks belongs at a size where either outcome is survivable — say why that number is what it is."
+   "angle": "The purest example on this screen of why position sizing is the answer rather than the view. A name that can go to zero or 4x inside two weeks belongs at a size where either outcome is survivable — say why that number is what it is.",
+   "endpointBasis": "indicative",
+   "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
   },
   {
    "id": "svra",
@@ -507,7 +487,9 @@
    "bull": "First-and-only therapy in an orphan indication with a clean Phase 3, no advisory committee flagged, and a balance sheet that improves by up to $150m on approval. The MHRA decision may land inside the same window and would be a leading indicator.",
    "bear": "A single asset, a single decision, and an inhaled biologic with manufacturing and device components that have tripped up other applicants. The flat price could also mean the market has quietly concluded the launch economics are thin.",
    "kill": "Any FDA request for additional data or a major-amendment extension, an advisory committee being called, or an MHRA rejection ahead of the US date.",
-   "angle": "The MHRA-before-FDA sequencing is the point worth making: a UK decision on the same dossier due in Q4 gives an observable signal before the binary, and most US-focused holders are not watching it."
+   "angle": "The MHRA-before-FDA sequencing is the point worth making: a UK decision on the same dossier due in Q4 gives an observable signal before the binary, and most US-focused holders are not watching it.",
+   "endpointBasis": "indicative",
+   "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
   },
   {
    "id": "smmt",
@@ -549,7 +531,9 @@
    "bull": "PFS was the co-primary endpoint and was met; the OS trend is now consistent across regions with longer follow-up. A first US approval de-risks a platform that is already commercial in China and opens a much larger first-line opportunity behind it.",
    "bear": "An OS miss on the pivotal trial is exactly the kind of thing a conservative FDA cycle refuses on. The stock has already re-rated on somebody else's data, and a majority owner means the float is thinner than the market cap suggests.",
    "kill": "An FDA extension of the review, a request for an advisory committee, or HARMONi-3 PFS slipping into 2027 — the second event was meant to de-risk the first.",
-   "angle": "Two dated events that can land inside the same six weeks, one regulatory and one clinical, on the same molecule. Being able to say which one the price is actually reacting to is the analysis."
+   "angle": "Two dated events that can land inside the same six weeks, one regulatory and one clinical, on the same molecule. Being able to say which one the price is actually reacting to is the analysis.",
+   "endpointBasis": "indicative",
+   "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
   },
   {
    "id": "mirm",
@@ -591,7 +575,9 @@
    "bull": "Two independent shots in one fortnight on a company whose base business grew LIVMARLI sales 46% year on year. Either a clean approval or a clean HDV readout resets the pipeline value, and the second one compounds.",
    "bear": "FOP is a very small market and a CRL would be read as a process failure; an HDV miss would hit the largest pipeline asset. Neither is existential, which is also why neither pays like the smaller names on this screen.",
    "kill": "A CRL citing anything other than a label negotiation, or an AZURE-1 readout that fails the primary virologic endpoint at week 48.",
-   "angle": "Two-event names are where you can show you understand correlation: these outcomes are independent, so the payoff distribution is genuinely different from a single binary of the same size. Say that, and why it lowers the risk score."
+   "angle": "Two-event names are where you can show you understand correlation: these outcomes are independent, so the payoff distribution is genuinely different from a single binary of the same size. Say that, and why it lowers the risk score.",
+   "endpointBasis": "indicative",
+   "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
   },
   {
    "id": "kod",
@@ -633,7 +619,9 @@
    "bull": "Four prior Phase 3 wins on the same molecule make a non-inferiority miss unlikely; the upside case is a durability result that supports six-month dosing, which no approved anti-VEGF offers. Two readouts in one press release doubles the chance of a positive headline.",
    "bear": "Non-inferiority alone is a passing grade in a crowded market with Eylea HD and Vabysmo, and the stock has already run on that expectation. A miss on either arm, or a safety signal on KSI-501's IL-6 component, re-rates the whole platform toward the $9 low.",
    "kill": "Guidance moving from September to Q4, or a topline that reports non-inferiority without the dosing-interval data alongside it.",
-   "angle": "The distinction between 'the trial worked' and 'the drug will be used' is the whole analysis here. Non-inferiority is a regulatory threshold, not a commercial one, and the price has to clear the second."
+   "angle": "The distinction between 'the trial worked' and 'the drug will be used' is the whole analysis here. Non-inferiority is a regulatory threshold, not a commercial one, and the price has to clear the second.",
+   "endpointBasis": "indicative",
+   "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
   },
   {
    "id": "bbio",
@@ -675,7 +663,9 @@
    "bull": "Priority review on an orphan indication with no competition, from a company that has now been through the FDA process successfully with acoramidis. Three staggered decisions inside nine months means the risk is spread rather than concentrated.",
    "bear": "Rare-disease launches are slow and a $13bn valuation already assumes several of them. LGMD2I is small; approval alone will not move a stock this size much, so the asymmetry is modest by construction.",
    "kill": "A review extension or an advisory committee for BBP-418, or a change in the encaleret PDUFA date — both would suggest the FDA relationship has cooled.",
-   "angle": "The useful pairing with Capricor and Savara: same event type, wildly different risk scores, and the difference is entirely in single-point-of-failure and downside. Being able to decompose the risk score is more convincing than a view on the drug."
+   "angle": "The useful pairing with Capricor and Savara: same event type, wildly different risk scores, and the difference is entirely in single-point-of-failure and downside. Being able to decompose the risk score is more convincing than a view on the drug.",
+   "endpointBasis": "indicative",
+   "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
   },
   {
    "id": "egtx",
@@ -717,7 +707,9 @@
    "bull": "EU-approved drug, clean review process by every observable marker, no AdCom, and a priority review voucher on approval that is worth a large fraction of the market cap. Product availability in the US 8–12 weeks after the date.",
    "bear": "At 92% of range there is very little left on the upside reference, and a CRL on a small Swedish company would be brutal for liquidity. Even a clean approval can be sold on the news given the run.",
    "kill": "Any announcement of an extended review or a request for additional data before 28 Sep, or a delay to the guided US product availability window after approval.",
-   "angle": "The mirror of Savara: identical event type, opposite crowding. Putting these two next to each other is a cleaner way to talk about 'what's priced in' than any single-name pitch."
+   "angle": "The mirror of Savara: identical event type, opposite crowding. Putting these two next to each other is a cleaner way to talk about 'what's priced in' than any single-name pitch.",
+   "endpointBasis": "indicative",
+   "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
   },
   {
    "id": "pypd",
@@ -759,7 +751,9 @@
    "bull": "Priority review, no filing issues, a commercial partner already contracted and paying, and a large addressable procedure volume. An approval converts the company from a binary into a royalty stream, which is a different valuation model entirely.",
    "bear": "$1m a day of trading volume with a 2% quoted spread means getting size on is slow and getting out on a CRL is slower. Drug-device combinations with novel matrices draw manufacturing scrutiny, and the company has one shot.",
    "kill": "A review extension, a manufacturing inspection finding, or an equity raise announced before the date — with Azurity paying milestones, a raise would say the company does not expect the approval milestone to arrive on time.",
-   "angle": "The liquidity score is the whole conversation on this one. The event is attractive; the instrument is not. Knowing when to pass on a good event because the line cannot be traded is a more senior answer than finding it."
+   "angle": "The liquidity score is the whole conversation on this one. The event is attractive; the instrument is not. Knowing when to pass on a good event because the line cannot be traded is a more senior answer than finding it.",
+   "endpointBasis": "indicative",
+   "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
   },
   {
    "id": "ezj",
@@ -801,7 +795,9 @@
    "bull": "Recommended cash with committed funding, the founder's block voting for it, and an 81% premium that nobody is going to vote against. If the scheme document arrives on time with the ownership structure resolved, the spread should compress sharply on publication rather than at completion.",
    "bear": "If the regulatory structure cannot be made to work, the reference is a stock that traded under 400p in May in a sector down double digits on fuel. Every extension without a published document widens the tail rather than narrowing it.",
    "kill": "A second extension to the scheme document deadline, or the document being published with a structure that requires a fresh regulatory process before completion.",
-   "angle": "Spreads carry information. Ask why a recommended UK scheme trades at 7% when the average is under 2%, and the answer is a piece of EU aviation law — which is a better interview answer than anything about airlines."
+   "angle": "Spreads carry information. Ask why a recommended UK scheme trades at 7% when the average is under 2%, and the answer is a piece of EU aviation law — which is a better interview answer than anything about airlines.",
+   "endpointBasis": "contractual",
+   "basisNote": "Apollo's 715p recommended cash offer vs the undisturbed price"
   },
   {
    "id": "boy",
@@ -847,7 +843,9 @@
    "ref": {
     "v": 940,
     "w": "Veritas's recommended cash offer incl. 7.2p dividend; the stock trades above it"
-   }
+   },
+   "endpointBasis": "indicative",
+   "basisNote": "Upside is the offer-period high (a counterbid the market hopes for), not the 940p on the table"
   },
   {
    "id": "gama",
@@ -893,7 +891,9 @@
    "ref": {
     "v": 1120,
     "w": "Epiris's recommended cash offer; the stock trades just above it"
-   }
+   },
+   "endpointBasis": "indicative",
+   "basisNote": "Upside is the offer-period high, not Epiris's 1,120p"
   },
   {
    "id": "cne",
@@ -947,7 +947,9 @@
      "to": "GBp"
     },
     "w": "Genel's earlier $4.74 agreed offer — not formally lapsed"
-   }
+   },
+   "endpointBasis": "contractual",
+   "basisNote": "DNO's $5.214 all-cash offer vs the 10 Mar undisturbed close"
   },
   {
    "id": "rgr",
@@ -989,7 +991,9 @@
    "bull": "A strategic buyer with no conditions paying a 21% premium for a block, which usually precedes either a larger approach or a long-term anchor holding. Low acceptance rates by retail holders mean institutional tenders get less prorated than the arithmetic suggests.",
    "bear": "After the tender closes, a 15% holder with board ambitions and a stock that has to find its own level again. The $44.80 applies to at most a fraction of the position, so the blended upside is well below the headline.",
    "kill": "Beretta amending or withdrawing the tender before expiry, or a preliminary acceptance count so high that proration makes the effective price close to the pre-tender level.",
-   "angle": "Proration arithmetic is a good five-minute problem: what is the expected blended exit price at a 60%, 80% and 100% tender rate, and at what current price does the trade stop paying? That is more useful than a view on firearms demand."
+   "angle": "Proration arithmetic is a good five-minute problem: what is the expected blended exit price at a 60%, 80% and 100% tender rate, and at what current price does the trade stop paying? That is more useful than a view on firearms demand.",
+   "endpointBasis": "contractual",
+   "basisNote": "Beretta's $44.80 tender price (prorated) vs the pre-tender close"
   },
   {
    "id": "rwc",
@@ -1035,7 +1039,9 @@
    "bull": "A go-shop is rare in Australian deals and signals the board thinks a higher bid is possible; the break fee is modest and the asset is a global brand with a strategic buyer universe. Any rival has to be public by 16 Oct, which makes the option dated.",
    "bear": "Matching rights mean Brookfield can neutralise most rivals, and a US-dollar price on an ASX line means an AUD rally quietly erodes the offer. Below the offer on a break is the pre-approach level, 28% down.",
    "kill": "16 Oct passing with no superior proposal announced, or the independent expert declining to conclude the scheme is in shareholders' best interests.",
-   "angle": "The offer is in dollars and the shares are in Australia: the exit price moves every day without anything happening to the deal. Pointing out that a merger-arb spread here has an FX leg is the sort of second-order thing that reads as real work."
+   "angle": "The offer is in dollars and the shares are in Australia: the exit price moves every day without anything happening to the deal. Pointing out that a merger-arb spread here has an FX leg is the sort of second-order thing that reads as real work.",
+   "endpointBasis": "contractual",
+   "basisNote": "Brookfield's US$3.38 scheme consideration vs the pre-approach level"
   },
   {
    "id": "natl",
@@ -1081,7 +1087,9 @@
    "bull": "Every other approval is done, the deal is strategically obvious and a Phase 1 clearance — or undertakings in lieu — on 22 Oct removes the last gate. The spread should close toward the cost of carry on the day.",
    "bear": "A Phase 2 reference adds six months and a real chance of UK remedies; at that point the spread widens rather than closes, and the stock leg means you are also long Brink's through a period when it is guiding on synergies it has not delivered.",
    "kill": "A Phase 2 reference on 22 Oct, or Brink's shares falling enough that the consideration drops below the current NATL price — which turns the trade into a bet on the acquirer.",
-   "angle": "Mixed consideration means the 'exit price' is a formula, not a number. Being able to say 'the deal is worth $46.67 today and here is the sensitivity to Brink's' is the difference between reading a press release and pricing a trade."
+   "angle": "Mixed consideration means the 'exit price' is a formula, not a number. Being able to say 'the deal is worth $46.67 today and here is the sensitivity to Brink's' is the difference between reading a press release and pricing a trade.",
+   "endpointBasis": "contractual",
+   "basisNote": "Brink's cash-plus-shares consideration vs the pre-announcement level"
   }
  ],
  "watch": [
@@ -1129,7 +1137,19 @@
    "date": "2026-10-20",
    "title": "Gilead — lenacapavir PDUFA in HIV prevention (new regimen)",
    "note": "Too large to move on it; the read-across is to the long-acting PrEP competitors."
+  },
+  {
+   "date": "2026-10-05",
+   "title": "Spire Healthcare — scheme document on the 250p Tulip offer due (28 days from 7 Sep)",
+   "note": "Firm, recommended, irrevocables over half the register; the Panel has barred a price revision. Timetable only."
   }
  ],
- "resolved": []
-}
+ "resolved": [
+  {
+   "date": "2026-09-07",
+   "name": "Spire Healthcare",
+   "outcome": "Tulip UK Bidco (Toscafund, Three Hills, Ares) announced a recommended 250p cash offer under Rule 2.7 on 7 Sep, by scheme, with irrevocables over 34% plus Toscafund's 18.6%. The Panel's 11 Sep ruling bars Bidco from revising the price.",
+   "note": "The card had it as a possible offer with a rolling PUSU deadline. At ~245p against 250p firm terms it is a 2% spread with no bump possible — a control case, and Eleco already fills that slot."
+  }
+ ]
+};

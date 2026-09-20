@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Event Screen</title>
+<meta name="description" content="Dated, binary catalysts on listed shares: the price now, two reference outcomes, and the dates — rebuilt on live prices every weekday.">
+<meta name="theme-color" content="#F6F7F5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131519" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Event Screen">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="icon-192.png">
+<script>
+try {
+  // Dark by default. A choice made here, or in the other apps on this origin,
+  // wins. The key is versioned: the first release stored "auto" for everyone.
+  var pick = function (v) { return v === "dark" || v === "light" ? v : null; };
+  var saved = localStorage.getItem("event-screen-theme-v2")
+           || pick(localStorage.getItem("morning-brief-theme"))
+           || pick(localStorage.getItem("vwrp-theme")) || "dark";
+  if (saved === "dark" || saved === "light") document.documentElement.setAttribute("data-theme", saved);
+} catch (e) {}
+</script>
+<style>
+:root {
+  --bg:#F6F7F5; --panel:#FFFFFF; --panel-2:#EEF1EE; --ink:#1B1F1E; --soft:#5C6663; --faint:#8E9895;
+  --line:#DDE3E0; --accent:#0E6E6E; --accent-2:#DCEDEC; --up:#1F7A4D; --up-2:#E3F2E9;
+  --down:#B23A2F; --down-2:#F8E7E4; --warn:#8A5A08; --warn-2:#FAF0DC; --cool:#2C5F8A; --cool-2:#E3EDF5;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme=light]) {
+    --bg:#131519; --panel:#1B1E24; --panel-2:#22262D; --ink:#EDEFF2; --soft:#A2AAB5; --faint:#79818C;
+    --line:#2C3138; --accent:#4FB5B0; --accent-2:#13322F; --up:#6DBE8E; --up-2:#16301F;
+    --down:#E87A70; --down-2:#39211E; --warn:#D9A244; --warn-2:#352A14; --cool:#72A8D4; --cool-2:#1A2B38;
+  }
+}
+:root[data-theme=dark] {
+  --bg:#131519; --panel:#1B1E24; --panel-2:#22262D; --ink:#EDEFF2; --soft:#A2AAB5; --faint:#79818C;
+  --line:#2C3138; --accent:#4FB5B0; --accent-2:#13322F; --up:#6DBE8E; --up-2:#16301F;
+  --down:#E87A70; --down-2:#39211E; --warn:#D9A244; --warn-2:#352A14; --cool:#72A8D4; --cool-2:#1A2B38;
+}
+* { box-sizing:border-box; -webkit-text-size-adjust:100%; }
+body { margin:0; background:var(--bg); color:var(--ink);
+  font:17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
+.wrap { max-width:760px; margin:0 auto; padding:26px 18px 72px; }
+.num { font-variant-numeric:tabular-nums; }
+
+header.top { position:relative; margin-bottom:22px; }
+.themebtn { position:absolute; top:2px; right:0; background:var(--panel); color:var(--faint); border:1px solid var(--line);
+  border-radius:6px; padding:6px 12px; font-size:12px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; font-family:inherit; cursor:pointer; }
+.themebtn:hover { color:var(--accent); border-color:var(--accent); }
+h1 { font:600 15px/1 inherit; letter-spacing:.09em; text-transform:uppercase; color:var(--accent); margin:0 0 10px; }
+.title { font-size:30px; font-weight:700; letter-spacing:-.02em; margin:0; }
+.stamp { color:var(--faint); font-size:14px; margin:6px 0 0; }
+.stamp.offline { color:var(--warn); }
+
+.lead { color:var(--soft); font-size:16px; margin:0 0 14px; max-width:64ch; }
+.lead b { color:var(--ink); font-weight:600; }
+.how { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px 18px; margin:18px 0 26px; font-size:15.5px; color:var(--soft); }
+.how b { color:var(--ink); }
+.how .k { display:inline-block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; padding:2px 7px; border-radius:4px; margin-right:4px; }
+.how .k.e { background:var(--accent-2); color:var(--accent); } .how .k.u { background:var(--up-2); color:var(--up); } .how .k.d { background:var(--down-2); color:var(--down); }
+
+h2 { font:700 13px/1 inherit; letter-spacing:.1em; text-transform:uppercase; color:var(--faint); margin:40px 0 12px; padding-bottom:8px; border-bottom:1px solid var(--line); }
+
+.nextup { list-style:none; margin:0 0 8px; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:8px; }
+.nextup a { display:block; background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:10px 12px; text-decoration:none; color:var(--ink); }
+.nextup a b { display:block; font-size:15px; } .nextup a span { color:var(--soft); font-size:13.5px; }
+
+.controls { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 16px; position:sticky; top:0; z-index:5; background:var(--bg); padding:10px 0; }
+.controls .lbl { font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--faint); font-weight:700; margin-right:2px; }
+.chip { font:600 14px/1 inherit; padding:9px 14px; border-radius:999px; border:1px solid var(--line); background:var(--panel); color:var(--soft); cursor:pointer; }
+.chip[aria-pressed=true] { background:var(--accent); border-color:var(--accent); color:#fff; }
+.controls .sep { width:1px; height:22px; background:var(--line); margin:0 4px; }
+
+.cards { display:flex; flex-direction:column; gap:14px; }
+.card { background:var(--panel); border:1px solid var(--line); border-left:5px solid var(--line); border-radius:12px; padding:18px 18px 14px; }
+.card[data-heat=hot] { border-left-color:var(--down); } .card[data-heat=warm] { border-left-color:var(--warn); } .card[data-heat=cool] { border-left-color:var(--cool); }
+.card[data-marked=passed] { opacity:.55; } .card[data-marked=entered] { border-color:var(--accent); }
+
+.card-head .who { display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+.rank { color:var(--faint); font-weight:700; font-size:15px; min-width:22px; }
+.card h3 { margin:0; font-size:23px; font-weight:700; letter-spacing:-.015em; }
+.tag { font-size:11px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; padding:3px 8px; border-radius:4px; background:var(--panel-2); color:var(--soft); }
+.tag.bid { background:var(--cool-2); color:var(--cool); } .tag.clin { background:var(--down-2); color:var(--down); } .tag.reg { background:var(--warn-2); color:var(--warn); }
+.meta { margin:4px 0 0; color:var(--soft); font-size:14.5px; }
+
+.levels { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:16px 0 6px; }
+@media (max-width:560px) { .levels { grid-template-columns:1fr; } .controls { position:static; } }
+.lvl { border-radius:10px; padding:12px 13px 11px; background:var(--panel-2); border:1px solid var(--line); }
+.lvl.now { background:var(--accent-2); border-color:transparent; } .lvl.up { background:var(--up-2); border-color:transparent; } .lvl.dn { background:var(--down-2); border-color:transparent; }
+.lvl .k { display:block; font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; color:var(--soft); }
+.lvl.now .k { color:var(--accent); } .lvl.up .k { color:var(--up); } .lvl.dn .k { color:var(--down); }
+.lvl .v { display:block; font-size:28px; font-weight:700; letter-spacing:-.02em; margin:4px 0 2px; font-variant-numeric:tabular-nums; line-height:1.1; }
+.lvl .v small { font-size:15px; font-weight:600; color:var(--soft); margin-left:4px; }
+.lvl.up .v small { color:var(--up); } .lvl.dn .v small { color:var(--down); }
+.lvl .w { display:block; font-size:13.5px; color:var(--soft); line-height:1.4; }
+.stale { color:var(--warn); font-weight:600; }
+.ref { margin:2px 0 10px; font-size:14.5px; color:var(--soft); }
+
+.scores { display:flex; gap:22px; margin:12px 0 10px; flex-wrap:wrap; }
+.score .v { display:block; font-size:34px; font-weight:700; line-height:1; letter-spacing:-.02em; font-variant-numeric:tabular-nums; }
+.score .k { display:block; font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--faint); font-weight:700; margin-top:3px; }
+.score.opp .v { color:var(--accent); } .score.risk .v { color:var(--down); } .score.be .v { color:var(--warn); }
+.score.be .v .ind { font-size:18px; vertical-align:top; margin-left:2px; }
+.basis { display:inline-block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; padding:2px 7px; border-radius:4px; margin-left:6px; vertical-align:middle; }
+.basis.contractual { background:var(--up-2); color:var(--up); } .basis.indicative { background:var(--warn-2); color:var(--warn); }
+.be-note { margin:-4px 0 10px; color:var(--soft); font-size:14.5px; }
+.be-note .ind-line { display:block; color:var(--warn); }
+.flag { background:var(--warn-2); border-left:4px solid var(--warn); border-radius:8px; padding:9px 12px; margin:0 0 12px; font-size:14.5px; color:var(--ink); }
+
+.odds { background:var(--panel-2); border:1px solid var(--line); border-radius:10px; padding:12px 14px; margin:0 0 14px; }
+.odds .row { display:flex; justify-content:space-between; align-items:baseline; gap:10px; }
+.odds label, .odds .lab { font-size:12px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; color:var(--soft); }
+.odds output { font-size:15px; letter-spacing:0; text-transform:none; color:var(--ink); font-variant-numeric:tabular-nums; }
+.odds input[type=range] { width:100%; margin:8px 0 6px; accent-color:var(--accent); }
+.endpoints { display:grid; grid-template-columns:1fr 1fr auto; gap:10px; align-items:end; margin:10px 0 8px; }
+@media (max-width:560px) { .endpoints { grid-template-columns:1fr 1fr; } .endpoints .reset { grid-column:1 / -1; } }
+.endpoints label { display:block; }
+.endpoints label span { display:block; font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; margin-bottom:4px; }
+.endpoints label.eu span { color:var(--up); } .endpoints label.ed span { color:var(--down); }
+.endpoints input[type=number] { width:100%; font:600 17px/1.2 inherit; padding:8px 10px; border-radius:8px; border:1px solid var(--line); background:var(--panel); color:var(--ink); font-variant-numeric:tabular-nums; }
+.endpoints input[type=number].edited { border-color:var(--accent); }
+.endpoints .pct { font-size:13px; color:var(--soft); margin-top:3px; display:block; text-transform:none; letter-spacing:0; font-style:normal; font-weight:400; }
+.endpoints .reset { font:600 13px/1 inherit; padding:9px 12px; border-radius:8px; border:1px solid var(--line); background:var(--panel); color:var(--soft); cursor:pointer; }
+.endpoints .reset[disabled] { opacity:.45; cursor:default; }
+.odds-out { margin:0; font-size:15px; color:var(--soft); }
+.odds-out b { color:var(--ink); } .odds-out b.pos { color:var(--up); } .odds-out b.neg { color:var(--down); }
+
+.timeline { list-style:none; margin:0 0 12px; padding:0 0 0 2px; border-left:2px solid var(--line); }
+.timeline li { position:relative; padding:0 0 10px 18px; font-size:15px; } .timeline li:last-child { padding-bottom:0; }
+.timeline .dot { position:absolute; left:-7px; top:7px; width:10px; height:10px; border-radius:50%; background:var(--panel); border:2px solid var(--accent); }
+.timeline li:nth-child(2) .dot { background:var(--accent); } .timeline li:last-child .dot { border-color:var(--down); }
+.timeline b { display:block; font-weight:700; } .timeline span:not(.dot) { color:var(--soft); }
+
+.event { margin:0 0 10px; font-size:15.5px; }
+details.case { border-top:1px solid var(--line); padding-top:10px; }
+details.case summary { cursor:pointer; font-weight:600; color:var(--accent); font-size:15px; list-style:none; }
+details.case summary::-webkit-details-marker { display:none; }
+details.case summary::before { content:"▸ "; } details.case[open] summary::before { content:"▾ "; }
+.case-body { padding-top:8px; }
+.case-body h4 { margin:14px 0 4px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--faint); }
+.case-body h4.implied { color:var(--accent); } .case-body h4.kill { color:var(--down); }
+.case-body p { margin:0; font-size:15.5px; } .case-body p.implied-p { background:var(--accent-2); padding:10px 12px; border-radius:8px; }
+.bars { display:grid; grid-template-columns:1fr 1fr; gap:10px 22px; margin-top:16px; padding-top:12px; border-top:1px solid var(--line); }
+@media (max-width:560px) { .bars { grid-template-columns:1fr; } }
+.bars h5 { margin:0 0 6px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--faint); }
+.bar { display:grid; grid-template-columns:150px 1fr 24px; gap:8px; align-items:center; margin-bottom:5px; font-size:13.5px; color:var(--soft); }
+.bar .track { height:6px; background:var(--line); border-radius:3px; overflow:hidden; }
+.bar .fill { display:block; height:100%; border-radius:3px; } .fill.opp { background:var(--accent); } .fill.risk { background:var(--down); }
+.bar b { text-align:right; color:var(--faint); font-weight:600; }
+.fine { color:var(--faint) !important; font-size:13.5px !important; margin-top:10px !important; }
+
+.marks { display:flex; gap:8px; align-items:center; margin-top:12px; padding-top:10px; border-top:1px solid var(--line); flex-wrap:wrap; }
+.marks button { font:600 14px/1 inherit; padding:8px 13px; border-radius:8px; border:1px solid var(--line); background:var(--panel); color:var(--soft); cursor:pointer; }
+.marks button[aria-pressed=true] { background:var(--accent); border-color:var(--accent); color:#fff; }
+.mark-note { margin-left:auto; color:var(--faint); font-size:13px; }
+
+.watch { list-style:none; padding:0; margin:0; background:var(--panel); border:1px solid var(--line); border-radius:12px; }
+.watch li { display:flex; gap:14px; padding:12px 16px; border-bottom:1px solid var(--line); font-size:15px; } .watch li:last-child { border-bottom:none; }
+.watch .wd { min-width:46px; text-align:center; color:var(--faint); font-size:11px; text-transform:uppercase; letter-spacing:.06em; }
+.watch .wd b { display:block; font-size:19px; color:var(--ink); letter-spacing:0; }
+.watch small { display:block; color:var(--soft); font-size:14px; margin-top:2px; }
+
+details.meth { margin-top:32px; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:0 16px; }
+details.meth summary { padding:14px 0; cursor:pointer; font-weight:600; }
+details.meth .body { padding:0 0 14px; color:var(--soft); font-size:15px; }
+details.meth code { background:var(--panel-2); padding:1px 5px; border-radius:4px; font-size:13.5px; color:var(--ink); }
+.note { color:var(--faint); font-size:13.5px; line-height:1.55; margin-top:40px; padding-top:18px; border-top:1px solid var(--line); }
+.note a { color:var(--faint); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <button id="theme" class="themebtn" type="button" aria-label="Switch theme"></button>
+  <h1>Event Screen</h1>
+  <p class="title" id="title">Loading…</p>
+  <p class="stamp" id="stamp"></p>
+</header>
+
+<p class="lead">Every name here has a <b>fixed date</b> on which something binary happens — a bid deadline, an FDA decision, a trial readout. Each card shows the price now, a reference price for each way the event can go, and when.</p>
+<div class="how">
+  <span class="k e">Price now</span> is the live quote. <span class="k u">If it works</span> and <span class="k d">If it fails</span> are <b>reference prices that already exist</b> — an offer price, an undisturbed price, a 52-week extreme — never a forecast. Each says what it is, and each is marked <b>contractual</b> (a real outcome of this event, such as an offer against the pre-bid price) or <b>indicative</b> (a historical reference standing in for an outcome). <b>Breakeven odds</b> is computed from whichever two endpoints are in the boxes on the card — the defaults, or yours — and is worth exactly what those endpoints are worth. <b>Your odds</b> is the slider.
+</div>
+
+<h2>Next up</h2>
+<ol class="nextup" id="nextup"></ol>
+
+<h2>The screen</h2>
+<div class="controls">
+  <span class="lbl">Sort</span>
+  <button class="chip" data-sort="opp" aria-pressed="true">Opportunity</button>
+  <button class="chip" data-sort="days" aria-pressed="false">Soonest</button>
+  <button class="chip" data-sort="risk" aria-pressed="false">Lowest risk</button>
+  <span class="sep"></span>
+  <span class="lbl">Show</span>
+  <button class="chip" data-filter="all" aria-pressed="true">All</button>
+  <button class="chip" data-filter="bid" aria-pressed="false">Bids</button>
+  <button class="chip" data-filter="clin" aria-pressed="false">Clinical</button>
+  <button class="chip" data-filter="reg" aria-pressed="false">Regulatory</button>
+</div>
+<div class="cards" id="cards"></div>
+
+<div id="passed"></div>
+
+<h2>Dated, not scored</h2>
+<p class="lead">Hard dates on names too large to move much on them, or without a verified price this run. Useful for the calendar, not for the sleeve.</p>
+<ul class="watch" id="watch"></ul>
+
+<div id="resolved"></div>
+
+<details class="meth">
+  <summary>How the numbers are built</summary>
+  <div class="body">
+    <p><b>Opportunity</b> = <code>asymmetry×0.35 + date clarity×0.20 + uncrowdedness×0.25 + reference quality×0.20</code>, each 0–10, then ×10. <b>Risk</b> = <code>illiquidity×0.20 + single point of failure×0.30 + downside to floor×0.30 + slip risk×0.20</code>. High is bad.</p>
+    <p>Four inputs are computed from the live price on every build, using the card's default endpoints: <b>asymmetry</b> (the gap to the upside reference against the gap to the downside one — equal gaps score 5), <b>uncrowdedness</b> (position in the 52-week range, less a penalty for a big one-month run), <b>downside to floor</b> (distance to the downside reference) and <b>illiquidity</b> (daily value traded). The other four are judgements made when the name was added and are shown as bars so you can disagree with one specifically.</p>
+    <p><b>Endpoints.</b> A pair of endpoints is <b>contractual</b> only when both are observable outcomes of the specific event — an offer price and the undisturbed price in a bid. Everything else is <b>indicative</b>: a 52-week high or low is a historical reference, not an outcome of a catalyst, and the offer-period high in a contested bid is a hope, not a price on the table. Indicative breakevens are marked and should be read as arithmetic on placeholders. On any card you can type your own endpoints; breakeven and the expected move follow them.</p>
+    <p><b>Breakeven odds</b> = <code>downside% ÷ (upside% + downside%)</code> from the two endpoints and the price now — the probability of the good outcome at which the expected move is zero. The slider's expected move is <code>p × upside% − (1 − p) × downside%</code>. Endpoints, odds and marks are saved in this browser only.</p>
+    <p><b>Downside bias.</b> Using a 52-week low as the failure case understates the downside for names that have already fallen, because their low sits close to the current price. Where a card is indicative and the price is in the bottom quarter of its 52-week range, the card says so and asks for your own floor rather than adjusting the number silently.</p>
+    <p>A high opportunity score is not a recommendation. The highest-opportunity names here also carry the highest risk scores, and that is the honest shape of event-driven trading.</p>
+  </div>
+</details>
+
+<div class="note" id="note"></div>
+</div>
+
+<script src="data.js"></script>
+<script>
+(function () {
+  "use strict";
+  var S = window.__SCREEN__ || { names: [], watch: [], resolved: [] };
+  var Q = S.quotes || {};
+  var LIVE = !!S.built;
+
+  // ------------------------------------------------------------- helpers
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function clamp(v, lo, hi) { return Math.max(lo == null ? 0 : lo, Math.min(hi == null ? 10 : hi, v)); }
+  var UNIT = { USD: "$", GBP: "£", GBp: "p", SEK: "SEK ", AUD: "A$", NOK: "NOK " };
+  function fmtPrice(v, unit) {
+    if (v == null || isNaN(v)) return "—";
+    if (unit === "GBp") return (v >= 100 ? v.toFixed(1) : v.toFixed(2)) + "p";
+    var d = v < 1000 ? 2 : 0; if (unit === "USD" && v < 1) d = 3;
+    return (UNIT[unit] || "") + v.toLocaleString("en-GB", { minimumFractionDigits: d, maximumFractionDigits: d });
+  }
+  function fmtCap(v, ccy) {
+    if (!v) return null;
+    var label = UNIT[ccy === "GBp" ? "GBP" : ccy] || "";
+    if (v >= 1e9) return label + (v / 1e9).toFixed(v < 1e10 ? 2 : 1) + "bn";
+    return label + Math.round(v / 1e6) + "m";
+  }
+  function fmtVol(v) { if (!v) return "—"; return v >= 1e6 ? (v / 1e6).toFixed(1) + "m sh" : Math.round(v / 1e3) + "k sh"; }
+  function pct(v, signed) { if (v == null || isNaN(v)) return "—"; var s = (v * 100).toFixed(1) + "%"; return signed !== false && v >= 0 ? "+" + s : s; }
+  function dayLabel(d) { return d.getDate() + " " + d.toLocaleString("en-GB", { month: "short" }); }
+  var today = new Date(); today.setHours(0, 0, 0, 0);
+  function daysTo(iso) { var p = iso.split("-"); var d = new Date(+p[0], +p[1] - 1, +p[2]); return Math.round((d - today) / 86400000); }
+  function eventDate(iso) { var p = iso.split("-"); return new Date(+p[0], +p[1] - 1, +p[2]); }
+
+  // ------------------------------------------------------- references
+  function fxRate(sym) { var q = Q[sym]; return q && q.price ? q.price : null; }
+  function resolveLevel(level) {
+    if (!level) return null;
+    var v = level.v;
+    if (typeof v === "number") return v;
+    if (v && v.cash != null) { var acq = fxRate(v.of); return acq == null ? null : v.cash + v.ratio * acq; }
+    if (v && v.usd != null) {
+      var r = fxRate(v.fx); if (r == null) return null;
+      if (v.fx === "GBPUSD=X") { var gbp = v.usd / r; return v.to === "GBp" ? gbp * 100 : gbp; }
+      if (v.fx === "AUDUSD=X") return v.usd / r;
+    }
+    return null;
+  }
+
+  // ------------------------------------------------------------ scoring
+  var OPP_W = { asym: .35, clarity: .20, crowd: .25, evid: .20 };
+  var RISK_W = { liq: .20, spof: .30, down: .30, slip: .20 };
+  var USD_PER_UNIT = { USD: 1, GBp: 0.0135, GBP: 1.35, SEK: 0.105, AUD: 0.66, NOK: 0.10 };
+  function asymScore(up, dn) { if (up == null || dn == null) return 5; up = Math.max(up, 0); dn = Math.max(dn, 0); if (up + dn === 0) return 5; return Math.round(clamp(5 + 5 * (up - dn) / (up + dn))); }
+  function crowdScore(pos, m1) { if (pos == null) return 5; var base = (1 - pos) * 7; var move = (m1 == null || m1 <= 0) ? 3 : Math.max(0, 3 - m1 / 10); return Math.round(clamp(base + move)); }
+  function downScore(dn) { return dn == null ? 5 : Math.round(clamp(dn * 18)); }
+  function liqScore(adv, px, unit) { if (!adv || !px) return 6; var usd = adv * px * (USD_PER_UNIT[unit] || 1); if (usd <= 0) return 10; return Math.round(clamp(10 - 3 * Math.log10(usd / 1e5))); }
+  function weighted(inputs, w) { var s = 0; for (var k in w) s += inputs[k] * w[k]; return Math.round(10 * s); }
+  function breakeven(upPct, dnPct) { if (upPct == null || dnPct == null || upPct <= 0 || dnPct <= 0) return null; return dnPct / (upPct + dnPct); }
+
+  function enrich(n) {
+    var snap = n.snapshot || {}, q = Q[n.symbol] || {}, live = !!q.price;
+    var px = live ? q.price : snap.price;
+    var hi = q.high52 || snap.high52, lo = q.low52 || snap.low52, adv = q.adv || snap.adv;
+    var cap = (live && fmtCap(q.cap, q.currency)) || snap.cap;
+    var upV = resolveLevel(n.up), dnV = resolveLevel(n.down), refV = n.ref ? resolveLevel(n.ref) : null;
+    var upPct = (upV == null || !px) ? null : upV / px - 1;
+    var dnPct = (dnV == null || !px) ? null : 1 - dnV / px;
+    var pos = (hi == null || lo == null || hi === lo) ? null : clamp((px - lo) / (hi - lo), 0, 1);
+    var j = n.judgement;
+    var oppIn = { asym: asymScore(upPct, dnPct), clarity: j.clarity, crowd: crowdScore(pos, q.m1), evid: j.evid };
+    var riskIn = { liq: liqScore(adv, px, n.unit), spof: j.spof, down: downScore(dnPct), slip: j.slip };
+    var out = Object.assign({}, n, {
+      px: px, hi: hi, lo: lo, adv: adv, cap: cap, m1: q.m1, live: live,
+      upV: upV, dnV: dnV, refV: refV, upPct: upPct, dnPct: dnPct, pos: pos,
+      oppIn: oppIn, riskIn: riskIn, opp: weighted(oppIn, OPP_W), risk: weighted(riskIn, RISK_W),
+      days: daysTo(n.date), eventDay: eventDate(n.date),
+      basis: n.endpointBasis === "contractual" ? "contractual" : "indicative",
+      bottomQuartile: pos != null && pos <= 0.25
+    });
+    return out;
+  }
+
+  // ---------------------------------------------------------- rendering
+  var TYPE = { bid: "Bid", clin: "Clinical", reg: "Regulatory" };
+  function bar(label, v, tone) { return '<div class="bar"><span>' + esc(label) + '</span><span class="track"><span class="fill ' + tone + '" style="width:' + (v * 10) + '%"></span></span><b>' + v + '</b></div>'; }
+
+  function card(n, rank) {
+    var heat = n.days < 0 ? "" : n.days <= 14 ? "hot" : n.days <= 35 ? "warm" : "cool";
+    var daysTxt = n.days < 0 ? "date passed — outcome to record" : n.days === 0 ? "today" : "in " + n.days + " day" + (n.days === 1 ? "" : "s");
+    var stale = n.live ? "" : ' <span class="stale" title="No live quote for this line in this build">last verified quote</span>';
+    var ref = (n.ref && n.refV != null) ? '<p class="ref">Also on the table: <b>' + esc(fmtPrice(n.refV, n.unit)) + '</b> — ' + esc(n.ref.w) + '</p>' : "";
+    var m1 = n.m1 == null ? "" : " · 1-month " + (n.m1 >= 0 ? "+" : "") + Math.round(n.m1) + "%";
+    var flag = (n.basis === "indicative" && n.bottomQuartile)
+      ? '<div class="flag"><b>Downside default is this name’s existing 52-week low.</b> The price is already in the bottom quarter of its range, so a failed catalyst here would more likely set a new low than stop at the old one — set your own floor in the box below.</div>' : "";
+    var step = n.unit === "GBp" ? "0.1" : (n.px < 5 ? "0.01" : "0.1");
+    return '' +
+'<article class="card" data-id="' + esc(n.id) + '" data-type="' + esc(n.type) + '" data-opp="' + n.opp + '" data-risk="' + n.risk + '" data-days="' + n.days + '" data-heat="' + heat + '" data-basis="' + n.basis + '"' +
+  ' data-px="' + (n.px == null ? "" : n.px) + '" data-up="' + (n.upV == null ? "" : n.upV) + '" data-dn="' + (n.dnV == null ? "" : n.dnV) + '" data-unit="' + esc(n.unit) + '">' +
+  '<header class="card-head"><div class="who"><span class="rank">' + rank + '</span><h3>' + esc(n.name) + '</h3>' +
+    '<span class="tag ' + esc(n.type) + '">' + esc(TYPE[n.type] || n.type) + '</span><span class="tag">' + esc(n.market) + '</span></div>' +
+    '<p class="meta">' + esc(n.ticker) + ' · ' + esc(n.cap) + ' · avg vol ' + esc(fmtVol(n.adv)) + m1 + '</p></header>' +
+  '<div class="levels">' +
+    '<div class="lvl now"><span class="k">Price now</span><span class="v">' + esc(fmtPrice(n.px, n.unit)) + '</span><span class="w">' + esc(pct(n.pos, false)) + ' of its 52-week range' + stale + '</span></div>' +
+    '<div class="lvl up"><span class="k">If it works</span><span class="v">' + esc(fmtPrice(n.upV, n.unit)) + ' <small>' + esc(pct(n.upPct)) + '</small></span><span class="w">' + esc(n.up.w) + '</span></div>' +
+    '<div class="lvl dn"><span class="k">If it fails</span><span class="v">' + esc(fmtPrice(n.dnV, n.unit)) + ' <small>' + esc(n.dnPct == null ? "—" : pct(-n.dnPct)) + '</small></span><span class="w">' + esc(n.down.w) + '</span></div>' +
+  '</div>' + ref +
+  '<div class="scores">' +
+    '<div class="score opp"><span class="v">' + n.opp + '</span><span class="k">Opportunity</span></div>' +
+    '<div class="score risk"><span class="v">' + n.risk + '</span><span class="k">Risk</span></div>' +
+    '<div class="score days"><span class="v">' + (n.days >= 0 ? n.days : "—") + '</span><span class="k">Days to event</span></div>' +
+    '<div class="score be"><span class="v"><span class="be-v">—</span>' + (n.basis === "indicative" ? '<span class="ind" title="Indicative endpoints">~</span>' : "") + '</span><span class="k">Breakeven odds<span class="basis ' + n.basis + '">' + n.basis + '</span></span></div>' +
+  '</div>' +
+  '<p class="be-note"><span class="be-text"></span>' + (n.basis === "indicative" ? '<span class="ind-line">Indicative: these endpoints are placeholders, not forecasts — ' + esc(n.basisNote || "") + '. The number is only worth what your own endpoints are worth.</span>' : '<span class="ind-line" style="color:var(--up)">Contractual: ' + esc(n.basisNote || "") + '.</span>') + '</p>' +
+  flag +
+  '<div class="odds">' +
+    '<div class="endpoints">' +
+      '<label class="eu"><span>If it works — your endpoint</span><input type="number" step="' + step + '" min="0" data-ep="up" aria-label="Your upside endpoint"><em class="pct" data-pct="up"></em></label>' +
+      '<label class="ed"><span>If it fails — your endpoint</span><input type="number" step="' + step + '" min="0" data-ep="dn" aria-label="Your downside endpoint"><em class="pct" data-pct="dn"></em></label>' +
+      '<button type="button" class="reset" data-reset disabled>Reset to defaults</button>' +
+    '</div>' +
+    '<div class="row"><label>Your odds it works</label><output class="odds-v">—</output></div>' +
+    '<input type="range" min="0" max="100" step="5" value="50" aria-label="Your probability the good outcome happens">' +
+    '<p class="odds-out">Drag to set your probability; the expected move at your number appears here.</p>' +
+  '</div>' +
+  '<ol class="timeline">' +
+    '<li><span class="dot"></span><b>Open now</b><span>the setup is live at today’s price</span></li>' +
+    '<li><span class="dot"></span><b>Event · ' + esc(dayLabel(n.eventDay)) + ' · ' + esc(daysTxt) + '</b><span>' + esc(n.when) + '</span></li>' +
+    '<li><span class="dot"></span><b>Close</b><span>' + esc(n.close) + '</span></li>' +
+  '</ol>' +
+  '<p class="event"><b>The event.</b> ' + esc(n.event) + '</p>' +
+  '<details class="case"><summary>Read the case — what the company is, what the price implies, bull, bear, and what would make it wrong</summary><div class="case-body">' +
+    '<h4>About the company</h4><p>' + esc(n.about) + '</p>' +
+    '<h4 class="implied">What the price implies</h4><p class="implied-p">' + esc(n.implied) + '</p>' +
+    '<h4>Setup</h4><p>' + esc(n.setup) + '</p><h4>Bull</h4><p>' + esc(n.bull) + '</p><h4>Bear</h4><p>' + esc(n.bear) + '</p>' +
+    '<h4 class="kill">What would make the call wrong</h4><p>' + esc(n.kill) + '</p><h4>Interview angle</h4><p>' + esc(n.angle) + '</p>' +
+    '<div class="bars"><div><h5>Opportunity inputs → ' + n.opp + '</h5>' + bar("Asymmetry", n.oppIn.asym, "opp") + bar("Date clarity", n.oppIn.clarity, "opp") + bar("Uncrowded", n.oppIn.crowd, "opp") + bar("Reference quality", n.oppIn.evid, "opp") + '</div>' +
+    '<div><h5>Risk inputs → ' + n.risk + '</h5>' + bar("Illiquidity", n.riskIn.liq, "risk") + bar("Single point of failure", n.riskIn.spof, "risk") + bar("Downside to floor", n.riskIn.down, "risk") + bar("Slip risk", n.riskIn.slip, "risk") + '</div></div>' +
+    '<p class="fine">Asymmetry, uncrowdedness, downside and illiquidity are computed from the live price and the default endpoints on every build. Date clarity, reference quality, single point of failure and slip risk are judgements set when the name was added.</p>' +
+  '</div></details>' +
+  '<div class="marks"><button type="button" data-mark="watch">Watch</button><button type="button" data-mark="passed">Passed</button><button type="button" data-mark="entered">Entered</button><span class="mark-note"></span></div>' +
+'</article>';
+  }
+
+  // --------------------------------------------------------------- page
+  var names = S.names.map(enrich);
+  var liveNames = names.filter(function (n) { return n.days >= 0; }).sort(function (a, b) { return b.opp - a.opp; });
+  var passed = names.filter(function (n) { return n.days < 0; }).sort(function (a, b) { return a.days - b.days; });
+
+  document.getElementById("title").textContent = liveNames.length + " dated setups";
+  var stampEl = document.getElementById("stamp");
+  if (LIVE) {
+    var b = new Date(S.built);
+    var fx = ["GBPUSD=X", "AUDUSD=X"].filter(fxRate).map(function (p) { return p.slice(0, 6) + " " + fxRate(p).toFixed(4); }).join(", ");
+    stampEl.textContent = "Prices " + b.getDate() + " " + b.toLocaleString("en-GB", { month: "short" }) + " " + b.getFullYear() + ", " + b.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" }) +
+      " · " + S.live + "/" + S.names.length + " lines live from Yahoo Finance" + (fx ? " · " + fx : "") + " · analysis as of " + S.asof;
+  } else {
+    stampEl.textContent = "Opened without a build: prices are each name’s last verified snapshot (analysis as of " + S.asof + "). Formula-based levels need live rates and show as —.";
+    stampEl.className = "stamp offline";
+  }
+  var soon = liveNames.slice().sort(function (a, b) { return a.days - b.days; }).slice(0, 6);
+  document.getElementById("nextup").innerHTML = soon.map(function (n) { return '<li><a href="#' + esc(n.id) + '"><b>' + esc(n.name) + '</b><span>' + esc(dayLabel(n.eventDay)) + ' · ' + (n.days === 0 ? "today" : n.days + " days") + '</span></a></li>'; }).join("");
+  var cards = document.getElementById("cards");
+  cards.innerHTML = liveNames.map(function (n, i) { return card(n, i + 1); }).join("");
+  if (passed.length) {
+    document.getElementById("passed").innerHTML = '<h2>Date passed — outcome to be recorded</h2><p class="lead">These have resolved. They stay here, unscored, until the outcome is written up.</p><div class="cards">' + passed.map(function (n) { return card(n, "·"); }).join("") + '</div>';
+  }
+  document.getElementById("watch").innerHTML = (S.watch || []).slice().sort(function (a, b) { return a.date < b.date ? -1 : 1; }).map(function (w) {
+    var d = daysTo(w.date); return '<li><span class="wd"><b>' + (d >= 0 ? d : "—") + '</b>days</span><span><b>' + esc(w.title) + '</b><small>' + esc(w.note) + '</small></span></li>'; }).join("");
+  var res = (S.resolved || []).slice().sort(function (a, b) { return a.date > b.date ? -1 : 1; });
+  if (res.length) {
+    document.getElementById("resolved").innerHTML = '<h2>Resolved</h2><p class="lead">What happened, so you can score your own call.</p><ul class="watch resolved">' + res.map(function (r) {
+      return '<li><span class="wd"><b>' + esc(dayLabel(eventDate(r.date))) + '</b></span><span><b>' + esc(r.name) + '</b> — ' + esc(r.outcome) + '<small>' + esc(r.note || "") + '</small></span></li>'; }).join("") + '</ul>';
+  }
+  document.getElementById("note").innerHTML = "Prices, 52-week ranges and volumes from Yahoo Finance, delayed. Catalyst dates verified against primary announcements — Investegate RNS for Takeover Code dates, SEC filings and company releases for FDA dates — with the analysis last refreshed on " + esc(S.asof) + ". Foreign-currency and share-based offers are converted at the build’s exchange rate and acquirer price. Endpoints, odds and marks (Watch, Passed, Entered) are saved in this browser only. Nothing here is investment advice.";
+
+  // ------------------------------------------------------- interaction
+  var store = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+  function loadJSON(k) { try { return JSON.parse(store.get(k) || "{}") || {}; } catch (e) { return {}; } }
+
+  // theme
+  var root = document.documentElement, btn = document.getElementById("theme"), labels = { auto: "Auto", light: "Light", dark: "Dark" };
+  var pick = function (v) { return v === "dark" || v === "light" ? v : null; };
+  var mode = store.get("event-screen-theme-v2") || pick(store.get("morning-brief-theme")) || pick(store.get("vwrp-theme")) || "dark";
+  if (!labels[mode]) mode = "dark";
+  function applyTheme() { if (mode === "auto") root.removeAttribute("data-theme"); else root.setAttribute("data-theme", mode); btn.textContent = "Theme: " + labels[mode]; store.set("event-screen-theme-v2", mode); }
+  btn.onclick = function () { mode = mode === "dark" ? "light" : mode === "light" ? "auto" : "dark"; applyTheme(); };
+  applyTheme();
+
+  // sort / filter
+  var sortMode = "opp", filterMode = "all";
+  function render() {
+    var list = Array.prototype.slice.call(cards.querySelectorAll(".card"));
+    list.forEach(function (c) { c.style.display = (filterMode === "all" || c.dataset.type === filterMode) ? "" : "none"; });
+    list.sort(function (a, b) { if (sortMode === "opp") return b.dataset.opp - a.dataset.opp; if (sortMode === "risk") return a.dataset.risk - b.dataset.risk; return a.dataset.days - b.dataset.days; });
+    var k = 0; list.forEach(function (c) { cards.appendChild(c); if (c.style.display !== "none") c.querySelector(".rank").textContent = ++k; });
+  }
+  document.querySelector(".controls").addEventListener("click", function (e) {
+    var c = e.target.closest(".chip"); if (!c) return;
+    var key = c.hasAttribute("data-sort") ? "sort" : "filter";
+    if (key === "sort") sortMode = c.dataset.sort; else filterMode = c.dataset.filter;
+    this.querySelectorAll("[data-" + key + "]").forEach(function (b) { b.setAttribute("aria-pressed", b === c); });
+    render();
+  });
+
+  // marks
+  var marks = loadJSON("event-screen-marks");
+  function paintMarks() {
+    document.querySelectorAll(".card").forEach(function (c) {
+      var m = marks[c.dataset.id] || ""; c.setAttribute("data-marked", m);
+      c.querySelectorAll("[data-mark]").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.mark === m); });
+      c.querySelector(".mark-note").textContent = m ? "Marked " + m + " on this device" : "";
+    });
+  }
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-mark]"); if (!b) return;
+    var id = b.closest(".card").dataset.id; marks[id] = marks[id] === b.dataset.mark ? "" : b.dataset.mark;
+    store.set("event-screen-marks", JSON.stringify(marks)); paintMarks();
+  });
+
+  // endpoints + odds. Both persist per ticker in localStorage; the card's
+  // breakeven and expected move are recomputed from whatever is in the boxes.
+  var odds = loadJSON("event-screen-odds"), endpoints = loadJSON("event-screen-endpoints");
+  function num(s) { var v = parseFloat(s); return isNaN(v) ? null : v; }
+  function paintCard(c) {
+    var id = c.dataset.id, unit = c.dataset.unit, px = num(c.dataset.px);
+    var defUp = num(c.dataset.up), defDn = num(c.dataset.dn);
+    var ep = endpoints[id] || {};
+    var up = ep.up != null ? ep.up : defUp, dn = ep.dn != null ? ep.dn : defDn;
+    var edited = (ep.up != null && ep.up !== defUp) || (ep.dn != null && ep.dn !== defDn);
+    var inUp = c.querySelector('[data-ep="up"]'), inDn = c.querySelector('[data-ep="dn"]');
+    if (document.activeElement !== inUp) inUp.value = up == null ? "" : +up.toFixed(unit === "GBp" ? 1 : 3);
+    if (document.activeElement !== inDn) inDn.value = dn == null ? "" : +dn.toFixed(unit === "GBp" ? 1 : 3);
+    inUp.classList.toggle("edited", ep.up != null && ep.up !== defUp);
+    inDn.classList.toggle("edited", ep.dn != null && ep.dn !== defDn);
+    c.querySelector("[data-reset]").disabled = !edited;
+    var upPct = (up == null || !px) ? null : up / px - 1, dnPct = (dn == null || !px) ? null : 1 - dn / px;
+    c.querySelector('[data-pct="up"]').textContent = upPct == null ? "" : pct(upPct) + " from " + fmtPrice(px, unit);
+    c.querySelector('[data-pct="dn"]').textContent = dnPct == null ? "" : pct(-dnPct) + " from " + fmtPrice(px, unit);
+    var be = breakeven(upPct, dnPct);
+    c.querySelector(".be-v").textContent = be == null ? "—" : Math.round(be * 100) + "%";
+    var beText = c.querySelector(".be-text");
+    if (be == null) beText.textContent = "No breakeven: the endpoints do not bracket the price (one sits on the wrong side of it), so the payoff is not a simple up-or-down.";
+    else beText.textContent = "With " + pct(upPct) + " to the good endpoint and " + pct(-dnPct) + " to the bad one" + (edited ? " (your endpoints)" : "") + ", the good outcome needs to be more likely than " + Math.round(be * 100) + "% for today’s price to pay. Above that is edge; below it, the price is not paying you for the risk.";
+    // odds
+    var p = odds[id], slider = c.querySelector('input[type=range]'), out = c.querySelector(".odds-out"), ov = c.querySelector(".odds-v");
+    if (p == null) { ov.textContent = "—"; slider.value = 50; out.textContent = "Drag to set your probability; the expected move at your number appears here."; return; }
+    slider.value = p; ov.textContent = p + "%";
+    if (upPct == null || dnPct == null) { out.textContent = "No expected move: the endpoints do not bracket the price."; return; }
+    var ev = (p / 100) * upPct - (1 - p / 100) * dnPct;
+    out.innerHTML = "At " + p + "%, the expected move is <b class=\"" + (ev >= 0 ? "pos" : "neg") + "\">" + pct(ev) + "</b> — " + (be != null && p / 100 >= be ? "your odds are above breakeven." : "your odds are below breakeven; the price is not paying you for the risk.");
+  }
+  document.addEventListener("input", function (e) {
+    var i = e.target, c = i.closest(".card"); if (!c) return;
+    var id = c.dataset.id;
+    if (i.matches('input[type=range]')) { odds[id] = parseInt(i.value, 10); store.set("event-screen-odds", JSON.stringify(odds)); paintCard(c); }
+    else if (i.matches("[data-ep]")) {
+      var v = num(i.value); endpoints[id] = endpoints[id] || {};
+      if (v == null) delete endpoints[id][i.dataset.ep]; else endpoints[id][i.dataset.ep] = v;
+      if (!Object.keys(endpoints[id]).length) delete endpoints[id];
+      store.set("event-screen-endpoints", JSON.stringify(endpoints)); paintCard(c);
+    }
+  });
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-reset]"); if (!b) return;
+    var c = b.closest(".card"); delete endpoints[c.dataset.id];
+    store.set("event-screen-endpoints", JSON.stringify(endpoints)); paintCard(c);
+  });
+  document.querySelectorAll(".card").forEach(function (c) { c.id = c.dataset.id; paintCard(c); });
+  render(); paintMarks();
+})();
+if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js").catch(function () {});
+</script>
+</body>
+</html>

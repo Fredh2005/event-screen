@@ -1,7 +1,7 @@
 // The screen. This is the only file a refresh edits. index.html renders it;
 // build.py adds live quotes on the way to site/.
 window.__SCREEN__ = {
- "asof": "2026-09-20",
+ "asof": "2026-09-27",
  "names": [
   {
    "id": "stem",
@@ -83,10 +83,10 @@ window.__SCREEN__ = {
    },
    "about": "Plymouth Meeting, Pennsylvania DNA-medicines company with a two-decade history of clinical programmes and no approved product. Lead asset INO-3107 for recurrent respiratory papillomatosis is under FDA review via the Accelerated Approval Program. $86m market cap and a balance sheet that is itself a near-term question.",
    "implied": "An $86m market cap on a company whose single near-term value driver resolves in weeks. At 31% of its 52-week range the price does not embed approval — the market is discounting a company that has been here before and missed. The process markers point the other way: late-cycle review meeting complete, pre-licensure inspections done with one observation the company says it has resolved, label negotiations expected from September. The open question the price is not obviously pricing is whether the agency still doubts the application's eligibility for accelerated approval.",
-   "setup": "BLA under review via the Accelerated Approval Program for RRP, a rare HPV-6/11 disease affecting an estimated 14,000 people in the US. Competitor Papzimeos (Precigen) was approved in August 2025 and already serves the indication. Pre-licensure inspections are complete with a single observation the company says it has resolved, and label negotiations were expected to open in September.",
+   "setup": "BLA under review via the Accelerated Approval Program for RRP, a rare HPV-6/11 disease affecting an estimated 14,000 people in the US. Competitor Papzimeos (Precigen) was approved in August 2025 and already serves the indication. Pre-licensure inspections are complete with a single observation the company says it has resolved, and label negotiations were expected to open in September. An $18.3m equity offering under the existing shelf has since taken the cash runway into late Q1 2027, through a potential launch.",
    "bull": "Label negotiations beginning is a meaningful late-stage signal — the agency does not usually negotiate labels on applications it intends to reject. A January 2026 position paper in The Laryngoscope recommends HPV-specific immunotherapy as preferred first-line, naming INO-3107 alongside the approved competitor.",
    "bear": "The FDA's file acceptance letter raised a preliminary concern that the application may not be eligible for the Accelerated Approval Program. The agency refused Inovio's Type A meeting request and, at an informal clinical meeting in July, declined to comment on the review pathway because the review was too far advanced — so the question is still open weeks from the date. Inovio also has a long history of missed timelines and dilution, with cash runway only into late Q1 2027, and Papzimeos is already entrenched.",
-   "kill": "Label negotiations failing to open, or any FDA communication confirming the accelerated-approval eligibility concern raised in the file acceptance letter. Either says the pathway question is unresolved with weeks to go. An equity raise before the date says the same thing about the balance sheet.",
+   "kill": "Label negotiations failing to open, or any FDA communication confirming the accelerated-approval eligibility concern raised in the file acceptance letter. Either says the pathway question is unresolved with weeks to go. The balance-sheet tell has already fired once: an $18.3m raise took the runway into late Q1 2027, so a second raise before the date would say the first was not enough.",
    "angle": "This is the highest-variance name on the screen and the smallest. Whatever you conclude about direction, the position-sizing answer is the interesting half: an $86m company with one decision in six weeks is where the sleeve rule earns its keep.",
    "endpointBasis": "indicative",
    "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
@@ -127,61 +127,13 @@ window.__SCREEN__ = {
    },
    "about": "San Diego cell-therapy company whose lead product, deramiocel, is a cardiosphere-derived cell therapy for Duchenne muscular dystrophy. BLA under review after a July advisory committee voted 9–3 against efficacy; the company then narrowed the proposed indication to upper-limb function. Partnered with Nippon Shinyaku for the US and Japan.",
    "implied": "A 13x 52-week range on one ticker. At 16% of that range the AdCom defeat is priced; the partial re-rate since reflects the extension. What looks underpriced is timing — the 24-month dataset goes in front of clinicians seven weeks before the PDUFA, while almost all the attention is on 22 November.",
-   "setup": "The FDA moved the PDUFA from 22 Aug to 22 Nov, classifying the BLA amendment as a major amendment. The amendment asks CBER to review a refined indication focused solely on upper limb function — the primary endpoint of HOPE-3 — after a July advisory committee voted 9–3 against efficacy.",
-   "bull": "CBER accepted the amendment citing significant unmet need in Duchenne, and the Phase 3 results were published in The Lancet after peer review. Continued separation at 24 months would make the narrowed indication harder to refuse.",
+   "setup": "The FDA moved the PDUFA from 22 Aug to 22 Nov, classifying the BLA amendment as a major amendment. The amendment asks CBER to review a refined indication focused solely on upper limb function — the primary endpoint of HOPE-3 — after a July advisory committee voted 9–3 against efficacy. Capricor said on 17 Sep that 24-month HOPE-3 and open-label extension data go to a late-breaking poster and an oral session at the World Muscle Society congress in Hiroshima, 29 Sep–3 Oct: 82 of the 106 randomised patients reached 24 months, 40 on deramiocel and 42 on placebo, and the presentations include the delayed-start analysis and natural-history comparisons that went into the BLA amendment.",
+   "bull": "CBER accepted the amendment citing significant unmet need in Duchenne, and the Phase 3 results were published in The Lancet after peer review. The WMS presentations are not a side event: they carry the delayed-start and natural-history analyses that went into the amendment, so clinicians see the actual basis of the refiled case seven weeks before the decision.",
    "bear": "A 9–3 AdCom against efficacy is a very hard starting position. A securities class action alleges the statistical analysis plan was changed without FDA agreement before resubmission — that goes directly at the credibility of the p-values the case rests on.",
    "kill": "Any disclosure that the FDA has not accepted the refined upper-limb indication, or 24-month data that fails to separate on the primary endpoint.",
    "angle": "Two dated events, and the near one is the less-watched one. Knowing a conference presentation can front-run a PDUFA by seven weeks is calendar awareness that reads as filing-level work rather than headline-level.",
    "endpointBasis": "indicative",
    "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
-  },
-  {
-   "id": "hwg",
-   "ticker": "LSE: HWG",
-   "name": "Harworth Group",
-   "type": "bid",
-   "market": "UK",
-   "symbol": "HWG.L",
-   "unit": "GBp",
-   "snapshot": {
-    "price": 178.6,
-    "high52": 185.0,
-    "low52": 116.8,
-    "adv": null,
-    "cap": "£581m",
-    "asof": "2026-09-18T16:30:00+01:00"
-   },
-   "date": "2026-10-25",
-   "when": "1.00pm, 25 Oct 2026",
-   "event": "Acceptance deadline on Peel's 177.5p Rule 9 mandatory offer",
-   "close": "On Peel's final acceptance deadline, 1pm on 25 Oct — or earlier if Peel declares the offer final under Rule 32.2.",
-   "down": {
-    "v": 143.6,
-    "w": "Pre-bid close on 5 Aug, before the offer period"
-   },
-   "up": {
-    "v": 214.8,
-    "w": "EPRA NDV at 30 Jun 2026 — the board's own asset value"
-   },
-   "judgement": {
-    "clarity": 10,
-    "evid": 10,
-    "spof": 7,
-    "slip": 4
-   },
-   "about": "Rotherham-based land regeneration and property developer that turns former coalfield and industrial sites in the North of England and Midlands into industrial and residential land, with a growing data-centre pipeline. Published EPRA NDV of 214.8p at June 2026. Subject of a hostile Rule 9 mandatory offer from Peel at 177.5p.",
-   "implied": "The stock trades above the cash offer, so the market is refusing the price and pricing either a bump or the asset value. Both cases are unusually well documented: Peel points to NDV down 4.3%, a negative 1.4% total accounting return over 18 months and net finance costs up 47.6%; the board points to a 17.4% discount to NDV and a data-centre pipeline the offer ignores.",
-   "setup": "Peel Bidco bought to exactly 30.00% on 17 Sep, forcing its voluntary offer to convert into a Rule 9 mandatory offer at the same price. The board has rejected unanimously twice and told holders to withdraw acceptances. There has been no engagement between the parties across the entire offer period.",
-   "bull": "Peel raises to clear 50%, or the NDV argument holds and the shares re-rate as the data-centre pipeline converts — the company targets exchanging a conditional contract on one site in Q4.",
-   "bear": "Peel sits on 30% and waits. The offer lapses with no bump, and a stock that was 143.6p in early August has no bidder and a hostile blocking stake on the register. Peel's own criticism is the bear case: one site under exclusivity may not produce cash until 2033.",
-   "kill": "Peel declaring the offer final under Rule 32.2 — it then cannot raise. Or acceptance levels published near the deadline showing it stuck well short of 50%.",
-   "angle": "Crossing 30% converts a voluntary offer into a mandatory one and strips every condition except acceptances. That mechanical detail changes the payoff structure, and most people discussing this stock won't know it.",
-   "ref": {
-    "v": 177.5,
-    "w": "Peel's cash offer; the stock trades above it"
-   },
-   "endpointBasis": "indicative",
-   "basisNote": "Upside is a published NAV, not the offer; the stock already trades above Peel's 177.5p"
   },
   {
    "id": "cogt",
@@ -439,8 +391,8 @@ window.__SCREEN__ = {
    },
    "about": "Austin, Texas rare-respiratory biotech with one asset: MOLBREEVI (inhaled molgramostim) for autoimmune pulmonary alveolar proteinosis, a disease with no approved therapy. BLA under review in the US, MAAs under review at the EMA and MHRA. ~$173m cash at June plus up to ~$150m of non-dilutive capital that triggers on FDA approval.",
    "implied": "A stock that has gone nowhere for three months into a hard-dated decision on its only asset. The market is neither pricing approval nor a rejection — it has simply stopped looking. That is the uncrowded shape this screen is built to find; the price gives you the payoff structure without a premium for attention.",
-   "setup": "The BLA for MOLBREEVI was accepted with a PDUFA date of 22 Nov 2026. The Phase 3 IMPALA-2 data were positive on lung function and quality of life, with long-term extension data presented at ATS. UK MHRA decision expected in Q4 2026, EMA in Q1 2027.",
-   "bull": "First-and-only therapy in an orphan indication with a clean Phase 3, no advisory committee flagged, and a balance sheet that improves by up to $150m on approval. The MHRA decision may land inside the same window and would be a leading indicator.",
+   "setup": "The BLA for MOLBREEVI was accepted with a PDUFA date of 22 Nov 2026. The Phase 3 IMPALA-2 data were positive on lung function and quality of life, with long-term extension data presented at ATS. The MHRA accepted the UK MAA under Accelerated Review, which carries a 150-day assessment, with a decision expected in Q4 2026; the EMA's CHMP decision is expected in Q1 2027.",
+   "bull": "First-and-only therapy in an orphan indication with a clean Phase 3, no advisory committee flagged, and a balance sheet that improves by up to $150m on approval. The UK decision runs on a 150-day accelerated assessment and is expected in Q4, so it may land inside the same window and would be a leading indicator.",
    "bear": "A single asset, a single decision, and an inhaled biologic with manufacturing and device components that have tripped up other applicants. The flat price could also mean the market has quietly concluded the launch economics are thin.",
    "kill": "Any FDA request for additional data or a major-amendment extension, an advisory committee being called, or an MHRA rejection ahead of the US date.",
    "angle": "The MHRA-before-FDA sequencing is the point worth making: a UK decision on the same dossier due in Q4 gives an observable signal before the binary, and most US-focused holders are not watching it.",
@@ -478,15 +430,15 @@ window.__SCREEN__ = {
    "judgement": {
     "clarity": 10,
     "evid": 5,
-    "spof": 7,
+    "spof": 8,
     "slip": 4
    },
    "about": "Miami-based oncology company built around ivonescimab, a PD-1/VEGF bispecific antibody licensed from Akeso for the US, Europe and Japan. No approved product in its territories; ivonescimab is approved and selling in China. Chaired by Bob Duggan, who owns a majority of the equity, which limits the free float.",
-   "implied": "A $14bn company priced at a third of its range, up 37% in a month on Akeso's HARMONi-2 survival data from China. The BLA under review rests on HARMONi, where PFS was significant but OS missed at p=0.057 in April 2025; the updated OS presented at WCLC on 15 Sep showed the western-patient result converging with the global one. The price now discounts a reasonable chance of approval on PFS but not a certainty.",
-   "setup": "BLA accepted with a PDUFA date of 14 Nov 2026 for ivonescimab plus chemotherapy in EGFR-mutated non-squamous NSCLC after progression on a third-generation EGFR TKI. HARMONi-3, the larger first-line squamous study, has a PFS readout guided for H2 2026, which may fall inside the same window.",
-   "bull": "PFS was the co-primary endpoint and was met; the OS trend is now consistent across regions with longer follow-up. A first US approval de-risks a platform that is already commercial in China and opens a much larger first-line opportunity behind it.",
-   "bear": "An OS miss on the pivotal trial is exactly the kind of thing a conservative FDA cycle refuses on. The stock has already re-rated on somebody else's data, and a majority owner means the float is thinner than the market cap suggests.",
-   "kill": "An FDA extension of the review, a request for an advisory committee, or HARMONi-3 PFS slipping into 2027 — the second event was meant to de-risk the first.",
+   "implied": "A $14bn company priced in the lower third of its range, having re-rated on Akeso's HARMONi-2 survival data from China. The BLA under review rests on HARMONi, where PFS was significant but OS missed at p=0.057 in April 2025; the updated OS presented at WCLC on 15 Sep showed the western-patient result converging with the global one. The price discounts a reasonable chance of approval on PFS but not a certainty.",
+   "setup": "BLA accepted with a PDUFA date of 14 Nov 2026 for ivonescimab plus chemotherapy in EGFR-mutated non-squamous NSCLC after progression on a third-generation EGFR TKI. HARMONi-3, the larger first-line study, has already disappointed once: its squamous cohort missed statistical significance on progression-free survival at an interim analysis in May 2026 and the shares fell on it. Final PFS and interim overall survival from HARMONi-3 are still guided to H2 2026, so they may land inside the same window.",
+   "bull": "PFS was a co-primary endpoint of HARMONi and was met; the OS trend is now consistent across regions with longer follow-up, as the updated data presented at WCLC on 15 Sep showed. A first US approval de-risks a platform that is already approved and selling in China and opens a much larger first-line opportunity behind it.",
+   "bear": "An OS miss on the pivotal trial is exactly the kind of thing a conservative FDA cycle refuses on. The second event is not a hedge: HARMONi-3 has already missed on PFS in its squamous cohort, so anyone treating that readout as de-risking has the sign wrong. The stock has also re-rated on somebody else's data, and a majority owner means the float is thinner than the market cap suggests.",
+   "kill": "An FDA extension of the review or a request for an advisory committee. On HARMONi-3, a final PFS result that misses in the non-squamous cohort too — the squamous interim already missed, so that would be confirmation rather than surprise.",
    "angle": "Two dated events that can land inside the same six weeks, one regulatory and one clinical, on the same molecule. Being able to say which one the price is actually reacting to is the analysis.",
    "endpointBasis": "indicative",
    "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
@@ -507,10 +459,10 @@ window.__SCREEN__ = {
     "cap": "$5.76bn",
     "asof": "2026-09-18T16:30:00+01:00"
    },
-   "date": "2026-09-26",
-   "when": "26 Sep 2026, then AZURE-1 by 30 Sep",
-   "event": "PDUFA for zilurgisertib in fibrodysplasia ossificans progressiva on 26 Sep, then Phase 3 AZURE-1 topline for brelovitug in hepatitis delta by month-end",
-   "close": "Two dates days apart: the 26 Sep PDUFA and the AZURE-1 topline by 30 Sep. Close after the second.",
+   "date": "2026-10-31",
+   "when": "Q4 2026 — the 'next couple of weeks' guided on 16 Sep has lapsed; standing guidance is H2 2026",
+   "event": "Phase 3 AZURE-1 topline for brelovitug in chronic hepatitis delta",
+   "close": "On the AZURE-1 topline press release. The FOP decision is done; this is the one event left.",
    "down": {
     "v": 63.232,
     "w": "52-week low, before the LIVMARLI growth re-rate"
@@ -520,18 +472,18 @@ window.__SCREEN__ = {
     "w": "52-week high, set earlier in 2026"
    },
    "judgement": {
-    "clarity": 9,
+    "clarity": 5,
     "evid": 5,
     "spof": 4,
-    "slip": 4
+    "slip": 7
    },
-   "about": "Foster City, California rare-disease company with three marketed liver medicines (LIVMARLI, Cholbam, Ctexli) guiding to $680–700m of 2026 sales, and a late-stage pipeline in hepatitis delta (brelovitug) and cholestatic pruritus (volixibat). Profitable at the operating line, so the events here are additive rather than existential.",
-   "implied": "Down 8% in a week and 12% over three months into two dated events, with a revenue base that pays the bills regardless. The market is trimming exposure rather than adding, which for a profitable company with a 27% gap to its 52-week high is the uncrowded end of the range. The price discounts neither event being large.",
-   "setup": "Zilurgisertib's NDA in FOP has a PDUFA date of 26 Sep 2026 after positive pivotal Phase 2 PROGRESS data. AZURE-1, the first of two Phase 3 studies of brelovitug in chronic hepatitis delta, was guided by management on 16 Sep to read out 'in the next couple of weeks'; the Phase 2b portion showed 100% virologic response on weekly dosing.",
-   "bull": "Two independent shots in one fortnight on a company whose base business grew LIVMARLI sales 46% year on year. Either a clean approval or a clean HDV readout resets the pipeline value, and the second one compounds.",
-   "bear": "FOP is a very small market and a CRL would be read as a process failure; an HDV miss would hit the largest pipeline asset. Neither is existential, which is also why neither pays like the smaller names on this screen.",
-   "kill": "A CRL citing anything other than a label negotiation, or an AZURE-1 readout that fails the primary virologic endpoint at week 48.",
-   "angle": "Two-event names are where you can show you understand correlation: these outcomes are independent, so the payoff distribution is genuinely different from a single binary of the same size. Say that, and why it lowers the risk score.",
+   "about": "Foster City, California rare-disease company with three marketed liver medicines (LIVMARLI, Cholbam, Ctexli) guiding to $680–700m of 2026 sales, now joined by Atebrioz in fibrodysplasia ossificans progressiva, and a late-stage pipeline in hepatitis delta (brelovitug) and cholestatic pruritus (volixibat). Profitable at the operating line, so the remaining event is additive rather than existential.",
+   "implied": "The FOP approval on 25 Sep removed the nearer of the two events, and on a 300-patient US indication with two approved therapies already in it, that is worth little against a base guiding to $680–700m of sales. What is left is the larger asset, and its date has gone soft: the 'next couple of weeks' management gave on 16 Sep has passed without a readout and the standing guidance is only H2 2026. That softness is why the clarity score has come down — it is a statement about the calendar, not about the drug.",
+   "setup": "Zilurgisertib was approved on 25 Sep 2026 as Atebrioz, a once-daily oral ALK2 inhibitor for FOP in patients aged 12 and over, partnered with Incyte — the third approved FOP therapy after Sohonos in 2023 and Pasatru in August 2026. That leaves AZURE-1, the first of two Phase 3 studies of brelovitug in chronic hepatitis delta, whose Phase 2b portion showed 100% virologic response on weekly dosing. Enrolment is complete. Management guided topline 'in the next couple of weeks' on 16 Sep; that has passed, and the company's standing guidance is H2 2026, with AZURE-1 and AZURE-4 together forming the US BLA.",
+   "bull": "A profitable base business and the largest pipeline readout still to come, on a molecule whose Phase 2b showed 100% virologic response at the weekly dose. AZURE-1 and AZURE-4 together form the US BLA, so a clean 24-week result starts a filing rather than just moving a number.",
+   "bear": "The date is the problem rather than the science: guidance has already lapsed once, and a readout that will not schedule itself is a poor thing to hold for on a dated-catalyst screen. A miss would hit the largest pipeline asset. The FOP approval, meanwhile, lands third into a market that already has two approved therapies, so it adds less than the headline suggests.",
+   "kill": "A further slip in the AZURE-1 timeline — a Q1 2027 guide at the Q3 results would put it outside any ten-week window — or a 24-week readout that fails the primary virologic endpoint.",
+   "angle": "The two-event structure did what it was meant to: one resolved, the smaller one, and the other is still live. The honest question now is whether a readout with no fixed date belongs on a dated screen at all. The clarity bar is that argument, and it is worth making out loud rather than hiding in a score.",
    "endpointBasis": "indicative",
    "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
   },
@@ -551,10 +503,10 @@ window.__SCREEN__ = {
     "cap": "$1.98bn",
     "asof": "2026-09-18T16:30:00+01:00"
    },
-   "date": "2026-09-30",
-   "when": "September 2026 (guided)",
+   "date": "2026-09-28",
+   "when": "8.30am ET, 28 Sep 2026",
    "event": "Phase 3 DAYBREAK one-year topline — Zenkuda and KSI-501 versus aflibercept in treatment-naive wet AMD",
-   "close": "On the DAYBREAK topline press release, guided for September.",
+   "close": "On the DAYBREAK topline, presented on a webcast at 8.30am ET on 28 Sep.",
    "down": {
     "v": 9.39,
     "w": "52-week low, before the re-rate — where a failed DAYBREAK would be argued"
@@ -564,17 +516,17 @@ window.__SCREEN__ = {
     "w": "52-week high, set in the summer run-up"
    },
    "judgement": {
-    "clarity": 7,
+    "clarity": 10,
     "evid": 4,
     "spof": 8,
-    "slip": 5
+    "slip": 2
    },
    "about": "Palo Alto retinal-disease biotech with no approved product. Lead asset Zenkuda (tarcocimab), a long-acting anti-VEGF with four completed Phase 3 trials behind it, and KSI-501, a bispecific that adds IL-6 inhibition. Three Phase 3 readouts guided between September and year-end, with DAYBREAK first.",
-   "implied": "Up 222% over a year but down 22% in the past month into the readout — the market has been taking profits into the date rather than adding. A $2bn valuation on a company with no product gives credit for a non-inferiority win already; what is not priced is whether the durability data are good enough to change prescribing, which is the actual commercial question.",
-   "setup": "DAYBREAK enrolled roughly 690 treatment-naive wet AMD patients across two comparisons against on-label aflibercept, with one-year primary endpoints. Management guided topline to September 2026. Zenkuda previously matched aflibercept on vision in GLOW1, GLOW2 and BEACON with extended dosing intervals.",
+   "implied": "Up sharply over a year but sold into the date rather than bought — the shape this screen looks for. A $2bn valuation on a company with no approved product gives credit for a non-inferiority win already; what is not priced is whether the durability data are good enough to change prescribing, which is the actual commercial question. With the webcast now fixed there is no ambiguity left about when that gets answered.",
+   "setup": "DAYBREAK enrolled roughly 690 treatment-naive wet AMD patients across two comparisons against on-label aflibercept, with one-year primary endpoints. Kodiak said on 25 Sep that it will report topline results on a webcast at 8.30am ET on Monday 28 Sep, turning a month-level guide into a fixed time. Zenkuda previously matched aflibercept on vision in GLOW1, GLOW2 and BEACON with extended dosing intervals.",
    "bull": "Four prior Phase 3 wins on the same molecule make a non-inferiority miss unlikely; the upside case is a durability result that supports six-month dosing, which no approved anti-VEGF offers. Two readouts in one press release doubles the chance of a positive headline.",
    "bear": "Non-inferiority alone is a passing grade in a crowded market with Eylea HD and Vabysmo, and the stock has already run on that expectation. A miss on either arm, or a safety signal on KSI-501's IL-6 component, re-rates the whole platform toward the $9 low.",
-   "kill": "Guidance moving from September to Q4, or a topline that reports non-inferiority without the dosing-interval data alongside it.",
+   "kill": "A topline that reports non-inferiority without the dosing-interval data alongside it, or a safety signal on KSI-501's IL-6 component. The date is no longer a risk: the webcast is scheduled.",
    "angle": "The distinction between 'the trial worked' and 'the drug will be used' is the whole analysis here. Non-inferiority is a regulatory threshold, not a commercial one, and the price has to clear the second.",
    "endpointBasis": "indicative",
    "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
@@ -804,54 +756,6 @@ window.__SCREEN__ = {
    "basisNote": "Upside is the offer-period high (a counterbid the market hopes for), not the 940p on the table"
   },
   {
-   "id": "gama",
-   "ticker": "LSE: GAMA",
-   "name": "Gamma Communications",
-   "type": "bid",
-   "market": "UK",
-   "symbol": "GAMA.L",
-   "unit": "GBp",
-   "snapshot": {
-    "price": 1125,
-    "high52": 1207,
-    "low52": 687,
-    "adv": 779000.0,
-    "cap": "£1.01bn",
-    "asof": "2026-09-18T16:30:00+01:00"
-   },
-   "date": "2026-09-29",
-   "when": "Scheme document by 29 Sep; Waterland's position to be clarified",
-   "event": "Scheme document on Epiris's 1,120p recommended offer; the market is waiting on Waterland",
-   "close": "On Waterland's decision — a counterbid or a Rule 2.8 statement. Scheme document due by 29 Sep.",
-   "down": {
-    "v": 732,
-    "w": "Undisturbed close on 7 Apr 2026, before the offer period"
-   },
-   "up": {
-    "v": 1207,
-    "w": "Offer-period high — where the market went when a Waterland break-up bid looked live"
-   },
-   "judgement": {
-    "clarity": 8,
-    "evid": 10,
-    "spof": 5,
-    "slip": 5
-   },
-   "about": "Newbury, England cloud communications provider — hosted voice, SIP trunking, connectivity and collaboration software sold mostly through channel partners across the UK and Europe. H1 2026 revenue £330m, net debt near zero. Recommended a £1.02bn cash offer from Epiris at 1,120p on 1 Sep 2026, days after confirming talks with Waterland, which had planned a break-up with Giacom.",
-   "implied": "A stock a few pence above a recommended cash offer, having touched 1,207p in the offer period. The 52-week high is the more interesting number: the market was prepared to pay 8% above the eventual offer at one point, when a Waterland–Giacom break-up bid looked live. That premium has mostly left the price, which says the market now doubts a counter, without being sure.",
-   "setup": "Epiris's Bradbury Bidco announced a Rule 2.7 firm offer at 1,120p on 1 Sep, a 53% premium to the 732p undisturbed price and 41% to the one-month average. Directors have committed their shares. Waterland confirmed on 11 Sep that it is no longer acting in concert with Giacom, that it continues to consider its interest and that there is no certainty of an offer. Scheme document within 28 days, shareholder vote at least 21 days later; completion guided for H1 2027 subject to antitrust and regulatory clearances.",
-   "bull": "Waterland is still a named potential offeror and says it is still looking. If it comes back, the reference is the 1,207p offer-period high. If it does not, you hold a recommended cash offer at a 0.4% premium — a small cost for the option.",
-   "bear": "The break-up structure that made a Waterland bid interesting went when it stopped acting in concert with Giacom on 11 Sep, and the stock has drifted back toward terms since. H1 2027 completion is a long timetable to earn nothing, and an FTSE 250 telecoms deal has both CMA and Ofcom-adjacent clearance risk. A break takes the stock toward 732p.",
-   "kill": "A Rule 2.8 no-intention statement from Waterland, or the scheme document showing irrevocables that lock out a counterbid. Waterland dropping Giacom on 11 Sep already removed the partner that made a break-up bid fundable.",
-   "angle": "Compare with Bodycote: two UK schemes, both trading above terms, one with a counterbidder that has already bid once (CVC) and one with a counterbidder that only ever talked (Waterland). The difference in premium above terms — 1.4% versus 0.4% — is the market grading the two counterbids. Explain that.",
-   "ref": {
-    "v": 1120,
-    "w": "Epiris's recommended cash offer; the stock trades just above it"
-   },
-   "endpointBasis": "indicative",
-   "basisNote": "Upside is the offer-period high, not Epiris's 1,120p"
-  },
-  {
    "id": "rgr",
    "ticker": "NYSE: RGR",
    "name": "Sturm, Ruger & Co.",
@@ -1052,6 +956,16 @@ window.__SCREEN__ = {
    "date": "2026-10-23",
    "title": "Moderna — detailed INTerpath-001 adjuvant melanoma data",
    "note": "The Phase 3 interim already read out on 19 Aug, meeting RFS and DMFS. Merck and Moderna say only that detailed data go to 'an upcoming international medical meeting' — no meeting has been named, so there is no verified date."
+  },
+  {
+   "date": "2026-10-25",
+   "title": "Harworth Group — acceptance deadline on Peel's 187p best and final offer",
+   "note": "Peel raised to 187p on 25 Sep, declared it best and final — Rule 32.2 then bars any raise — and won a unanimous board recommendation, with agreed purchases of 72.1m shares at 187p settling 29 Sep. The card's kill fact has fired: no bump is possible, so the 214.8p EPRA NDV is no longer reachable through this event. Timetable only."
+  },
+  {
+   "date": "2026-09-29",
+   "title": "Gamma Communications — scheme document on Epiris's 1,120p offer due",
+   "note": "Waterland's Rule 2.6 deadline was 5pm on 18 Sep and has passed; the outcome could not be verified this run. The card's upside was the offer-period high, which needs a live Waterland counterbid to mean anything, so it comes off the scored list until a firm offer or a Rule 2.8 statement is confirmed."
   }
  ],
  "resolved": [

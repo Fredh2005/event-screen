@@ -1,0 +1,4 @@
+Last automated activity: 2026-10-01 10:17 UTC
+
+This file exists only to keep the repository active so GitHub
+does not disable the scheduled build. Nothing reads it.

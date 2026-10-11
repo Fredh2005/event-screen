@@ -1,7 +1,7 @@
 // The screen. This is the only file a refresh edits. index.html renders it;
 // build.py adds live quotes on the way to site/.
 window.__SCREEN__ = {
- "asof": "2026-10-04",
+ "asof": "2026-10-11",
  "names": [
   {
    "id": "stem",
@@ -19,33 +19,33 @@ window.__SCREEN__ = {
     "cap": "£361m",
     "asof": "2026-09-18T16:30:00+01:00"
    },
-   "date": "2026-10-07",
-   "when": "5.00pm, 7 Oct 2026",
-   "event": "Rule 2.6(a) deadline — Circle8 must announce a firm offer or walk away",
-   "close": "On Circle8's Rule 2.7 firm offer or Rule 2.8 walk-away — 5pm on 7 Oct at the latest, earlier if it walks.",
+   "date": "2026-10-21",
+   "when": "5.00pm, 21 Oct 2026",
+   "event": "Rule 2.6 deadline, extended by 14 days — Circle8 must announce a firm offer or walk away",
+   "close": "On Circle8's Rule 2.7 firm offer or Rule 2.8 walk-away — 5pm on 21 Oct at the latest, earlier if it walks.",
    "down": {
     "v": 276,
     "w": "Undisturbed price, implied by the 15% jump to 317p on 9 Sep"
    },
    "up": {
     "v": 324.0,
-    "w": "Offer-period high, set on the approach"
+    "w": "Offer-period high, set on the 9 Sep approach — the revised proposal's price is undisclosed"
    },
    "judgement": {
     "clarity": 10,
     "evid": 9,
     "spof": 8,
-    "slip": 5
+    "slip": 7
    },
    "about": "Glasgow-founded STEM recruitment specialist placing contract and permanent staff in technology, engineering and life sciences across the UK, Germany, the Netherlands and the US. FTSE 250 until the cycle turned; revenue has been falling with the contract market. Approached on 9 Sep 2026 by Circle8 Group, a $43m Nasdaq-listed IT recruiter.",
-   "implied": "At 297.5p the market prices something close to a coin flip on a firm offer — not a done deal. The asymmetry sits in the bidder: Circle8 is a $42.7m Nasdaq company proposing an all-cash acquisition of a £361m target, financed without issuing stock, with its own shares at $0.47 and down 38% over a year.",
-   "setup": "Unsolicited, preliminary and highly conditional approach on 9 Sep. The board rejected it unanimously on 11 Sep as significantly undervaluing the company. A Q3 trading update is due inside the offer period on 22 Sep.",
-   "bull": "A financed Rule 2.7 announcement before the deadline, or the approach flushes out a credible trade or PE bidder in a market where 50-plus UK companies have been bid for this year.",
-   "bear": "No cash confirmation. Rule 2.7 requires the financial adviser to confirm funds are available in full; the bidder is roughly a tenth of the target's size. It walks, Rule 2.8 locks it out for six months, and the premium unwinds.",
-   "kill": "Any Rule 2.8 statement of no intention to bid. Or a Panel-consented extension with still no evidence of committed financing — an extension without a funding update reads bearish, not bullish.",
+   "implied": "The board has now granted time rather than rejected a price, which is a different posture from 11 Sep. But the revised figure was not disclosed, so there is no new anchor to price against: the only committed number in this situation remains the undisturbed price. The asymmetry still sits in the bidder. Circle8 is a $43m Nasdaq company proposing an all-cash acquisition of a target many times its size, financed without issuing stock, and financing is still a pre-condition of its own proposal rather than something it has confirmed.",
+   "setup": "Unsolicited, preliminary and highly conditional approach on 9 Sep, rejected unanimously on 11 Sep as significantly undervaluing the company. Circle8 came back on 7 Oct with an improved all-cash proposal at a price SThree has not disclosed. With the Panel's consent the board extended the Rule 2.6 deadline by 14 days, from 5pm on 7 Oct to 5pm on 21 Oct, to assess whether an acceptable proposal can be put on terms it would be minded to recommend. The revised proposal remains subject to confirmatory due diligence, confirmation of financing arrangements and agreement of definitive documents.",
+   "bull": "The board extended rather than rejected, which says the second price was close enough to be worth 14 days of the target's time. A financed Rule 2.7 before the deadline, or the approach flushes out a trade or private-equity bidder in a market where 50-plus UK companies have been bid for this year.",
+   "bear": "Cash confirmation is still the binding constraint. Rule 2.7 requires the financial adviser to confirm funds are available in full, the bidder is roughly a tenth of the target's size, and its own proposal still carries financing as a pre-condition with no funding update published. It walks, Rule 2.8 locks it out for six months, and the premium unwinds.",
+   "kill": "A Rule 2.8 statement of no intention to bid. Or a second extension of the 21 Oct deadline with still no evidence of committed financing — the first extension at least arrived with a better price, and one without would say the money is the problem.",
    "angle": "Cash confirmation is the binding constraint, not board willingness. That distinction is the whole trade here and takes thirty seconds to explain.",
    "endpointBasis": "indicative",
-   "basisNote": "No firm offer yet; the upside is the offer-period high, not a price anyone has committed to pay"
+   "basisNote": "No firm offer, and the revised proposal's price is undisclosed, so the upside is an offer-period high rather than a price anyone has committed to pay"
   },
   {
    "id": "ezj",
@@ -175,61 +175,13 @@ window.__SCREEN__ = {
    },
    "about": "ASX-listed, Atlanta-run plumbing products group behind SharkBite push-to-connect fittings, John Guest, Cash Acme and Holman. Most profit comes from North America, where tariffs and lower volumes cut adjusted operating profit by over 11% in FY26. Agreed on 16 Sep 2026 to a Brookfield scheme at US$3.38 a share after four approaches since April.",
    "implied": "About 3.5% below an offer denominated in US dollars, on a timetable to Q1 2027, with a go-shop that ends on 16 Oct. The spread is the market's blend of currency risk, scheme execution and a small probability that the go-shop produces a rival. Brookfield holds matching rights, which caps how much a rival can win by and therefore how much the go-shop is worth.",
-   "setup": "Brookfield Capital Partners made proposals at A$4.15, A$4.25 and A$4.50 before a fourth in August at US$3.38 (A$4.75 at the time). Scheme implementation deed signed 16 Sep with a go-shop to 16 Oct, a US$25.3m break fee and a reverse break fee on the same terms. Shareholder vote and court approval to follow; completion guided for Q1 2027.",
+   "setup": "Brookfield Capital Partners made proposals at A$4.15, A$4.25 and A$4.50 before a fourth in August at US$3.38 (A$4.75 at the time). Scheme implementation deed signed 16 Sep with a go-shop to 16 Oct, a US$25.3m break fee and a reverse break fee on the same terms. Shareholder vote and court approval to follow; completion guided for Q1 2027. Grant Thornton has been appointed independent expert and is expected to report in November. Brookfield's matching right gives it five business days to match or better any competing proposal before the board can act on one.",
    "bull": "A go-shop is rare in Australian deals and signals the board thinks a higher bid is possible; the break fee is modest and the asset is a global brand with a strategic buyer universe. Any rival has to be public by 16 Oct, which makes the option dated.",
    "bear": "Matching rights mean Brookfield can neutralise most rivals, and a US-dollar price on an ASX line means an AUD rally quietly erodes the offer. Below the offer on a break is the pre-approach level, 28% down.",
    "kill": "16 Oct passing with no superior proposal announced, or the independent expert declining to conclude the scheme is in shareholders' best interests.",
    "angle": "The offer is in dollars and the shares are in Australia: the exit price moves every day without anything happening to the deal. Pointing out that a merger-arb spread here has an FX leg is the sort of second-order thing that reads as real work.",
    "endpointBasis": "contractual",
    "basisNote": "Brookfield's US$3.38 scheme consideration vs the pre-approach level"
-  },
-  {
-   "id": "natl",
-   "ticker": "NYSE: NATL",
-   "name": "NCR Atleos",
-   "type": "reg",
-   "market": "US",
-   "symbol": "NATL",
-   "unit": "USD",
-   "snapshot": {
-    "price": 45.66,
-    "high52": 48.5,
-    "low52": 33.31,
-    "adv": 722000.0,
-    "cap": "$3.37bn",
-    "asof": "2026-09-18T16:30:00+01:00"
-   },
-   "date": "2026-10-22",
-   "when": "CMA Phase 1 decision by 22 Oct 2026",
-   "event": "CMA decision by 22 Oct — accept the NoteMachine divestiture as undertakings in lieu, or refer to Phase 2",
-   "close": "On the CMA's decision, 22 Oct: undertakings accepted in principle, or a Phase 2 reference.",
-   "down": {
-    "v": 40.6,
-    "w": "Pre-announcement level on 25 Feb 2026, back-solved from the stated 24% premium"
-   },
-   "up": {
-    "v": {
-     "cash": 30,
-     "ratio": 0.1574,
-     "of": "BCO"
-    },
-    "w": "Brink's consideration: $30 cash + 0.1574 Brink's shares at today's price"
-   },
-   "judgement": {
-    "clarity": 10,
-    "evid": 9,
-    "spof": 4,
-    "slip": 3
-   },
-   "about": "Atlanta-based ATM manufacturer, operator and services company spun out of NCR in 2023, including the Allpoint surcharge-free ATM network. Agreed in February 2026 to be acquired by Brink's for $30 cash plus 0.1574 Brink's shares per NATL share, about $6.6bn including debt. Shareholders of both companies approved on 30 Jun; US, Brazil and India clearances are in hand.",
-   "implied": "The gate narrowed rather than closed. The substantial-lessening-of-competition finding on 30 Sep was the adverse half of the Phase 1 question and it has already landed; what is left on 22 Oct is the narrower question of whether a divestiture the acquirer had already planned is accepted. Brink's says the sale was contemplated in the financial metrics it has disclosed and does not change the $200m of run-rate synergies. The stock leg of the consideration means the spread still drifts with Brink's.",
-   "setup": "Brink's agreed to buy NCR Atleos on 26 Feb 2026 for $30 cash and 0.1574 Brink's shares per share, funded with cash and a $4.5bn Morgan Stanley bridge. Shareholder approvals were obtained 30 Jun; HSR, Brazil and India have cleared. On 30 Sep the CMA found, under its fast-track Phase 1 procedure, that the merger may be expected to substantially lessen competition in UK ATM deployment and operation, where Brink's NoteMachine and Atleos's Cardtronics are two of the largest suppliers. Brink's agreed to propose the divestiture of NoteMachine/TestLink UK as undertakings in lieu of a reference, says several prospective buyers have expressed preliminary interest, and had until 7 Oct to offer them formally. The statutory Phase 1 deadline is 22 Oct.",
-   "bull": "Every other approval is done and the remedy is identified, accepted by the acquirer and already in a sale process with interested buyers. Undertakings accepted on 22 Oct removes the last gate, and the CMA reaching its decision under the fast-track procedure says the issue was scoped quickly rather than fought.",
-   "bear": "Undertakings in lieu are not a formality: the CMA has to satisfy itself that the divested business is viable and the buyer suitable, and it refers to Phase 2 if it is not, adding six months. The stock leg means you are long Brink's through that wait, and a UK disposal forced onto a regulator's timetable is rarely sold well.",
-   "kill": "A Phase 2 reference on 22 Oct, the CMA rejecting the undertakings as insufficient, or Brink's shares falling enough that the consideration drops below the current NATL price — which turns the trade into a bet on the acquirer.",
-   "angle": "Mixed consideration means the 'exit price' is a formula, not a number. Being able to say 'the deal is worth $46.67 today and here is the sensitivity to Brink's' is the difference between reading a press release and pricing a trade.",
-   "endpointBasis": "contractual",
-   "basisNote": "Brink's cash-plus-shares consideration vs the pre-announcement level"
   },
   {
    "id": "trb",
@@ -273,7 +225,7 @@ window.__SCREEN__ = {
    },
    "about": "Bristol-based supplier of student information systems to universities and colleges — Tribal's SITS:Vision runs admissions, records and assessment across a large part of UK higher education, with further business in Australia and Canada. AIM-listed, and since 11 Sep 2026 the subject of two competing routes to a sale.",
    "implied": "At 98p the market pays 93% of the 105p on the ballot and discounts Jenzabar's 111p to almost nothing. That is a specific claim: the vote carries and the counterbid does not arrive. The 7p gap to an agreed figure is what a general meeting already adjourned once on a procedural defect, and a 26% shareholder campaigning against it, are worth.",
-   "setup": "Tribal agreed the sale of its operating subsidiaries to Main Capital Partners' Thames Bidco on 11 Sep, then raised the price, reaching £231.2m — 105p a share — on 28 Sep, 22% above the £189.3m first agreed; the shares rose 17% to 98p on it. Jenzabar, a US education software firm and Tribal's largest shareholder at 26.19%, said on 29 Sep that it is considering a cash offer at 111p and urged shareholders to vote the sale down. The general meeting convened for 2 Oct was adjourned on legal advice over a procedural defect in how it had been called, and has been reconvened for 26 Oct at Investec's London offices. Irrevocable undertakings to vote in favour stand at about 53% of the share capital. Jenzabar must announce a firm offer or walk away by 5pm on 27 Oct.",
+   "setup": "Tribal agreed the sale of its operating subsidiaries to Main Capital Partners' Thames Bidco on 11 Sep, then raised the price, reaching £231.2m — 105p a share — on 28 Sep, 22% above the £189.3m first agreed; the shares rose 17% to 98p on it. Jenzabar, a US education software firm and Tribal's largest shareholder at 26.19%, said on 29 Sep that it is considering a cash offer at 111p and urged shareholders to vote the sale down. The general meeting convened for 2 Oct was adjourned on legal advice over a procedural defect in how it had been called, and has been reconvened for 26 Oct at Investec's London offices. Irrevocable undertakings to vote in favour stand at about 53% of the share capital. Jenzabar must announce a firm offer or walk away by 5pm on 27 Oct. Jenzabar's opening position disclosure on 9 Oct left its holding unchanged at 56,139,342 shares, 26.19% of the company.",
    "bull": "Two independent routes to a price well above the undisturbed level, and the holder blocking one of them has to put up a firm offer within a day of the vote or lose the right to bid for six months. A bidder that already owns 26% and has publicly named 111p has a short window in which silence costs it the asset.",
    "bear": "Jenzabar's 111p is a stated intention from a bidder that has not shown committed cash, and 26% does not block a simple-majority resolution that already has 53% of irrevocables behind it. If the vote carries and Jenzabar walks, holders are not receiving takeover consideration at all: they wait on a return of capital out of the sale proceeds, which is a slower and less certain 105p than the headline implies.",
    "kill": "A Rule 2.8 statement from Jenzabar that it does not intend to bid. Or a second adjournment of the general meeting, which would say the procedural defect is not cured.",
@@ -408,50 +360,6 @@ window.__SCREEN__ = {
    "bear": "An Inovio approval introduces a directly competing product into a 14,000-patient US market, and does so into a stock priced at the top of its range. This is the mirror of the Inovio trade and the two shouldn't both be owned.",
    "kill": "An Inovio approval, or Papzimeos launch metrics that show slower uptake than the re-rate implies.",
    "angle": "A genuine pair. One decision on one day moves two listed companies in opposite directions, and the smaller one is priced for failure while the larger is priced for continued monopoly. That's a cleaner way to express a view on the FDA than owning either outright.",
-   "endpointBasis": "indicative",
-   "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
-  },
-  {
-   "id": "pcvx",
-   "ticker": "NASDAQ: PCVX",
-   "name": "Vaxcyte",
-   "type": "clin",
-   "market": "US",
-   "symbol": "PCVX",
-   "unit": "USD",
-   "snapshot": {
-    "price": 58.95,
-    "high52": 65.0,
-    "low52": 30.89,
-    "adv": null,
-    "cap": "$8.51bn",
-    "asof": "2026-09-18T16:30:00+01:00"
-   },
-   "date": "2026-10-31",
-   "when": "By end of October 2026",
-   "event": "VAX-31 adult Phase 3 OPUS-1 topline safety and immunogenicity",
-   "close": "On the OPUS-1 topline press release, guided for by the end of October.",
-   "down": {
-    "v": 30.89,
-    "w": "52-week low — the failed-readout reference"
-   },
-   "up": {
-    "v": 65.0,
-    "w": "52-week high, set on the run into the readout"
-   },
-   "judgement": {
-    "clarity": 6,
-    "evid": 5,
-    "spof": 8,
-    "slip": 7
-   },
-   "about": "San Carlos, California vaccine company developing VAX-31, a 31-valent pneumococcal conjugate vaccine intended to beat Prevnar 20 and Capvaxive on coverage. No approved product; $8.5bn market cap rests on a three-trial adult Phase 3 programme that is fully enrolled.",
-   "implied": "An $8.5bn valuation on a company with no approved product, 82% of the way up its range and 81% higher over a year. This is a binary priced for success — the mirror image of Capricor. The question isn't direction, it's what's left on the upside if the trial does exactly what everyone expects.",
-   "setup": "Guidance narrowed on 3 Sep from Q4 to 'by the end of October'. OPUS-1 is the pivotal non-inferiority trial in a three-study adult programme with 6,191 adults dosed, roughly 3,500 on VAX-31, designed in consultation with the FDA.",
-   "bull": "A fully enrolled 6,191-patient programme with a large safety database and an FDA-aligned design. OPUS-2 and OPUS-3 follow in H1 2027, so a clean OPUS-1 de-risks a sequence rather than a single print.",
-   "bear": "Priced near highs, so even a clean hit can be sold. A miss on any single serotype's immunogenicity in a 31-valent construct re-rates the whole platform, not just this trial.",
-   "kill": "Guidance slipping back from 'end of October' to Q4. A schedule slip on a fully enrolled, fully dosed trial is information in itself.",
-   "angle": "Put beside Capricor this answers 'how do you think about risk?' cleanly: two binaries, one at 16% of its range and one at 82%, same ten-week window. The trade is the gap between the odds and the price, not the science.",
    "endpointBasis": "indicative",
    "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
   },
@@ -667,8 +575,8 @@ window.__SCREEN__ = {
    },
    "about": "Palo Alto genetic-disease company with one commercial product, Attruby (acoramidis) for ATTR cardiomyopathy, approved in the US, EU, Japan and UK, and a sequence of late-stage rare-disease filings behind it. Roughly 1,000 staff and a $13bn market cap; the events are a pipeline sequence, not a single bet.",
    "implied": "Down 19% in a month and 12% year to date on a company whose lead product is launched and growing, with a priority-review PDUFA ten weeks out. The price is reacting to sector flows and a Q2 guidance debate, not to the LGMD decision, which means the decision is close to free at the current level.",
-   "setup": "BBP-418 NDA accepted with priority review and a PDUFA date of 27 Nov 2026 for LGMD2I/R9, a disease with no approved therapy. Encaleret in ADH1 follows on 8 May 2027, and infigratinib in achondroplasia is awaiting a filing decision. Attruby sales are the base under all of it.",
-   "bull": "Priority review on an orphan indication with no competition, from a company that has now been through the FDA process successfully with acoramidis. Three staggered decisions inside nine months means the risk is spread rather than concentrated.",
+   "setup": "BBP-418 NDA accepted with priority review and a PDUFA date of 27 Nov 2026 for LGMD2I/R9, a disease with no approved therapy. Encaleret in ADH1 follows on 8 May 2027, and infigratinib in achondroplasia is awaiting a filing decision. Attruby sales are the base under all of it. On 5 Oct the company reported exploratory cardiac data from FORTIFY: among patients with elevated high-sensitivity troponin I, all of those on BBP-418 were back in the normal range by month 12, against 40% on placebo.",
+   "bull": "Priority review on an orphan indication with no competition, from a company that has now been through the FDA process successfully with acoramidis. Three staggered decisions inside nine months means the risk is spread rather than concentrated. The October cardiac read adds a disease-modification argument to a filing that had already met all primary and secondary endpoints at the pre-specified 12-month interim.",
    "bear": "Rare-disease launches are slow and a $13bn valuation already assumes several of them. LGMD2I is small; approval alone will not move a stock this size much, so the asymmetry is modest by construction.",
    "kill": "A review extension or an advisory committee for BBP-418, or a change in the encaleret PDUFA date — both would suggest the FDA relationship has cooled.",
    "angle": "The useful pairing with Capricor and Savara: same event type, wildly different risk scores, and the difference is entirely in single-point-of-failure and downside. Being able to decompose the risk score is more convincing than a view on the drug.",
@@ -801,7 +709,7 @@ window.__SCREEN__ = {
    },
    "about": "Washington DC company with three marketed products — Fanapt and Hetlioz, plus Nereus and Bysanti approved inside the last year — a litigation-heavy record with the FDA, and a $278m market cap. Imsidolimab is an IL-36 receptor antibody licensed from AnaptysBio for generalised pustular psoriasis, a rare and sometimes fatal skin disease.",
    "implied": "Within 12% of its 52-week low and roughly half its high, ten weeks from a fixed FDA decision on a drug whose pivotal data are published in NEJM Evidence. That is the shape this screen is built to find. The reason is not the asset: the market discounts Vanda's management and litigation record and prices the company close to its cash. An approval does not change that, which is why the discount has persisted through two previous ones.",
-   "setup": "The FDA accepted the imsidolimab BLA on 25 Feb 2026 with a target action date of 12 Dec 2026. The filing rests on the global GEMINI-1 and GEMINI-2 studies: 53% of patients reached clear or almost clear skin four weeks after a single intravenous dose against 13% on placebo, published in NEJM Evidence on 28 Apr 2026. Japan granted orphan designation in May 2026 and the EMA's orphan committee adopted a positive opinion in July. An approval would be Vanda's third new product in twelve months.",
+   "setup": "The FDA accepted the imsidolimab BLA on 25 Feb 2026 with a target action date of 12 Dec 2026. The filing rests on the global GEMINI-1 and GEMINI-2 studies: 53% of patients reached clear or almost clear skin four weeks after a single intravenous dose against 13% on placebo, published in NEJM Evidence on 28 Apr 2026. Japan granted orphan designation in May 2026, and the European Commission granted EU orphan designation in late August on the orphan committee's positive opinion. Vanda has filed the product under the name Quimilza. An approval would be Vanda's third new product in twelve months.",
    "bull": "A published, statistically clean pivotal result in a disease with one approved competitor, on a company small enough that a rare-disease launch moves the valuation, trading near the bottom of its range into a date that has not moved.",
    "bear": "Vanda's problem has never been getting approvals; it is converting them into revenue, and the two most recent ones did not re-rate the stock. GPP is a very small population. A stock this close to its low into a catalyst can mean the market has stopped believing the catalyst matters, rather than that it is mispriced.",
    "kill": "A review extension or an advisory committee for imsidolimab. Or Nereus and Bysanti revenue in the Q3 results showing no launch traction — that would say an approval is not the variable this price responds to.",
@@ -809,21 +717,6 @@ window.__SCREEN__ = {
   }
  ],
  "watch": [
-  {
-   "date": "2026-10-05",
-   "title": "Spire Healthcare — scheme document on the 250p Tulip offer due (28 days from 7 Sep)",
-   "note": "Firm, recommended, irrevocables over half the register; the Panel has barred a price revision. Timetable only."
-  },
-  {
-   "date": "2026-10-07",
-   "title": "ACV Auctions — Copart's $10.50 cash tender expires (extended)",
-   "note": "Extended from 30 Sep to 5pm New York on 7 Oct, with the HSR waiting period running to 13 Oct. No financing condition, no minimum. The spread is too thin to score; it is here as the arb control case alongside Eleco."
-  },
-  {
-   "date": "2026-10-10",
-   "title": "Merck — ifinatamab deruxtecan PDUFA",
-   "note": "Priority review in extensive-stage small cell lung cancer. Too large for the move to matter to a satellite sleeve."
-  },
   {
    "date": "2026-10-15",
    "title": "Roche — Enspryng in thyroid eye disease",
@@ -883,6 +776,26 @@ window.__SCREEN__ = {
    "date": "2026-12-31",
    "title": "Mirum Pharmaceuticals — AZURE-4 topline",
    "note": "AZURE-1 met its primary endpoint on 28 Sep and the card resolved on it. AZURE-4, the second pivotal study in the US registration package, is guided to Q4 2026 — a quarter, not a month, so there is no dated event to score yet."
+  },
+  {
+   "date": "2027-01-31",
+   "title": "NCR Atleos — the CMA's final decision on the NoteMachine/TestLink UK undertakings",
+   "note": "The 22 Oct Phase 1 gate the card was built on resolved early and in the holder's favour: the CMA accepted Brink's divestiture remedy in principle on 8 Oct and is now consulting on it, with a buyer still to be found and approved. No decision date is published and Brink's guides completion to early Q1 2027, so there is no dated event left to score."
+  },
+  {
+   "date": "2026-10-27",
+   "title": "Permanent TSB — Irish High Court hearing to sanction BAWAG's scheme",
+   "note": "Shareholders approved the scheme on 30 July with 91.28% of votes cast, and the sanction hearing is listed for 11am on 27 Oct. Axis Capital made a Rule 2.4 possible-offer announcement on 2 Oct and Scotchstone Capital followed on 9 Oct; the board dismissed both and neither has committed financing. A shareholder-approved scheme days from sanction leaves almost nothing between the price and the terms, and Eleco already holds the control-case slot, so this is dated rather than scored."
+  },
+  {
+   "date": "2026-12-17",
+   "title": "Corcept Therapeutics — relacorilant PDUFA on the resubmitted Cushing's syndrome NDA",
+   "note": "Resubmitted on 17 Jun 2026 after the complete response letter of 30 Dec 2025, with new GRACE and GRADIENT analyses of blood pressure and glucose; the FDA's target date is 17 Dec. A verified date inside the window, but no quote feed was reachable on this run, so the 52-week extremes that would be its endpoints could not be verified. First candidate to promote next run."
+  },
+  {
+   "date": "2026-12-22",
+   "title": "Mineralys Therapeutics — lorundrostat PDUFA in hypertension",
+   "note": "NDA accepted on 9 Mar 2026 with a target action date of 22 Dec, on the Phase 3 Launch-HTN and Phase 2 Advance-HTN data. Two days outside the ten-week window, so dated rather than scored; it qualifies on the window at the next refresh."
   }
  ],
  "resolved": [
@@ -915,6 +828,12 @@ window.__SCREEN__ = {
    "name": "Bodycote",
    "outcome": "The scheme document on Veritas's 940p recommended cash offer was published on 28 Sep, and the board noted a statement from CVC Advisers that it will not make a firm offer and is bound by the Rule 2.8 restrictions. Court and General Meetings were convened for 21 Oct, with a court sanction hearing on 11 Mar 2027.",
    "note": "The card's kill fact fired exactly as written. CVC's Rule 2.8 statement locks it out for six months, so the 967.5p offer-period high that was the upside reference is unreachable through this event and the 13.5p the market was paying above terms was paying for nothing."
+  },
+  {
+   "date": "2026-10-05",
+   "name": "Vaxcyte",
+   "outcome": "VAX-31 met every co-primary immunogenicity endpoint in OPUS-1, the pivotal adult Phase 3 trial, reported on 5 Oct and ahead of the end-October guidance. All 32 immunobridging serotype comparisons cleared non-inferiority and all four superiority comparisons were met. Against PCV21, 17 of the 19 shared serotypes met the stricter lower-bound threshold; serotypes 3 and 12F missed it and cleared the historical one. Against PCV20 all 20 shared serotypes met the stricter threshold. Safety matched PCV20 and PCV21 across every age studied, in 4,047 participants.",
+   "note": "The card said the question was not direction but what was left on the upside if the trial did what everyone expected. The answer was about 30% in a day, through the $65 52-week high that was the card's upside reference — a name already at 82% of its range still had a third of itself to add on a clean print."
   }
  ]
 };

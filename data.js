@@ -463,17 +463,17 @@ window.__SCREEN__ = {
     "cap": null,
     "asof": null
    },
-   "date": "2026-11-27",
-   "when": "Scheme document due by 27 Nov 2026",
+   "date": "2026-11-26",
+   "when": "Scheme document due by 26 Nov 2026",
    "event": "Scheme document on Leita Mobility's 46p firm offer, which fixes the meeting dates",
-   "close": "The scheme document, due by 27 Nov under the Code's 28-day rule, sets the Court Meeting and General Meeting dates. The position is over at those meetings; until then the document is the checkpoint.",
+   "close": "The scheme document, due within 28 days of the Rule 2.7 announcement, sets the Court Meeting and General Meeting dates. The position is over at those meetings; completion is guided to the first half of 2027.",
    "down": {
     "v": 29.7,
     "w": "Closing price on 20 Oct 2026, the last business day before the offer period began, as stated in the Rule 2.7 announcement"
    },
    "up": {
     "v": 46,
-    "w": "Leita Mobility's recommended cash offer under Rule 2.7, announced 30 Oct 2026"
+    "w": "Leita Mobility's recommended cash offer under Rule 2.7, announced in the last days of October 2026"
    },
    "endpointBasis": "contractual",
    "basisNote": "A firm Rule 2.7 offer price against the undisturbed close stated in that same announcement",
@@ -484,10 +484,10 @@ window.__SCREEN__ = {
     "slip": 5
    },
    "about": "The former National Express: Birmingham-based operator of coaches and buses in the UK and Spain and of school buses in North America, renamed in 2023. A FTSE 250 constituent that has spent three years working through a US school-bus problem, a Spanish disposal and a suspended dividend, and that carries more than £1bn of net debt against an equity value of about £308m at the offer price. In an offer period since 21 Oct 2026 and the subject of a firm recommended offer since 30 Oct.",
-   "implied": "The 18 November put-up-or-shut-up date this card was built on never arrived: the offer was firmed up nineteen days early, on 30 October, and the shares rose about 11% on it. What was a question about whether a price would appear is now a question about a scheme completing, and the gap that remains is paying for conditions rather than intentions. It is also paying for the shape of the thing: a buyer of 46p of equity is assuming more than £1bn of debt, so the enterprise changing hands is several times the cheque being written for the shares.",
-   "setup": "Mobico announced on 21 Oct 2026 a non-binding 46p cash proposal from Autobuses de León, whose CMC Group arm was already Mobico's largest shareholder at about 26%, alongside Asterion Industrial Partners' Fund III. On 30 Oct the parties announced agreed terms: a firm Rule 2.7 offer from Leita Mobility at 46p cash, valuing the equity at about £308m — a 55.1% premium to the 29.7p close on 20 Oct, the last business day before the offer period began. The structure is a court-sanctioned scheme of arrangement, subject to customary regulatory approvals. Under the Code the scheme document must be posted within 28 days of a Rule 2.7 announcement unless the Panel consents otherwise, which puts it on or before 27 Nov 2026; the Court Meeting and General Meeting dates are set in that document.",
-   "bull": "Firmed up nineteen days early by a bidder that already owns a quarter of the company and knows the assets better than anyone outside the boardroom, with an infrastructure fund alongside it and a board recommendation in place. The kill fact on the earlier version of this card — a deadline extension granted with no agreed price — did not fire; the opposite happened.",
-   "bear": "A 26% holder buying the rest is not an auction: there is no second bidder and a controlling shareholder has little reason to raise. What is left is a regulatory and court timetable on a group operating in the UK, Spain and North America, with more than £1bn of debt being assumed. If a condition fails, the reference is the 29.7p close of a fortnight before the approach — about a third below the offer.",
+   "implied": "The 18 November put-up-or-shut-up date this card was built on never arrived: the offer was firmed up more than a fortnight early, and the shares rose about 11% on it. What was a question about whether a price would appear is now a question about a scheme completing, and the gap that remains is paying for conditions rather than intentions. It is also paying for the shape of the thing: a buyer of £308m of equity is taking on an enterprise of about £2.3bn, so most of what changes hands is debt.",
+   "setup": "Mobico announced on 21 Oct 2026 a non-binding 46p cash proposal from Autobuses de León, whose CMC Group arm — the Cosmen family vehicle — was already Mobico's largest shareholder at about 26%, alongside Asterion Industrial Partners' Fund III. Terms were then agreed: a firm Rule 2.7 offer from Leita Mobility at 46p cash, valuing the equity at about £308m and the enterprise at about £2.32bn — a 55.1% premium to the 29.7p close on 20 Oct, the last business day before the offer period began. Coverage dates that announcement to 29 or 30 Oct and the day has not been pinned down here, which matters only because the Code's 28-day clock for posting the scheme document runs from it: the deadline is 26 or 27 Nov 2026, and this card takes the earlier of the two. The independent directors recommend the offer unanimously, with irrevocable undertakings from directors over about 0.2% of the share capital. The structure is a court-sanctioned scheme, subject to customary regulatory approvals, though Leita retains the right to switch to a takeover offer with the necessary consents. Completion is guided to the first half of 2027.",
+   "bull": "Firmed up more than a fortnight before the deadline by a bidder that already owns a quarter of the company and knows the assets better than anyone outside the boardroom, with an infrastructure fund alongside it and a unanimous recommendation from the independent directors. The kill fact on the earlier version of this card — a deadline extension granted with no agreed price — did not fire; the opposite happened.",
+   "bear": "A 26% holder buying the rest is not an auction: there is no second bidder and a controlling shareholder has little reason to raise. What is left is a regulatory and court timetable on a group operating in the UK, Spain and North America, with roughly £2bn of debt inside the enterprise value, and completion not guided until the first half of 2027. If a condition fails, the reference is the 29.7p close of a fortnight before the approach — about a third below the offer.",
    "kill": "The scheme document not being posted by 27 Nov, or a Panel consent to extend that deadline. On a firm offer at an agreed price, a delay in the paperwork is about a condition rather than about the number.",
    "angle": "This card changed category rather than price: an indicative proposal became a contractual pair the moment the Rule 2.7 announcement landed, and the breakeven on the page stopped being a guess. Watching a name cross from indicative to contractual is the clearest illustration of why the screen distinguishes the two at all."
   },

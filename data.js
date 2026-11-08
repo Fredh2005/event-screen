@@ -1,52 +1,8 @@
 // The screen. This is the only file a refresh edits. index.html renders it;
 // build.py adds live quotes on the way to site/.
 window.__SCREEN__ = {
- "asof": "2026-11-01",
+ "asof": "2026-11-08",
  "names": [
-  {
-   "id": "gama",
-   "ticker": "LSE: GAMA",
-   "name": "Gamma Communications",
-   "type": "bid",
-   "market": "UK",
-   "symbol": "GAMA.L",
-   "unit": "GBp",
-   "snapshot": {
-    "price": null,
-    "high52": null,
-    "low52": null,
-    "adv": null,
-    "cap": null,
-    "asof": null
-   },
-   "date": "2026-11-02",
-   "when": "Court Meeting 8.30am, General Meeting 8.45am, 2 Nov 2026",
-   "event": "Adjourned shareholder meetings on Epiris's 1,120p scheme, after the first pair failed on turnout",
-   "close": "At the adjourned meetings on 2 Nov, before the market opens. Either the 75% carries or the scheme falls over on turnout; completion is then guided to Q1 2027.",
-   "down": {
-    "v": 732,
-    "w": "Closing price on 7 Apr 2026, the last business day before the offer period began"
-   },
-   "up": {
-    "v": 1120,
-    "w": "Epiris's recommended cash offer, since declared final"
-   },
-   "endpointBasis": "contractual",
-   "basisNote": "A firm recommended offer price against the undisturbed close stated in that announcement",
-   "judgement": {
-    "clarity": 10,
-    "evid": 10,
-    "spof": 7,
-    "slip": 3
-   },
-   "about": "Newbury-based business communications group: cloud telephony, Microsoft Teams voice, SIP trunking and connectivity, sold through UK channel partners and increasingly in Germany and the Netherlands. Moved from AIM to the Main Market in 2025 and into the FTSE 250. In an offer period since 8 Apr 2026.",
-   "implied": "The unusual thing here is the shape. There is almost nothing between the price and the 1,120p on the table, and 732p underneath it. The market is not being paid to take vote risk; it is taking vote risk for nothing — which is the normal state of a recommended scheme, except that this one has already failed to get a vote out once. On 20 October the meetings were adjourned because proxies had been lodged for under 40% of the shares, with the board attributing the shortfall to merger-arbitrage funds that had only recently bought in and had not voted. Those holders have now had a fortnight and an explicit warning.",
-   "setup": "Epiris's Bradbury Bidco agreed a recommended 1,120p cash offer on 1 Sep 2026, a 53% premium to the 732p close on 7 Apr 2026, the last business day before the offer period began, valuing the equity at about £1.02bn. The scheme document was published in late September and the Court and General Meetings were convened for 20 Oct, then adjourned on the day because proxies had come in for less than 40% of the shares. They were reconvened for 8.30am and 8.45am on 2 Nov 2026, with a record date of 6.00pm on 29 Oct; existing proxy appointments remain valid. Bidco has since declared the 1,120p final, with specified exceptions, and Gamma has said it is not in discussions with anyone else. The board's unanimous recommendation stands. Completion is now guided to Q1 2027 rather than H1.",
-   "bull": "A unanimous recommendation, a price declared final, no competing process, and a fortnight of public notice to the holders who did not vote. Schemes adjourned on turnout generally carry at the second attempt, because the problem was administrative rather than a disagreement about price.",
-   "bear": "Seventy-five per cent by value of the shares voted is a threshold, not a formality, and the holders who have to turn up are the ones who did not. There were reports in October of institutional holders pushing for more than 1,120p, and the price has since been declared final, so a holder voting against is not obviously voting for nothing. The asymmetry is the real problem: a few pence of upside against 732p underneath.",
-   "kill": "A second adjournment on 2 Nov, or the resolutions being put and failing to reach 75% by value at the Court Meeting.",
-   "angle": "A card with almost no upside and a large floor is worth keeping on the page precisely because the opportunity score will rate it near the bottom. That is the score working: a near-certain deal at a near-zero spread is not an opportunity, and the only honest way to show that is to put its numbers beside the names where the gap is wide."
-  },
   {
    "id": "ires",
    "ticker": "EURONEXT: IRES",
@@ -220,11 +176,11 @@ window.__SCREEN__ = {
     "slip": 4
    },
    "about": "New Jersey-based maker of non-opioid pain products: Exparel, a long-acting bupivacaine injection used in surgery, plus Zilretta and the iovera° cryoanalgesia device. Agreed on 8 Oct 2026 to be acquired by Viatris for $36.50 a share in cash, about $1.65bn of equity value.",
-   "implied": "The shares sit within a few cents of the $36.50 on the table. This is the control case on the screen: a signed merger agreement, a cash tender with no financing condition, a unanimous board recommendation, and a minimum condition of one share more than half the outstanding. What the market is pricing is HSR clearance arriving before the expiry, and almost nothing else. Its job on this page is to show what a near-certainty looks like next to the names where the gap is wide — and to make the point that the widest gaps here are wide for reasons.",
-   "setup": "Viatris and Pacira announced a merger agreement on 8 Oct 2026 at $36.50 cash a share, a 44.8% premium to the $25.20 close the day before. Viatris's Peach Purchaser Sub commenced the tender offer on 30 Oct; it expires one minute after 11.59pm New York time on 16 Nov 2026 unless extended as the merger agreement permits. The conditions are a majority of the outstanding shares tendered and HSR clearance; there is no financing condition, with Viatris funding it from excess cash and short-term borrowings. The back end is a DGCL 251(h) merger, so no shareholder vote is required. The agreement carries a $62m termination fee and an outside date of 8 Apr 2027, extendable to 8 Jul 2027. Pacira's board unanimously recommends that shareholders tender.",
+   "implied": "The shares sit within a few cents of the $36.50 on the table. This is the control case on the screen: a signed merger agreement, a cash tender with no financing condition, a unanimous board recommendation, and a minimum condition of one share more than half the outstanding. The antitrust leg now looks done — MLex reported that the HSR waiting period expired just before midnight on 29 Oct — but neither company has confirmed that in a filing, so what the market is pricing is a condition reported satisfied rather than one shown to be. Its job on this page is to show what a near-certainty looks like next to the names where the gap is wide, and to make the point that the widest gaps here are wide for reasons.",
+   "setup": "Viatris and Pacira announced a merger agreement on 8 Oct 2026 at $36.50 cash a share, a 44.8% premium to the $25.20 close the day before. Viatris's Peach Purchaser Sub commenced the tender offer on 30 Oct; it expires one minute after 11.59pm New York time on 16 Nov 2026 unless extended as the merger agreement permits. The conditions are a majority of the outstanding shares tendered and HSR clearance; there is no financing condition, with Viatris funding it from excess cash and short-term borrowings. The back end is a DGCL 251(h) merger, so no shareholder vote is required. The agreement carries a $62m termination fee and an outside date of 8 Apr 2027, extendable to 8 Jul 2027. MLex reported on 29 Oct that the HSR waiting period had expired; neither company has confirmed it in a filing and the tender offer materials still carry HSR expiry or termination as a condition. Pacira's board unanimously recommends that shareholders tender.",
    "bull": "Signed, funded, recommended, no vote required, and a structure that completes days after the tender closes. The remaining work is an antitrust filing between a generics company and a non-opioid pain specialist with little product overlap.",
-   "bear": "There is a fraction of a per cent between here and the offer, and the failure reference is $25.20 — a payoff shape that is all risk and no reward if anything goes wrong. A second request under HSR would push this past the expiry and into an extension, and the outside date runs to next April, which is a long time to hold a stock for a few cents.",
-   "kill": "A second request from the FTC or DOJ under HSR, or an extension of the 16 Nov expiry announced without the minimum condition having been met.",
+   "bear": "There is a fraction of a per cent between here and the offer, and the failure reference is $25.20 — a payoff shape that is all risk and no reward if anything goes wrong. The antitrust condition has been reported satisfied by one outlet and confirmed by neither party, and the outside date runs to next April, which is a long time to hold a stock for a few cents.",
+   "kill": "An extension of the 16 Nov expiry announced without the minimum condition having been met, or either company disclosing that the antitrust condition is still outstanding. The HSR expiry has been reported, not confirmed in a filing, so a second request is still the thing that would break this.",
    "angle": "Every screen needs one name where the answer is effectively known, so the reader can see what the scale looks like at the far end. The fraction of a per cent here and the gaps on the clinical cards are prices on the same kind of question, and putting them on one page is the only way to judge whether a wide spread is an opportunity or a warning."
   },
   {
@@ -272,50 +228,6 @@ window.__SCREEN__ = {
    "angle": "This is the card where the screen's own rule bites hardest. There is no offer price, so there is nothing contractual to anchor to, and the upside slot can only be filled with a 52-week high from a year ago — a historical fact, not an outcome of this bid. The entry is marked indicative for exactly that reason, and the reader should set their own numbers before taking the breakeven seriously."
   },
   {
-   "id": "stem",
-   "ticker": "LSE: STEM",
-   "name": "SThree",
-   "type": "bid",
-   "market": "UK",
-   "symbol": "STEM.L",
-   "unit": "GBp",
-   "snapshot": {
-    "price": 297.5,
-    "high52": 324.0,
-    "low52": 137.2,
-    "adv": null,
-    "cap": "£361m",
-    "asof": "2026-09-18T16:30:00+01:00"
-   },
-   "date": "2026-11-18",
-   "when": "5.00pm, 18 Nov 2026",
-   "event": "Rule 2.6 deadline, extended a second time — Circle8 must announce a firm offer or walk away",
-   "close": "On Circle8's Rule 2.7 firm offer or Rule 2.8 walk-away — 5pm on 18 Nov at the latest, earlier if it walks.",
-   "down": {
-    "v": 276,
-    "w": "Undisturbed price, implied by the 15% jump to 317p on 9 Sep"
-   },
-   "up": {
-    "v": 324.0,
-    "w": "Offer-period high, set on the 9 Sep approach — neither revised proposal's price has been disclosed"
-   },
-   "judgement": {
-    "clarity": 10,
-    "evid": 9,
-    "spof": 8,
-    "slip": 8
-   },
-   "about": "Glasgow-founded STEM recruitment specialist placing contract and permanent staff in technology, engineering and life sciences across the UK, Germany, the Netherlands and the US. FTSE 250 until the cycle turned; revenue has been falling with the contract market. Approached on 9 Sep 2026 by Circle8 Group, a $43m Nasdaq-listed IT recruiter.",
-   "implied": "The previous card's kill fact has fired. A second extension arrived on 21 Oct and, unlike the first, it came with neither a disclosed price nor any evidence of committed funding — only that talks continue. That is the specific thing the card said would say the money is the problem. What has not changed is the shape: the revised figure is still undisclosed, so the only committed number in this situation remains the undisturbed price, and the asymmetry still sits with the bidder. Circle8 is a $43m Nasdaq company proposing an all-cash acquisition of a target many times its size, with financing still a pre-condition of its own proposal.",
-   "setup": "Unsolicited, preliminary and highly conditional approach on 9 Sep, rejected unanimously on 11 Sep as significantly undervaluing the company. Circle8 came back on 7 Oct with an improved all-cash proposal at a price SThree has not disclosed, and with the Panel's consent the board extended the Rule 2.6 deadline by 14 days to 5pm on 21 Oct. On 21 Oct the board requested, and the Panel consented to, a further 28-day extension to 5pm on 18 Nov 2026, on the stated basis that discussions between the two are ongoing. No funding update has been published alongside either extension. The revised proposal remains subject to confirmatory due diligence, confirmation of financing arrangements and agreement of definitive documents.",
-   "bull": "Two months and two extensions of the target's time is not what a board grants a bidder it expects to walk away. A financed Rule 2.7 before 18 Nov, or the approach flushes out a trade or private-equity bidder in a market where 50-plus UK companies have been bid for this year.",
-   "bear": "Cash confirmation is the binding constraint and the clock has now been reset twice without it. Rule 2.7 requires the financial adviser to confirm funds are available in full, the bidder is roughly a tenth of the target's size, and the second extension published no funding progress at all. It walks, Rule 2.8 locks it out for six months, and the premium unwinds.",
-   "kill": "A Rule 2.8 statement of no intention to bid. Or a third extension past 18 Nov: two have now been granted, the second with no disclosed price and no funding update, and a third would be the Panel giving more time to a bidder that still cannot show the cash.",
-   "angle": "Cash confirmation is the binding constraint, not board willingness. That distinction is the whole trade here and takes thirty seconds to explain.",
-   "endpointBasis": "indicative",
-   "basisNote": "No firm offer, and the revised proposal's price is undisclosed, so the upside is an offer-period high rather than a price anyone has committed to pay"
-  },
-  {
    "id": "ashtd",
    "ticker": "LSE: AT.",
    "name": "Ashtead Technology",
@@ -358,6 +270,50 @@ window.__SCREEN__ = {
    "bear": "The interesting part of this one has already happened. From here it is a timetable, and the way it goes wrong is slowly — a Panel-consented delay to the document, a condition that takes longer than guided. A counterbid is the only route to a better price, and nobody has appeared in the month since the firm offer.",
    "kill": "The scheme document not being posted by 18 Nov, or a Panel consent to extend that deadline. On a firm offer at an agreed price, a delay in the paperwork is about something other than the price.",
    "angle": "This is the cleanest contractual pair on the page: a real offer price and a real undisturbed close, both printed in the same announcement. Everything this card says about payoff can be checked against one document, which is more than most of the clinical names on this screen can offer."
+  },
+  {
+   "id": "stem",
+   "ticker": "LSE: STEM",
+   "name": "SThree",
+   "type": "bid",
+   "market": "UK",
+   "symbol": "STEM.L",
+   "unit": "GBp",
+   "snapshot": {
+    "price": 297.5,
+    "high52": 324.0,
+    "low52": 137.2,
+    "adv": null,
+    "cap": "£361m",
+    "asof": "2026-09-18T16:30:00+01:00"
+   },
+   "date": "2026-11-18",
+   "when": "5.00pm, 18 Nov 2026",
+   "event": "Rule 2.6 deadline, extended a second time — Circle8 must announce a firm offer or walk away",
+   "close": "On Circle8's Rule 2.7 firm offer or Rule 2.8 walk-away — 5pm on 18 Nov at the latest, earlier if it walks.",
+   "down": {
+    "v": 276,
+    "w": "Undisturbed price, implied by the 15% jump to 317p on 9 Sep"
+   },
+   "up": {
+    "v": 324.0,
+    "w": "Offer-period high, set on the 9 Sep approach — neither revised proposal's price has been disclosed"
+   },
+   "judgement": {
+    "clarity": 10,
+    "evid": 9,
+    "spof": 8,
+    "slip": 8
+   },
+   "about": "Glasgow-founded STEM recruitment specialist placing contract and permanent staff in technology, engineering and life sciences across the UK, Germany, the Netherlands and the US. FTSE 250 until the cycle turned; revenue has been falling with the contract market. Approached on 9 Sep 2026 by Circle8 Group, a $43m Nasdaq-listed IT recruiter.",
+   "implied": "The previous card's kill fact has fired. A second extension arrived on 21 Oct and, unlike the first, it came with neither a disclosed price nor any evidence of committed funding — only that talks continue. That is the specific thing the card said would say the money is the problem. What has not changed is the shape: the revised figure is still undisclosed, so the only committed number in this situation remains the undisturbed price, and the asymmetry still sits with the bidder. Circle8 is a $43m Nasdaq company proposing an all-cash acquisition of a target many times its size, with financing still a pre-condition of its own proposal.",
+   "setup": "Unsolicited, preliminary and highly conditional approach on 9 Sep, rejected unanimously on 11 Sep as significantly undervaluing the company. Circle8 came back on 7 Oct with an improved all-cash proposal at a price SThree has not disclosed, and with the Panel's consent the board extended the Rule 2.6 deadline by 14 days to 5pm on 21 Oct. On 21 Oct the board requested, and the Panel consented to, a further 28-day extension to 5pm on 18 Nov 2026, on the stated basis that discussions between the two are ongoing. No funding update has been published alongside either extension. The revised proposal remains subject to confirmatory due diligence, confirmation of financing arrangements and agreement of definitive documents.",
+   "bull": "Two months and two extensions of the target's time is not what a board grants a bidder it expects to walk away. A financed Rule 2.7 before 18 Nov, or the approach flushes out a trade or private-equity bidder in a market where 50-plus UK companies have been bid for this year.",
+   "bear": "Cash confirmation is the binding constraint and the clock has now been reset twice without it. Rule 2.7 requires the financial adviser to confirm funds are available in full, the bidder is roughly a tenth of the target's size, and the second extension published no funding progress at all. It walks, Rule 2.8 locks it out for six months, and the premium unwinds.",
+   "kill": "A Rule 2.8 statement of no intention to bid. Or a third extension past 18 Nov: two have now been granted, the second with no disclosed price and no funding update, and a third would be the Panel giving more time to a bidder that still cannot show the cash.",
+   "angle": "Cash confirmation is the binding constraint, not board willingness. That distinction is the whole trade here and takes thirty seconds to explain.",
+   "endpointBasis": "indicative",
+   "basisNote": "No firm offer, and the revised proposal's price is undisclosed, so the upside is an offer-period high rather than a price anyone has committed to pay"
   },
   {
    "id": "capr",
@@ -448,6 +404,58 @@ window.__SCREEN__ = {
    "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
   },
   {
+   "id": "vsvs",
+   "ticker": "LSE: VSVS",
+   "name": "Vesuvius",
+   "type": "bid",
+   "market": "UK",
+   "symbol": "VSVS.L",
+   "unit": "GBp",
+   "snapshot": {
+    "price": null,
+    "high52": null,
+    "low52": null,
+    "adv": null,
+    "cap": null,
+    "asof": null
+   },
+   "date": "2026-11-24",
+   "when": "5.00pm, 24 Nov 2026",
+   "event": "Rule 2.6 deadline, extended once — RHI Magnesita must announce a firm offer or walk away",
+   "close": "On RHI Magnesita's Rule 2.7 firm offer or a Rule 2.8 statement that it will not bid — 5pm on 24 Nov at the latest, earlier if it walks.",
+   "down": {
+    "v": 373.5,
+    "w": "Undisturbed close on 28 Sep 2026, back-solved from the stated 47% premium to RHI Magnesita's 549p headline value"
+   },
+   "up": {
+    "v": {
+     "cash": 470,
+     "ratio": 0.028,
+     "of": "RHIM.L"
+    },
+    "w": "The 27 Aug proposal — 470p cash plus 0.28 new RHI Magnesita shares for every 10 Vesuvius shares — valued at the acquirer's live price. A proposal, not a firm offer"
+   },
+   "ref": {
+    "v": 549,
+    "w": "RHI Magnesita's own headline value for the proposal, struck on its 28 Sep 2026 close"
+   },
+   "endpointBasis": "indicative",
+   "basisNote": "RHI Magnesita has made a possible-offer announcement, not a firm offer under Rule 2.7, and the share half of the consideration floats with the acquirer's own quote, so the upside is a package the bidder has named rather than one it is committed to pay.",
+   "judgement": {
+    "clarity": 10,
+    "evid": 8,
+    "spof": 7,
+    "slip": 7
+   },
+   "about": "London-listed molten-metal flow engineering group: refractory linings and flow-control systems sold to steelmakers and foundries, around 10,000 people across forty-odd countries. FTSE 250. In an offer period since 29 Sep 2026, when the board confirmed approaches from RHI Magnesita, the Vienna-run, London-listed refractories group that is its largest competitor.",
+   "implied": "The upside here is a package, not a price. 470p of it is cash; the rest is 0.028 of an RHI Magnesita share for each Vesuvius share, so the number on this card moves with the acquirer's own quote — 549p on RHI Magnesita's 28 Sep close, 551p on its one-month VWAP to 27 Aug, the same proposal measured on two different days. What the market has to price is not whether the Vesuvius board wants the money. It is whether the competition authorities will let the two largest refractories groups combine, and that is exactly what the two sides have spent the extension negotiating.",
+   "setup": "RHI Magnesita approached Vesuvius repeatedly through 2026 and the board confirmed the talks on 29 Sep in response to media speculation, which opened the offer period. The latest proposal, dated 27 Aug 2026, is 470p in cash plus 0.28 new RHI Magnesita shares for every 10 Vesuvius shares, with Vesuvius holders keeping the 7.1p interim dividend. RHI Magnesita valued that at 549p on its own 28 Sep close — a 47% premium to the Vesuvius close that day, 48% to the one-month VWAP and 38% to the three-month VWAP; Vesuvius puts it at 551p using the acquirer's one-month VWAP to 27 Aug. The original Rule 2.6 deadline of 27 Oct was extended with the Panel's consent to 5pm on 24 Nov, on the stated basis that reasonable progress had been made on execution risk, including a headline agreement on a disposal revenue threshold for remedies and on a related reverse break fee. Cevian has extended its irrevocable undertaking in support of an RHI Magnesita offer to run to the new deadline.",
+   "bull": "The two sides have stopped arguing about price and started drafting remedies. A headline agreement on how much revenue would be divested, and on a reverse break fee that pays Vesuvius if the clearances fail, is the sort of detail boards only negotiate when they expect to sign. Cevian has rolled its irrevocable forward to the new deadline rather than letting it lapse.",
+   "bear": "This is a horizontal combination of the two largest refractories groups, which is why the remedy conversation has taken three months rather than three weeks. A disposal threshold agreed in principle is not a clearance, and if RHI Magnesita concludes the divestments cost more than the synergies it walks, Rule 2.8 locks it out for six months and the premium unwinds toward the undisturbed price. Half the consideration is also paper in the acquirer, so the upside level falls if RHI Magnesita's shares fall — without the deal changing at all.",
+   "kill": "A Rule 2.8 statement of no intention to bid. Or a second extension past 24 Nov with no disposal package named: the first was granted on the stated basis of progress on execution risk, so a further one disclosing nothing more would say the remedies are the obstacle.",
+   "angle": "Mixed consideration is where spread arithmetic quietly goes wrong. Two-thirds of this is cash at a fixed 470p and the rest is acquirer paper, so the ‘offer price’ is a figure that changes every day the deal is live, which is why the level on this card is a formula the page resolves rather than a number someone typed in."
+  },
+  {
    "id": "mcg",
    "ticker": "LSE: MCG",
    "name": "Mobico Group",
@@ -536,54 +544,6 @@ window.__SCREEN__ = {
    "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
   },
   {
-   "id": "sdf",
-   "ticker": "ASX: SDF",
-   "name": "Steadfast Group",
-   "type": "bid",
-   "market": "AU",
-   "symbol": "SDF.AX",
-   "unit": "AUD",
-   "snapshot": {
-    "price": null,
-    "high52": null,
-    "low52": null,
-    "adv": null,
-    "cap": null,
-    "asof": null
-   },
-   "date": "2026-11-27",
-   "when": "10.00am Sydney, 27 Nov 2026",
-   "event": "Scheme Meeting on the A$6.00 cash scheme from Dragoneer, KKR and Amwins",
-   "close": "At the Scheme Meeting on 27 Nov, where the resolution carries its 75% of votes cast and its majority in number or does not. A second court hearing is listed for 1 Dec and implementation is targeted at 22 Dec 2026.",
-   "down": {
-    "v": 3.95,
-    "w": "Undisturbed close on 9 June 2026, the reference used in the company's own scheme materials"
-   },
-   "up": {
-    "v": 6.0,
-    "w": "Starboard BidCo's cash consideration, less the cash amount of any permitted dividends (capped at A$0.20 a share)"
-   },
-   "ref": {
-    "v": 5.44,
-    "w": "Bottom of Kroll Australia's independent-expert valuation range, from the scheme booklet"
-   },
-   "endpointBasis": "contractual",
-   "basisNote": "A signed scheme consideration against the undisturbed close stated in the company's own scheme materials",
-   "judgement": {
-    "clarity": 10,
-    "evid": 10,
-    "spof": 5,
-    "slip": 4
-   },
-   "about": "Sydney-based insurance broking network, Australia's largest: the Steadfast Network of broker businesses, the underwriting agencies, and the trade-credit and technology operations behind them. An ASX 200 constituent. Signed a binding scheme implementation deed on 21 Aug 2026.",
-   "implied": "A 52% premium with a scheme booklet registered, an independent expert in support and a meeting date fixed means the vote is not the hard part. What remains is the list of regulators: FIRB in Australia, the ACCC, the FCA in the UK, MAS in Singapore and the Texas Department of Insurance. The consideration is also not a flat A$6.00 — permitted dividends of up to A$0.20 come out of it, so the cash at implementation is below the headline, and reading this card as A$6.00 flat overstates the payoff.",
-   "setup": "Steadfast signed a binding scheme implementation deed on 21 Aug 2026 with Starboard BidCo, indirectly owned by Dragoneer Investment Group and KKR funds, with Amwins Group taking the underwriting agencies business — about A$7.7bn in all. Consideration is A$6.00 cash a share less the cash amount of any permitted dividends, which are capped at A$0.20, a 51.9% premium to the undisturbed A$3.95 close on 9 June 2026. The New South Wales Supreme Court approved convening the meeting on 23 Oct and the scheme booklet was registered with ASIC. The Scheme Meeting is at 10.00am Sydney time on 27 Nov 2026 at the Sheraton Grand Sydney Hyde Park, with proxies closing at 10.00am on 25 Nov; it needs more than 50% of shareholders by number and 75% of the votes cast. Kroll Australia values the shares at A$5.44 to A$6.09 and concludes the scheme is in shareholders' best interests absent a superior proposal. A second court hearing is listed for 1 Dec and implementation is targeted for 22 Dec 2026, conditional on FIRB, ACCC, FCA, MAS and Texas Department of Insurance approvals.",
-   "bull": "A unanimous board recommendation, an independent expert whose range brackets the price, a booklet registered and a date fixed. Insurance broking is a business regulators understand, and the buying group includes a trade acquirer in Amwins rather than financial sponsors alone.",
-   "bear": "Five regulators in five jurisdictions have to clear this, and implementation is targeted three weeks after the vote. The expert's range starts at A$5.44, below the consideration, so a reader treating the valuation as a floor is treating a number below the offer as one. If the scheme fails, the reference is A$3.95 — a third below the offer.",
-   "kill": "Any of the five conditions — FIRB, ACCC, FCA, MAS or the Texas Department of Insurance — being refused or deferred past the 22 Dec implementation target, or Kroll withdrawing or qualifying its conclusion before the meeting.",
-   "angle": "The headline price is not the cash. A$6.00 less up to A$0.20 of permitted dividends is exactly the detail that gets rounded away in a spread calculation and then matters at implementation, which is why the deduction sits in the level's own label rather than in a footnote."
-  },
-  {
    "id": "pypd",
    "ticker": "NASDAQ: PYPD",
    "name": "PolyPid",
@@ -628,6 +588,50 @@ window.__SCREEN__ = {
    "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
   },
   {
+   "id": "cgon",
+   "ticker": "NASDAQ: CGON",
+   "name": "CG Oncology",
+   "type": "clin",
+   "market": "US",
+   "symbol": "CGON",
+   "unit": "USD",
+   "snapshot": {
+    "price": null,
+    "high52": null,
+    "low52": null,
+    "adv": null,
+    "cap": null,
+    "asof": null
+   },
+   "date": "2026-11-30",
+   "when": "November 2026",
+   "event": "Phase 3 PIVOT-006 topline — cretostimogene in intermediate-risk and high-grade Ta NMIBC",
+   "close": "On the PIVOT-006 topline announcement, guided to November and narrowed by the chief executive on 5 Nov to ‘this month’. The 12-month BOND-003 and CORE-008 data in December is a separate readout.",
+   "down": {
+    "v": 35.8,
+    "w": "52-week low, set 11 Nov 2025 — it rolls out of the window within days, so the live range will tighten behind it"
+   },
+   "up": {
+    "v": 80.97,
+    "w": "52-week high, set 19 Aug 2026"
+   },
+   "endpointBasis": "indicative",
+   "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this readout. The low was set a year ago and leaves the window this week, which makes it the weaker of the two — set your own floor.",
+   "judgement": {
+    "clarity": 6,
+    "evid": 5,
+    "spof": 4,
+    "slip": 6
+   },
+   "about": "Irvine, California oncology company developing cretostimogene grenadenorepvec, an intravesical oncolytic immunotherapy for non-muscle-invasive bladder cancer. No approved product: the BLA for the BCG-unresponsive indication is guided for completion in the fourth quarter of 2026.",
+   "implied": "The readout has already slipped once — from the first half of 2026, where the company had pulled it forward ‘nearly one year ahead of schedule’, to November — and the shares have been sitting nearer the middle of a wide 52-week range than either end of it. PIVOT-006 is the expansion study, in intermediate-risk disease; it is not the trial the first filing rests on. A miss here does not take the BCG-unresponsive BLA away, which is why the single-point-of-failure score is low for a company with nothing yet approved.",
+   "setup": "PIVOT-006 is a randomised Phase 3 of cretostimogene against surveillance in intermediate-risk and high-grade Ta NMIBC of 3cm or less after resection. Guidance moved from the first half of 2026 to November 2026; the Q2 report said the trial had accrued the vast majority of its target events, and the Q3 report on 5 Nov listed topline for November with the chief executive saying the data would be shared this month. Separately, the company guides BLA completion for the BCG-unresponsive indication to Q4 2026, and 12-month data from BOND-003 Cohort P and CORE-008 Cohort CX to December 2026.",
+   "bull": "An event-driven trial that has accrued its events, a company that has put the month on the record and then narrowed it to ‘this month’, and two further readouts behind it in December. Intermediate-risk NMIBC is a larger population than the BCG-unresponsive label the first filing targets, so a positive result widens the commercial case rather than creating it.",
+   "bear": "The date is a month, not a day, and it has already moved by two quarters once. Several billion of market value on no approved product means the intermediate-risk opportunity is partly in the price already. And the honest failure reference is a 52-week low set a year ago that is about to leave the window, so the number on this card understates how far an unsupportive readout could take the shares.",
+   "kill": "December arriving with no PIVOT-006 topline. The company has now put itself on the record twice, first at a month and then at ‘this month’; a second slip would say the data is not where it has been said to be.",
+   "angle": "The one name on the screen where the dated readout is the smaller of the company's two catalysts. Being able to say why a failed Phase 3 here would not take the filing away is more interesting than having a view on the drug."
+  },
+  {
    "id": "cogt",
    "ticker": "NASDAQ: COGT",
    "name": "Cogent Biosciences",
@@ -670,6 +674,54 @@ window.__SCREEN__ = {
    "angle": "The useful contrast with Capricor and Inovio: same regulatory structure, but staggered dates change the risk profile materially. Being able to say why is more interesting than having a view on the drug.",
    "endpointBasis": "indicative",
    "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
+  },
+  {
+   "id": "rwc",
+   "ticker": "ASX: RWC",
+   "name": "Reliance Worldwide",
+   "type": "bid",
+   "market": "AU",
+   "symbol": "RWC.AX",
+   "unit": "AUD",
+   "snapshot": {
+    "price": null,
+    "high52": null,
+    "low52": null,
+    "adv": null,
+    "cap": null,
+    "asof": null
+   },
+   "date": "2026-12-04",
+   "when": "10.00am Melbourne, 4 Dec 2026",
+   "event": "Scheme Meeting on Brookfield's US$3.38 cash scheme",
+   "close": "At the Scheme Meeting on 4 Dec, where the resolution carries its 75% of votes cast and its majority in number or does not. A second court hearing and implementation follow in late December, still conditional on FIRB, the ACCC and Hart-Scott-Rodino.",
+   "down": {
+    "v": 3.61,
+    "w": "Undisturbed close before the approach, back-solved from the stated 31.5% premium to the A$4.75 announcement-day equivalent of the consideration"
+   },
+   "up": {
+    "v": {
+     "usd": 3.38,
+     "fx": "AUDUSD=X",
+     "to": "AUD"
+    },
+    "w": "Brookfield's US$3.38 cash consideration under the 16 Sep 2026 scheme implementation deed, converted at the live AUD/USD rate"
+   },
+   "endpointBasis": "contractual",
+   "basisNote": "A signed scheme consideration against the undisturbed price the company's own announcement measured its premium from. The consideration is fixed in US dollars on an Australian line, so the Australian-dollar level moves with the exchange rate rather than with the deal.",
+   "judgement": {
+    "clarity": 10,
+    "evid": 9,
+    "spof": 5,
+    "slip": 4
+   },
+   "about": "Maker of plumbing fittings and water-control products, run out of Atlanta and Brisbane: SharkBite push-to-connect fittings, Cash Acme valves, John Guest. Most of the revenue is US repair and remodel rather than new build. An ASX 200 constituent. Signed a binding scheme implementation deed with Brookfield on 16 Sep 2026 after four rounds of bidding.",
+   "implied": "The consideration is US$3.38, not a round Australian number, and that is the character of this one: a holder of the Australian line owns the deal and the currency at the same time. At the 0.7122 rate prevailing on 15 Sep the package was A$4.75; every cent the Australian dollar falls lifts the Australian-dollar level and every cent it rises cuts it, with the scheme untouched either way. The vote is the smaller question. The go-shop window closed on 16 Oct without a rival bid and the board's recommendation is unanimous, so what is left is three regulators and three weeks.",
+   "setup": "Brookfield signed a binding scheme implementation deed on 16 Sep 2026 at US$3.38 cash a share — an enterprise value of about US$2.9bn, roughly 12.1x FY26 EBITDA, a 31.5% premium to the undisturbed price and 43.0% to the six-month VWAP, and A$4.75 at the 0.7122 exchange rate prevailing on 15 Sep. The deed carried a go-shop period, which closed at 11.59pm Melbourne time on 16 Oct with no competing proposal; the board then reaffirmed its unanimous recommendation. The scheme booklet was registered with ASIC on 30 Oct and the Scheme Meeting is at 10.00am Melbourne time on 4 Dec 2026, with voting entitlement fixed at 7.00pm on 2 Dec. FIRB, ACCC and US Hart-Scott-Rodino clearances, a second court hearing and implementation all remain.",
+   "bull": "A four-round auction that ended in a signed deed, a go-shop that found nobody better, and a unanimous board behind it. Plumbing fittings are not a national-security question or a concentration problem, and the buyer is a single infrastructure acquirer rather than a consortium that has to hold together.",
+   "bear": "Three regulators still have to clear it and the timetable puts implementation inside a month of the vote, which leaves little room if one of them is slow. The larger exposure for a sterling-based holder has nothing to do with the deal: this is a US dollar price on an Australian dollar line in a pound-denominated account, so two exchange rates sit between the announcement and the money. If the scheme fails the reference is a price a third below the consideration.",
+   "kill": "FIRB, the ACCC or the HSR waiting period not clearing before the second court hearing, or the independent expert qualifying or withdrawing its conclusion before the meeting.",
+   "angle": "A cross-currency scheme is the cleanest case on the screen of a payoff that is not a number. The upside level here is a formula the page resolves from the live exchange rate, which is the only honest way to write down a price fixed in a currency the shareholder does not hold."
   },
   {
    "id": "vnda",
@@ -894,16 +946,6 @@ window.__SCREEN__ = {
  ],
  "watch": [
   {
-   "date": "2026-11-06",
-   "title": "First Tin — Metals X's Rule 2.6 deadline on a 15p indicative proposal",
-   "note": "First Tin announced on 9 Oct that it had received an unsolicited indicative cash proposal of 15p a share from Metals X on 8 Oct. Metals X must announce a firm intention to make an offer or walk away by 5pm on 6 Nov. Left off the screen on size: the equity is too small and the quoted spread too wide to transact in meaningfully from a Trading 212 ISA."
-  },
-  {
-   "date": "2026-11-06",
-   "title": "Dianomi — Court and General Meetings on the recommended scheme",
-   "note": "Scheme document published 14 Oct, with both meetings set for 2.00pm and 2.15pm on 6 Nov at Thomas House in London and the court hearing still to be listed. An AIM company of about £25m: the dates are firm but the line is not tradeable at size."
-  },
-  {
    "date": "2026-11-10",
    "title": "Irish Continental Group — Irish High Court hearing to sanction Bluefin Bidco's scheme",
    "note": "Shareholders approved the €8.00 recommended cash offer at the reconvened scheme meetings and EGM, and the UK Secretary of State confirmed on 2 Oct that no further action will be taken under the National Security and Investment Act. The sanction hearing is listed for 11.00am GMT on 10 Nov, and the scheme document puts the effective date at four business days after the hearing. A second near-formality: the screen already carries one in Pacira, so this stays here."
@@ -919,9 +961,34 @@ window.__SCREEN__ = {
    "note": "A phase 2 reference is the tail risk. The expression is the spread rather than either equity."
   },
   {
+   "date": "2026-11-20",
+   "title": "First Tin — Metals X's Rule 2.6 deadline, extended to 20 November on a revised 16.5p proposal",
+   "note": "Metals X raised its indicative cash proposal from 15p to 16.5p and began confirmatory due diligence; the Panel extended the deadline to 5pm on 20 Nov 2026, and the board says it would be minded to recommend a firm offer at that price, subject to final terms and to a planned distribution of the German development assets that would sit outside the 16.5p. Still left off the screen on size: the equity is too small and the quoted spread too wide to transact in meaningfully from a Trading 212 ISA."
+  },
+  {
+   "date": "2026-11-27",
+   "title": "Ausgold — Scheme Meeting on OceanaGold's offer",
+   "note": "The Federal Court ordered the meeting for 10.00am Melbourne on 27 Nov 2026, with a cash election date of 20 Nov, a second court hearing on 1 Dec and an effective date of 2 Dec. Left off because the consideration cannot be written down as one level: it is OceanaGold scrip whose A$1.36 implied value was struck on the acquirer's 14 Aug close, with a cash alternative at A$1.36 capped at a A$194m pool and subject to scale-back."
+  },
+  {
    "date": "2026-11-30",
    "title": "Regeneron — cemdisiran in generalised myasthenia gravis",
    "note": "Priority review following a voucher. Large-cap, single-product-line impact."
+  },
+  {
+   "date": "2026-12-03",
+   "title": "Logistics Development Group — DBAY's Rule 2.6 deadline, extended to 3 December",
+   "note": "The independent directors rejected DBAY's 20p cash proposal on 8 Oct; DBAY confirmed on 5 Nov that it is still considering an offer, the Panel extended the deadline to 5pm on 3 Dec 2026, and the directors are now commissioning an independent valuer. Any firm offer is expected to be a contractual offer with a 75% acceptance condition, and Colin Kingsnorth is treated as acting in concert with DBAY. Left off on size: an AIM line this small cannot be transacted in meaningfully from a Trading 212 ISA."
+  },
+  {
+   "date": "2026-12-15",
+   "title": "Rezolute — upLIFT Phase 3 topline in tumour hyperinsulinism, guided to mid-December",
+   "note": "Enrolment completed on 14 Oct 2026 and the company guides topline to mid-December. Screened and left off on the endpoints rather than the event: the 52-week high near $11.46 was set in November 2025 at roughly three times the current price and rolls out of the window this week, and the low near $1.07 goes with it, so neither extreme is a usable success or failure reference. The registrational study is also only sixteen participants."
+  },
+  {
+   "date": "2026-12-22",
+   "title": "Steadfast Group — implementation of the A$6.00 scheme from Dragoneer, KKR and Amwins",
+   "note": "Off the screen on the formality test rather than on anything going wrong. The booklet is registered, Kroll's range brackets the price, the Scheme Meeting is fixed for 10.00am Sydney on 27 Nov with a second court hearing on 1 Dec and implementation targeted at 22 Dec, and a broker note in early November put the gross spread at about 1.1%. The screen keeps one near-formality as a control case and that is Pacira. FIRB, the ACCC, the FCA, MAS and the Texas Department of Insurance are the remaining question, and A$6.00 is still less up to A$0.20 of permitted dividends."
   },
   {
    "date": "2026-12-31",
@@ -937,6 +1004,11 @@ window.__SCREEN__ = {
    "date": "2026-12-31",
    "title": "Mirum Pharmaceuticals — AZURE-4 topline",
    "note": "AZURE-1 met its primary endpoint on 28 Sep and the card resolved on it. AZURE-4, the second pivotal study in the US registration package, is guided to Q4 2026 — a quarter, not a date, so there is nothing firm enough to score."
+  },
+  {
+   "date": "2026-12-31",
+   "title": "Gresham House Energy Storage Fund — formal sale process",
+   "note": "The board reversed its opposition to a sale under pressure from PrimeStone Capital and launched a formal sale process on 2 Nov 2026, which opened an offer period over all 569.1m shares. NAV was 131.3p at 30 June 2026 against a share price around 102p in early November, and the Panel has confirmed that no Rule 29 valuation report is required until a firm offer is announced. No dated event: a formal sale process carries a dispensation from the Rule 2.6 clock, so there is nothing firm enough to score."
   },
   {
    "date": "2027-01-21",
@@ -959,6 +1031,11 @@ window.__SCREEN__ = {
    "note": "The card's kill fact fired. On 30 Oct, two days before the 1 Nov goal date, Agios said the FDA had classified its response to a REMS information request as a major amendment and added three months, making the new date 1 Feb 2027; the company says it is launch-ready and in labelling discussions. The shares fell sharply on the news. That date sits outside the ten-week window, so the name comes off the screen rather than resolving."
   },
   {
+   "date": "2027-03-03",
+   "title": "Exelixis — zanzalintinib with atezolizumab in metastatic colorectal cancer",
+   "note": "Screened as a December candidate and dropped on checking: the FDA notified Exelixis on 10 Sep that it had classified the company's updated submission as a major amendment and moved the action date to 3 Mar 2027. The aggregator calendars still carry the old December date."
+  },
+  {
    "date": "2027-03-11",
    "title": "Bodycote — court sanction hearing on Veritas's 940p scheme",
    "note": "Shareholders approved on 21 Oct, with 99.79% of the votes cast at the Court Meeting in favour. The timetable lists the sanction hearing for 11 Mar 2027 or another date in Q1 2027, with merger-control and foreign-investment conditions outstanding and a long stop of 1 Sep 2027."
@@ -972,11 +1049,6 @@ window.__SCREEN__ = {
    "date": "2027-03-31",
    "title": "Spire Healthcare — court sanction of Tulip UK Bidco's 250p scheme",
    "note": "The meetings on 30 Oct passed: 87.84% of voting shareholders and 99.90% of voting shares at the Court Meeting, 99.92% at the General Meeting, satisfying Conditions 2(a) and 2(b). The Panel's 11 Sep Rule 4.2 ruling still bars Bidco and its concert parties from acquiring further shares or revising the offer. Effective in Q4 2026 or Q1 2027."
-  },
-  {
-   "date": "2027-03-03",
-   "title": "Exelixis — zanzalintinib with atezolizumab in metastatic colorectal cancer",
-   "note": "Screened as a December candidate and dropped on checking: the FDA notified Exelixis on 10 Sep that it had classified the company's updated submission as a major amendment and moved the action date to 3 Mar 2027. The aggregator calendars still carry the old December date."
   }
  ],
  "resolved": [
@@ -1023,12 +1095,6 @@ window.__SCREEN__ = {
    "note": "The card said the proration arithmetic was the trade, not a view on firearms demand. At 38.45% a holder who tendered everything is taken out at $44.80 on about two shares in five and keeps the rest in the open market, so the blended exit sits far below the headline price — which is what a partial tender always meant."
   },
   {
-   "date": "2026-10-16",
-   "name": "Reliance Worldwide",
-   "outcome": "The go-shop window under the Brookfield scheme implementation deed closed at 11.59pm Melbourne time on 16 Oct — the date the company corrected from the 15 Oct it first stated. No competing or superior proposal was announced during it. The scheme now runs its normal course: Grant Thornton's independent expert report and the scheme booklet are guided to November, with completion still expected in Q1 2027.",
-   "note": "The card's kill fact was 16 Oct passing with no superior proposal announced, and that is what happened. Brookfield's US$3.38 is the only price on the table and the matching right never had to be used. What is left is scheme execution plus the currency leg of a US-dollar offer on an ASX line — not an auction, and not what the card was for."
-  },
-  {
    "date": "2026-10-26",
    "name": "Tribal Group",
    "outcome": "Shareholders approved the sale of Tribal's business and assets to Main Capital's Thames Bidco at the reconvened General Meeting on 26 Oct. Jenzabar, the 26.19% holder that had floated 111p on 29 Sep, announced on 27 Oct — its Rule 2.6 deadline — that it does not intend to make an offer for Tribal, with the usual reservations. SilverTree had already issued its own Rule 2.8 statement on 9 Oct.",
@@ -1051,6 +1117,12 @@ window.__SCREEN__ = {
    "name": "Precigen",
    "outcome": "The paired decision went against the incumbent. The FDA's accelerated approval of Inovio's Voceryq on 30 Oct gave Papzimeos — fully approved in August 2025, and Precigen's only marketed product — its first competitor in adult RRP. Papzimeos keeps full approval and orphan exclusivity to August 2032; Voceryq's approval is accelerated and conditional on a confirmatory study.",
    "note": "The card was built on Precigen falling if Inovio were approved, and it did: the shares dropped about 27% in after-hours trading on 30 Oct, from a price sitting on its $8.04 52-week high. The $2.99 low was the downside reference."
+  },
+  {
+   "date": "2026-11-02",
+   "name": "Gamma Communications",
+   "outcome": "The reconvened meetings carried. At the Court Meeting and General Meeting on 2 Nov the requisite majorities of scheme shareholders voted in favour of the scheme on Epiris's Bradbury Bidco offer, satisfying Conditions 2(a) and 2(b) of the scheme document. The first pair of meetings on 20 Oct had been adjourned on turnout, with proxies lodged for under 40% of the shares eligible to vote, and Epiris had declared the 1,120p cash offer final in the meantime.",
+   "note": "The turnout problem the card was built on resolved in the holder's favour at the second attempt. The 1,120p is now a question of the outstanding clearances and court sanction rather than of shareholder approval, measured against the 732p close on 7 Apr 2026 that was the failure reference; completion has moved out to Q1 2027 from the first half."
   }
  ]
 };

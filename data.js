@@ -1,144 +1,8 @@
 // The screen. This is the only file a refresh edits. index.html renders it;
 // build.py adds live quotes on the way to site/.
 window.__SCREEN__ = {
- "asof": "2026-11-08",
+ "asof": "2026-11-15",
  "names": [
-  {
-   "id": "ires",
-   "ticker": "EURONEXT: IRES",
-   "name": "Irish Residential Properties REIT",
-   "type": "bid",
-   "market": "IE",
-   "symbol": "IRES.IR",
-   "unit": "EUR",
-   "snapshot": {
-    "price": null,
-    "high52": null,
-    "low52": null,
-    "adv": null,
-    "cap": null,
-    "asof": null
-   },
-   "date": "2026-11-09",
-   "when": "9 Nov 2026",
-   "event": "Rule 2.7 deadline — Barings must announce a firm offer or walk away",
-   "close": "On Barings's firm offer under Rule 2.7, or a Rule 2.8 statement that it will not bid — 9 Nov at the latest.",
-   "down": {
-    "v": 1.06,
-    "w": "Closing price on 25 Sep 2026, the business day before the proposal — back-solved from the stated 30.7% premium and consistent with the quoted close"
-   },
-   "up": {
-    "v": 1.386,
-    "w": "Barings's stated proposal price of €1.386 a share — named, but not a firm offer"
-   },
-   "ref": {
-    "v": 1.388,
-    "w": "IFRS net asset value of 138.8 cent a share at 30 June 2026, from the interim report"
-   },
-   "endpointBasis": "indicative",
-   "basisNote": "Barings has made a possible-offer announcement, not a firm offer under Rule 2.7, so the €1.386 upside is a price the bidder has named rather than one it is committed to pay",
-   "judgement": {
-    "clarity": 9,
-    "evid": 9,
-    "spof": 7,
-    "slip": 6
-   },
-   "about": "Euronext Dublin-listed real estate investment trust and Ireland's largest listed residential landlord, letting apartments and houses under Ireland's rent caps. Reported IFRS net asset value of 138.8 cent a share at 30 June 2026, up 5.4% in six months, with net loan-to-value cut to 42.6% from 43.6%. The proposal values the equity at about €727m and, including borrowings, the business at close to €1.27bn. In an offer period since 28 Sep 2026.",
-   "implied": "The shares were near €1.26 in mid-October against a €1.386 proposal — a 10% discount to a price the board has said it would recommend. The unusual part is where that proposal sits: within a fraction of a cent of the company's own reported net asset value. A REIT bid for at book is not being bought cheap in the way a 31% premium suggests; it is being bought at the number the accounts already carry, which is what years of a share price well below net asset value had made possible. The discount to €1.386 is the market's price on whether a fifth proposal becomes the first firm one.",
-   "setup": "I-RES confirmed on 28 Sep 2026 a possible all-cash offer from Barings at €1.386 a share — the fifth proposal Barings had made since early August, and a 30.7% premium to the 25 Sep close. The board said it would be minded to recommend a firm offer at that level, subject to confirmatory due diligence, and there can be no certainty that a firm offer will be made. The announcement was made under the Irish Takeover Rules: Barings must announce a firm intention to make an offer under Rule 2.7, or that it does not intend to bid, by 9 Nov 2026 unless the Irish Takeover Panel consents to an extension.",
-   "bull": "Four rejected proposals before this one, a board that has now said in public it would recommend the price, and a buyer that has been working on the asset since August. The level is also backed by something that exists independently of the bid — the company's own reported net asset value, which the proposal matches almost exactly.",
-   "bear": "A possible offer is not an offer, and this is the fifth version of one: a bidder that has already had to move four times may decide the fifth is enough. Confirmatory diligence on an Irish residential portfolio means rent-cap exposure and build-quality liability, both of which have repriced Irish housing assets before. If Barings walks, the reference is a share that closed at about €1.06 in late September, roughly 16% below the mid-October level.",
-   "kill": "A Rule 2.8 statement from Barings. Or an extension of the 9 Nov deadline: a bidder on its fifth proposal, already granted confirmatory diligence, asking the Panel for more time would be saying the diligence found something.",
-   "angle": "A bid struck at book value is the cleanest version of the question this screen is built around. The upside reference is not a 52-week high or a hope — it is a net asset value the company published, with an as-at date, so the payoff can be checked against a number nobody here invented. Being able to say what a level actually is changes the conversation, and this is the card where that is easiest to show."
-  },
-  {
-   "id": "ezj",
-   "ticker": "LSE: EZJ",
-   "name": "easyJet",
-   "type": "bid",
-   "market": "UK",
-   "symbol": "EZJ.L",
-   "unit": "GBp",
-   "snapshot": {
-    "price": 667.4,
-    "high52": 683.8,
-    "low52": 332.6,
-    "adv": 7540000.0,
-    "cap": "£4.99bn",
-    "asof": "2026-09-18T16:30:00+01:00"
-   },
-   "date": "2026-11-11",
-   "when": "Court Meeting 10.00am, General Meeting 10.15am, 11 Nov 2026",
-   "event": "Court Meeting and General Meeting on Apollo's 715p recommended cash offer",
-   "close": "At the two shareholder meetings on 11 Nov, where the scheme carries its 75% or does not. Completion, still conditional on the outstanding regulatory clearances and court sanction, is guided to the end of Q1 2027.",
-   "down": {
-    "v": 395,
-    "w": "Undisturbed price, back-solved from the stated 81% premium to the May 2026 level"
-   },
-   "up": {
-    "v": 715,
-    "w": "Apollo's recommended cash offer"
-   },
-   "judgement": {
-    "clarity": 10,
-    "evid": 10,
-    "spof": 6,
-    "slip": 5
-   },
-   "about": "Luton-based low-cost airline, Europe's second largest by passengers, with around 300 aircraft and a holidays business. Agreed on 6 Aug 2026 to a recommended £5.7bn cash acquisition by Apollo funds at 715p per share, after seeing off Castlelake. Rejoins the FTSE 100 on 21 Sep, probably briefly.",
-   "implied": "The first of the two things the spread was paying for has happened: the scheme document was published on the extended deadline rather than slipping again, and the meetings are now fixed for 11 Nov. The second is moving but unfinished. Clearances are in hand in five jurisdictions, including the UK, France and Germany, and more are outstanding — and behind all of them sits the question the delay was about. EU rules require an airline to be majority owned and effectively controlled by EU nationals, Apollo is American, and completion remains expressly conditional on clearances that have not arrived. The vote is close to a formality; the structure is not, and that is where the remaining spread sits.",
-   "setup": "Apollo's Eagle Bidco agreed a 715p cash offer on 6 Aug with a rollover alternative; the Haji-Ioannou family (15%) has agreed to vote in favour and roll. On 25 Aug both sides extended the scheme document deadline from 3 Sep to 15 Oct to continue engagement with aviation regulators. The document was published on 15 Oct, convening the Court Meeting for 10.00am and the General Meeting for 10.15am on 11 Nov 2026 at Clifford Chance in London. The Court Meeting needs a majority in number of those voting representing 75% or more in value; the General Meeting resolution needs 75% of votes cast. Several European unions have objected and the European Works Council has opposed the acquisition over job-security commitments. Clearances have been obtained in Austria, the UK, France, Germany and Malta, and further merger-control and foreign-investment approvals remain outstanding in those and other jurisdictions, among them Italy and Spain. Completion remains conditional on shareholder approval, the outstanding regulatory clearances and court sanction, and is still guided to the end of Q1 2027.",
-   "bull": "Recommended cash with committed funding, the founder's block voting for it, an 81% premium that nobody is going to vote against, and a document that arrived on the extended date rather than slipping a second time. A clean vote on 11 Nov removes the execution leg and leaves only the regulatory one.",
-   "bear": "The ownership question the delay was about is still open: the document was published with completion conditional on clearances that have not arrived, and the ones obtained so far are the merger-control filings rather than an answer on control. Union and works-council opposition does not block a shareholder vote but it is the kind of thing that lengthens a regulatory process. If the structure cannot be made to work, the reference is a stock that traded under 400p in May.",
-   "kill": "The meetings on 11 Nov being adjourned or the resolutions failing to carry, or any announcement that a regulatory clearance has been refused or requires a fresh process before completion. The earlier kill fact — a second extension to the scheme document deadline — did not fire: the document came on 15 Oct.",
-   "angle": "Spreads carry information, and this one has now split in two. The vote on 11 Nov is cheap to handicap; the EU ownership-and-control condition behind it is not. Being able to say which half of the spread you are being paid for is the whole conversation.",
-   "endpointBasis": "contractual",
-   "basisNote": "Apollo's 715p recommended cash offer vs the undisturbed price"
-  },
-  {
-   "id": "smmt",
-   "ticker": "NASDAQ: SMMT",
-   "name": "Summit Therapeutics",
-   "type": "reg",
-   "market": "US",
-   "symbol": "SMMT",
-   "unit": "USD",
-   "snapshot": {
-    "price": 17.5253,
-    "high52": 29.23,
-    "low52": 12.07,
-    "adv": 5330000.0,
-    "cap": "$14.0bn",
-    "asof": "2026-09-18T16:30:00+01:00"
-   },
-   "date": "2026-11-14",
-   "when": "14 Nov 2026",
-   "event": "PDUFA target action date — ivonescimab BLA in EGFR-mutant NSCLC after a third-generation TKI",
-   "close": "On the FDA decision, 14 Nov. There is no second date: Summit has stopped guiding HARMONi-3 timing.",
-   "down": {
-    "v": 12.07,
-    "w": "52-week low, set on the HARMONi overall-survival miss in 2025"
-   },
-   "up": {
-    "v": 29.23,
-    "w": "52-week high, set on the first HARMONi-2 read-across"
-   },
-   "judgement": {
-    "clarity": 10,
-    "evid": 5,
-    "spof": 9,
-    "slip": 4
-   },
-   "about": "Miami-based oncology company built around ivonescimab, a PD-1/VEGF bispecific antibody licensed from Akeso for the US, Europe and Japan. No approved product in its territories; ivonescimab is approved and selling in China. Chaired by Bob Duggan, who owns a majority of the equity, which limits the free float.",
-   "implied": "A $14bn company priced in the lower third of its range, having re-rated on Akeso's HARMONi-2 survival data from China. The BLA rests on a trial that met progression-free survival and missed overall survival, and the western overall-survival hazard ratio has walked from 0.98 to 0.84 to 0.76 across three data cuts without crossing significance. The price discounts a reasonable chance of approval on PFS but not a certainty — and with HARMONi-3 no longer guided, 14 November is the only thing left in the window.",
-   "setup": "BLA accepted on 29 Jan 2026 with a PDUFA date of 14 Nov 2026 for ivonescimab plus chemotherapy in EGFR-mutated non-squamous NSCLC after progression on a third-generation EGFR TKI. The filing rests on HARMONi, where progression-free survival was met but overall survival missed at p=0.057 in April 2025. Overall survival in the 165-patient western subgroup has improved with follow-up — a hazard ratio of 0.76 at the June 2026 data cut, against 0.84 in September 2025 and 0.98 at the primary analysis — and is still short of significance. HARMONi-3, the larger first-line study, missed statistical significance on progression-free survival in its squamous cohort at an interim analysis in May 2026, and Summit's most recent position is that it has no update on HARMONi-3 timing. Summit has since submitted an updated overall-survival analysis of HARMONi to the FDA, which it describes as showing a favourable trend consistent across western and Asian patients. The second dated event this card used to carry no longer exists.",
-   "bull": "Progression-free survival was a co-primary endpoint of HARMONi and was met, and the overall-survival trend has improved at every data cut and is now consistent across regions. A first US approval de-risks a platform that is already approved and selling in China and opens a much larger first-line opportunity behind it.",
-   "bear": "An overall-survival miss on the pivotal trial is exactly the kind of thing a conservative FDA cycle refuses on, and a hazard ratio that improves with follow-up without reaching significance is an argument rather than a result. The hedge has also gone: HARMONi-3 is no longer guided, so there is no clinical readout to fall back on if the decision goes badly. The stock re-rated on somebody else's data, and a majority owner means the float is thinner than the market cap suggests.",
-   "kill": "An FDA extension of the review or a request for an advisory committee. Or Summit putting a date back on HARMONi-3 that falls before 14 Nov — the squamous cohort has already missed on PFS, so that readout arriving early would be a risk to the decision rather than a hedge against it.",
-   "angle": "One date, not two. The previous version of this card treated a HARMONi-3 readout as a second exit; Summit has since stopped guiding it, which removes the hedge and concentrates everything into 14 November. Noticing when a name's risk profile changes while its price does nothing is the whole exercise.",
-   "endpointBasis": "indicative",
-   "basisNote": "Both endpoints are 52-week extremes: historical references, not outcomes of this event"
-  },
   {
    "id": "pcrx",
    "ticker": "NASDAQ: PCRX",
@@ -694,7 +558,7 @@ window.__SCREEN__ = {
    "date": "2026-12-04",
    "when": "10.00am Melbourne, 4 Dec 2026",
    "event": "Scheme Meeting on Brookfield's US$3.38 cash scheme",
-   "close": "At the Scheme Meeting on 4 Dec, where the resolution carries its 75% of votes cast and its majority in number or does not. A second court hearing and implementation follow in late December, still conditional on FIRB, the ACCC and Hart-Scott-Rodino.",
+   "close": "At the Scheme Meeting on 4 Dec, where the resolution carries its 75% of votes cast and its majority in number or does not. The second court hearing is expected at 10.15am Melbourne on 7 Dec, three days later, with implementation after it and still conditional on FIRB, the ACCC and Hart-Scott-Rodino.",
    "down": {
     "v": 3.61,
     "w": "Undisturbed close before the approach, back-solved from the stated 31.5% premium to the A$4.75 announcement-day equivalent of the consideration"
@@ -717,9 +581,9 @@ window.__SCREEN__ = {
    },
    "about": "Maker of plumbing fittings and water-control products, run out of Atlanta and Brisbane: SharkBite push-to-connect fittings, Cash Acme valves, John Guest. Most of the revenue is US repair and remodel rather than new build. An ASX 200 constituent. Signed a binding scheme implementation deed with Brookfield on 16 Sep 2026 after four rounds of bidding.",
    "implied": "The consideration is US$3.38, not a round Australian number, and that is the character of this one: a holder of the Australian line owns the deal and the currency at the same time. At the 0.7122 rate prevailing on 15 Sep the package was A$4.75; every cent the Australian dollar falls lifts the Australian-dollar level and every cent it rises cuts it, with the scheme untouched either way. The vote is the smaller question. The go-shop window closed on 16 Oct without a rival bid and the board's recommendation is unanimous, so what is left is three regulators and three weeks.",
-   "setup": "Brookfield signed a binding scheme implementation deed on 16 Sep 2026 at US$3.38 cash a share — an enterprise value of about US$2.9bn, roughly 12.1x FY26 EBITDA, a 31.5% premium to the undisturbed price and 43.0% to the six-month VWAP, and A$4.75 at the 0.7122 exchange rate prevailing on 15 Sep. The deed carried a go-shop period, which closed at 11.59pm Melbourne time on 16 Oct with no competing proposal; the board then reaffirmed its unanimous recommendation. The scheme booklet was registered with ASIC on 30 Oct and the Scheme Meeting is at 10.00am Melbourne time on 4 Dec 2026, with voting entitlement fixed at 7.00pm on 2 Dec. FIRB, ACCC and US Hart-Scott-Rodino clearances, a second court hearing and implementation all remain.",
+   "setup": "Brookfield signed a binding scheme implementation deed on 16 Sep 2026 at US$3.38 cash a share — an enterprise value of about US$2.9bn, roughly 12.1x FY26 EBITDA, a 31.5% premium to the undisturbed price and 43.0% to the six-month VWAP, and A$4.75 at the 0.7122 exchange rate prevailing on 15 Sep. The deed carried a go-shop period, which closed at 11.59pm Melbourne time on 16 Oct with no competing proposal; the board then reaffirmed its unanimous recommendation. The scheme booklet was registered with ASIC on 30 Oct and the Scheme Meeting is at 10.00am Melbourne time on 4 Dec 2026, with voting entitlement fixed at 7.00pm on 2 Dec. The booklet puts the second court hearing at 10.15am Melbourne on 7 Dec. FIRB, ACCC and US Hart-Scott-Rodino clearances, that hearing and implementation all remain. The consideration also accrues a further 0.0263 US cents a share for each day after 31 Mar 2027, so a timetable that slips past the end of March pays a little for the wait.",
    "bull": "A four-round auction that ended in a signed deed, a go-shop that found nobody better, and a unanimous board behind it. Plumbing fittings are not a national-security question or a concentration problem, and the buyer is a single infrastructure acquirer rather than a consortium that has to hold together.",
-   "bear": "Three regulators still have to clear it and the timetable puts implementation inside a month of the vote, which leaves little room if one of them is slow. The larger exposure for a sterling-based holder has nothing to do with the deal: this is a US dollar price on an Australian dollar line in a pound-denominated account, so two exchange rates sit between the announcement and the money. If the scheme fails the reference is a price a third below the consideration.",
+   "bear": "Three regulators still have to clear it and the timetable puts the second court hearing three days after the vote, which leaves no room at all if one of them is slow. The larger exposure for a sterling-based holder has nothing to do with the deal: this is a US dollar price on an Australian dollar line in a pound-denominated account, so two exchange rates sit between the announcement and the money. If the scheme fails the reference is a price a third below the consideration.",
    "kill": "FIRB, the ACCC or the HSR waiting period not clearing before the second court hearing, or the independent expert qualifying or withdrawing its conclusion before the meeting.",
    "angle": "A cross-currency scheme is the cleanest case on the screen of a payoff that is not a number. The upside level here is a formula the page resolves from the live exchange rate, which is the only honest way to write down a price fixed in a currency the shareholder does not hold."
   },
@@ -766,6 +630,50 @@ window.__SCREEN__ = {
    "bear": "Vanda's problem has never been getting approvals; it is converting them into revenue, and the two most recent ones did not re-rate the stock. GPP is a very small population, and a 10% royalty runs off the top of it. A stock this close to its low into a catalyst can mean the market has stopped believing the catalyst matters, rather than that it is mispriced.",
    "kill": "A review extension or an advisory committee for imsidolimab. Or Nereus and Bysanti revenue in the Q3 results showing no launch traction — that would say an approval is not the variable this price responds to.",
    "angle": "The honest version of 'uncrowded' is sometimes 'ignored for a reason'. This is the test case on the screen for telling the two apart, and the evidence is in whether the last two approvals moved the revenue line. December gives you a second, unusual read on the same question: the Hetlioz hearing is the company arguing its FDA record in front of a judge, in the same month as a decision that depends on that record."
+  },
+  {
+   "id": "opch",
+   "ticker": "NASDAQ: OPCH",
+   "name": "Option Care Health",
+   "type": "bid",
+   "market": "US",
+   "symbol": "OPCH",
+   "unit": "USD",
+   "snapshot": {
+    "price": null,
+    "high52": null,
+    "low52": null,
+    "adv": null,
+    "cap": null,
+    "asof": null
+   },
+   "date": "2026-12-15",
+   "when": "15 Dec 2026",
+   "event": "Special meeting of stockholders on the $32.05 cash merger with CD&R and McKesson",
+   "close": "At the special meeting on 15 Dec, where a majority of the shares outstanding is there or is not. Closing itself needs Hart-Scott-Rodino and specified healthcare approvals and is guided to the first half of 2027, so the vote ends the dated part of this and not the deal.",
+   "down": {
+    "v": 22.64,
+    "w": "Closing price on 2 Oct 2026, the figure the merger proxy itself names as the benchmark for its 42% premium"
+   },
+   "up": {
+    "v": 32.05,
+    "w": "The cash merger consideration under the 5 Oct 2026 merger agreement"
+   },
+   "endpointBasis": "contractual",
+   "basisNote": "A signed merger price against a closing price stated in the merger proxy — both observable outcomes of this deal",
+   "judgement": {
+    "clarity": 10,
+    "evid": 10,
+    "spof": 2,
+    "slip": 4
+   },
+   "about": "Bannockburn, Illinois provider of home and alternate-site infusion therapy, the largest independent one in the United States, running a national network of infusion pharmacies and nursing teams. Agreed on 5 Oct 2026 to a $5.8bn take-private by Clayton, Dubilier & Rice and McKesson, with management staying in place.",
+   "implied": "There is very little between spot and $32.05, and that is why this name is here. The screen keeps one near-formality as a control case, because a high opportunity score only means anything next to a card that has almost no gap left in it. What the remaining spread pays for is not the December vote — a majority-of-outstanding threshold on a 42% premium is the cheapest condition on the page — but the healthcare and antitrust reviews behind it, and those are guided to the first half of 2027, outside the window this screen looks at.",
+   "setup": "CD&R and McKesson agreed on 5 Oct 2026 to acquire Option Care Health for $32.05 a share in cash through Onyx Bidco, valuing the business at about $5.8bn. The merger proxy puts that at about a 42% premium to the $22.64 close on 2 Oct 2026, which it describes as the second-to-last trading day before the announcement; the press releases quote about 37% measured against the 5 Oct close instead. CD&R would hold about 51% and McKesson about 49% for roughly $1.4bn, with equity commitments of about $2.87bn and committed debt financing behind them. The special meeting is on 15 Dec 2026, the record date was 3 Nov and proxy materials were mailed from about 9 Nov; adoption of the merger agreement needs holders of a majority of the shares issued and outstanding, not merely of those voted. Completion also requires Hart-Scott-Rodino clearance and specified healthcare approvals and is guided to the first half of 2027. The company withdrew its prior guidance and did not hold a third-quarter call.",
+   "bull": "A signed cash price with committed equity and debt, a 42% premium to an undisturbed close the proxy names itself, management continuing, and a buyer pair that includes the company's own distributor. There is no financing condition and no competing structure to hold together.",
+   "bear": "A majority of the shares outstanding, rather than of the votes cast, is a threshold that depends on turnout rather than on sentiment, and a quorum failure adjourns the meeting. The deeper problem is the one any control case has: what could actually break this deal is a healthcare or antitrust review reporting in 2027, and nothing about a December vote tells a reader anything about that. With almost nothing above spot and the undisturbed price nearly a third below it, the payoff here is asymmetric in the wrong direction.",
+   "kill": "The 15 December meeting being adjourned for want of a quorum or of votes, or either party disclosing a second request on the Hart-Scott-Rodino filing.",
+   "angle": "This card is on the page to be boring, and to be measured. Opportunity on this screen is mostly the gap between spot and the upside reference; a deal trading a point or two under terms has none, and seeing that scored on the same four bars as a biotech with sixty points of range is what makes the other scores legible."
   },
   {
    "id": "cort",
@@ -900,6 +808,50 @@ window.__SCREEN__ = {
    "angle": "The cleanest test on the screen of whether 'bottom of the range into a catalyst' means mispriced or means the market has read something you have not. Here the something is nameable and dated — the OSA miss in March — so you can actually argue about whether one failed Phase 2 in a different disease should have taken half the company."
   },
   {
+   "id": "rfx",
+   "ticker": "AIM: RFX",
+   "name": "Ramsdens Holdings",
+   "type": "bid",
+   "market": "UK",
+   "symbol": "RFX.L",
+   "unit": "GBp",
+   "snapshot": {
+    "price": null,
+    "high52": null,
+    "low52": null,
+    "adv": null,
+    "cap": null,
+    "asof": null
+   },
+   "date": "2026-12-22",
+   "when": "22 Dec 2026",
+   "event": "The CMA's phase 1 statutory deadline — the last condition on FirstCash's 675p scheme, nine days before it lapses",
+   "close": "On the CMA's phase 1 decision, due by 22 Dec, and the court sanction that can only follow it. The scheme lapses if it has not become effective by 11.59pm London time on 31 Dec 2026, unless Bidco and Ramsdens agree to extend that date.",
+   "down": {
+    "v": 453,
+    "w": "Closing price on 22 Jun 2026, the last business day before the Rule 2.7 announcement, as stated in the revised offer announcement"
+   },
+   "up": {
+    "v": 675,
+    "w": "Chess Bidco's cash offer, raised from 600p on 16 Jul 2026 and declared final"
+   },
+   "endpointBasis": "contractual",
+   "basisNote": "A firm Rule 2.7 offer price, declared final, against the undisturbed close named in the bidder's own announcement",
+   "judgement": {
+    "clarity": 9,
+    "evid": 10,
+    "spof": 9,
+    "slip": 6
+   },
+   "about": "Middlesbrough-based pawnbroker and foreign-currency retailer on AIM, with around 174 stores: pawnbroking loans, jewellery retail, gold purchasing and travel money. FirstCash Holdings, the US pawn operator, agreed terms in June 2026 at a price it has since raised once and called final. In an offer period since 23 Jun 2026.",
+   "implied": "The price has not been the question here since July. Shareholders approved the scheme in August, the FCA has cleared the change in control, and the consideration is cash from FirstCash's own revolving facility with no financing condition. What any discount to 675p pays for is a calendar: the Competition and Markets Authority's phase 1 deadline falls on 22 December and the scheme lapses if it has not gone effective by the 31st. That is nine days to fit a clearance, a court hearing and an effective date into, over Christmas.",
+   "setup": "Chess Bidco, FirstCash's UK acquisition vehicle, announced a recommended Rule 2.7 cash offer on 23 Jun 2026 at 609p — 600p cash plus permitted dividends of 9p — and raised it on 16 Jul to 684p, being 675p cash plus the same 9p, which it declared final subject to the usual reservation for a third-party offer. The revised announcement puts that at a 49% premium to the 453p close on 22 Jun 2026, the last business day before the Rule 2.7 announcement, and 37% to the 493p close on 3 Jun, Ramsdens's highest-ever closing price on AIM. The 9p dividend was paid on 9 Oct, so a buyer now is buying the 675p alone. Both shareholder meetings carried on 10 Aug and the FCA change-in-control condition has been satisfied. The CMA opened its merger inquiry on 26 Oct 2026 and publishes a phase 1 statutory deadline of 22 Dec 2026, noting that the deadline can be extended in limited circumstances. The scheme's long stop is 11.59pm London time on 31 Dec 2026, extendable only by written agreement between Bidco and Ramsdens, with the Panel's consent where required.",
+   "bull": "Everything a bid normally fails on is already done: a final price, both meetings carried three months ago, the FCA satisfied, and committed cash. A phase 1 clearance announced ahead of the statutory deadline — which is how most phase 1 cases end — leaves a court hearing that can be listed quickly, and the bidder has every reason to want the money spent before its own year end.",
+   "bear": "The ordering is the whole risk. The CMA opened its inquiry four months after the offer was announced, and a phase 1 decision taken up to the deadline leaves the sanction hearing and the effective date to be squeezed into the last week of December. A phase 2 reference, or undertakings in lieu that take time to settle, pushes the scheme past 31 Dec, and the deal then rests on both parties agreeing an extension rather than on its merits. Ramsdens is also an AIM line of a couple of hundred million pounds, so the spread a reader actually transacts at is not the spread on the screen. If it lapses, the reference is the 453p the shares closed at in June.",
+   "kill": "A phase 2 reference, or the CMA extending its phase 1 deadline beyond 22 Dec. Either one leaves the scheme unable to go effective inside the 31 Dec long stop without an extension that both parties have to agree.",
+   "angle": "A spread that is paying for a timetable rather than for a number is a different object from a spread that is paying for a price, and this is the cleanest example of one on the screen. Every human involved has already voted; what is left is a competition authority's published deadline sitting nine days in front of a contractual long stop. The thing to check is not the merits of the merger but the dates."
+  },
+  {
    "id": "prax",
    "ticker": "NASDAQ: PRAX",
    "name": "Praxis Precision Medicines",
@@ -946,19 +898,14 @@ window.__SCREEN__ = {
  ],
  "watch": [
   {
-   "date": "2026-11-10",
-   "title": "Irish Continental Group — Irish High Court hearing to sanction Bluefin Bidco's scheme",
-   "note": "Shareholders approved the €8.00 recommended cash offer at the reconvened scheme meetings and EGM, and the UK Secretary of State confirmed on 2 Oct that no further action will be taken under the National Security and Investment Act. The sanction hearing is listed for 11.00am GMT on 10 Nov, and the scheme document puts the effective date at four business days after the hearing. A second near-formality: the screen already carries one in Pacira, so this stays here."
+   "date": "2026-11-17",
+   "title": "SoundThinking — expiry of Transom Capital's tender offer",
+   "note": "$8.00 a share in cash plus a non-transferable contingent value right worth up to $3.00, agreed on 29 Sep 2026 at a 46% premium to the 28 Sep close, with the tender commenced on 20 Oct. Left off because the consideration cannot be written down as one level: the CVR's first $0.50 only pays if 2027 ShotSpotter and SafePointe revenue reaches $73.5m, so the upside is a cash price plus a contingency rather than a price on the table."
   },
   {
-   "date": "2026-11-11",
-   "title": "CMA phase 1 — AkzoNobel / Axalta",
-   "note": "Statutory deadline on the all-stock merger of equals, in which Axalta holders receive 0.6539 AkzoNobel shares. The consideration is a euro-denominated share ratio against a dollar line, which the build cannot resolve into a single level, so the payoff cannot be stated honestly on a card."
-  },
-  {
-   "date": "2026-11-11",
-   "title": "CMA phase 1 — McCormick / Unilever foods",
-   "note": "A phase 2 reference is the tail risk. The expression is the spread rather than either equity."
+   "date": "2026-11-20",
+   "title": "AKVA group — expiry of Yanmar's NOK 161 voluntary cash offer",
+   "note": "Pontos Bidco, owned by Yanmar, launched the recommended offer on 6 Nov 2026 at NOK 161 a share against an undisturbed, dividend-adjusted close of NOK 102.5 on 7 Apr 2026, with the offer period running to 20 Nov and Norwegian competition and UK foreign-investment clearances still outstanding. Off on the formality test: holders of about 92% of the shares have already undertaken to tender against a 90% minimum acceptance condition, so the date has almost nothing left to decide."
   },
   {
    "date": "2026-11-20",
@@ -972,6 +919,11 @@ window.__SCREEN__ = {
   },
   {
    "date": "2026-11-30",
+   "title": "Eleco — court sanction of Accel-KKR's 235p scheme, now dated",
+   "note": "The card resolved at the 27 Oct meetings, where 99.99% of the scheme shares voted were in favour. The timetable has since been published: the court sanction hearing is listed for 20 Nov 2026, the scheme is expected to become effective on 30 Nov, the AIM cancellation follows on 1 Dec and consideration is due by 14 Dec, with a long stop of 10 Mar 2027. A matter of court process and payment dates rather than of approval, so it stays here."
+  },
+  {
+   "date": "2026-11-30",
    "title": "Regeneron — cemdisiran in generalised myasthenia gravis",
    "note": "Priority review following a voucher. Large-cap, single-product-line impact."
   },
@@ -979,6 +931,11 @@ window.__SCREEN__ = {
    "date": "2026-12-03",
    "title": "Logistics Development Group — DBAY's Rule 2.6 deadline, extended to 3 December",
    "note": "The independent directors rejected DBAY's 20p cash proposal on 8 Oct; DBAY confirmed on 5 Nov that it is still considering an offer, the Panel extended the deadline to 5pm on 3 Dec 2026, and the directors are now commissioning an independent valuer. Any firm offer is expected to be a contractual offer with a 75% acceptance condition, and Colin Kingsnorth is treated as acting in concert with DBAY. Left off on size: an AIM line this small cannot be transacted in meaningfully from a Trading 212 ISA."
+  },
+  {
+   "date": "2026-12-03",
+   "title": "Ultralife — expiry of EnerSys's $16.00 cash tender offer",
+   "note": "EnerSys agreed terms on 27 Oct 2026 and its merger sub commenced the tender on 28 Oct; it expires at 5.00pm New York on 3 Dec 2026, conditional on a majority of the outstanding shares and on regulatory approvals, with holders of 40.3% signed up to tender. Screened and left off on the downside endpoint rather than the event: the announcement quotes a 166% premium to the unaffected 26 Oct close, which back-solves to about $6.01, while other accounts of the same announcement imply about $6.36. A failure reference that moves six per cent with the source is not one to put on a card."
   },
   {
    "date": "2026-12-15",
@@ -992,8 +949,8 @@ window.__SCREEN__ = {
   },
   {
    "date": "2026-12-31",
-   "title": "Kodiak Sciences — PEAK Pivotal Analysis 1 topline in macular edema secondary to inflammation",
-   "note": "Kodiak has reaffirmed December 2026 for topline data on the first pivotal cohort of the Phase 3 PEAK trial of KSI-101, with the second cohort reading out in Q2 2027. Screened and left off: after the DAYBREAK result the shares are within a few per cent of a $104 52-week high against a $15.83 low, so the only honest failure reference is a very long way down, and the date is a month rather than a day."
+   "title": "Gresham House Energy Storage Fund — formal sale process",
+   "note": "The board reversed its opposition to a sale under pressure from PrimeStone Capital and launched a formal sale process on 2 Nov 2026, which opened an offer period over all 569.1m shares. NAV was 131.3p at 30 June 2026 against a share price around 102p in early November, and the Panel has confirmed that no Rule 29 valuation report is required until a firm offer is announced. No dated event: a formal sale process carries a dispensation from the Rule 2.6 clock, so there is nothing firm enough to score."
   },
   {
    "date": "2026-12-31",
@@ -1002,18 +959,28 @@ window.__SCREEN__ = {
   },
   {
    "date": "2026-12-31",
+   "title": "Kodiak Sciences — PEAK Pivotal Analysis 1 topline in macular edema secondary to inflammation",
+   "note": "Kodiak has reaffirmed December 2026 for topline data on the first pivotal cohort of the Phase 3 PEAK trial of KSI-101, with the second cohort reading out in Q2 2027. Screened and left off: after the DAYBREAK result the shares are within a few per cent of a $104 52-week high against a $15.83 low, so the only honest failure reference is a very long way down, and the date is a month rather than a day."
+  },
+  {
+   "date": "2026-12-31",
+   "title": "Metro Bank Holdings — formal sale process",
+   "note": "The offer period began at 07:00 on 12 Nov 2026 with a Rule 2.4 announcement naming no offeror; the bank said it was not in active discussions with any potential bidder and had received no approach, and that its standalone plan continues. The Panel has granted a dispensation so that interested parties are neither publicly identified nor held to the 28-day deadline, which is precisely what leaves nothing here to score."
+  },
+  {
+   "date": "2026-12-31",
    "title": "Mirum Pharmaceuticals — AZURE-4 topline",
    "note": "AZURE-1 met its primary endpoint on 28 Sep and the card resolved on it. AZURE-4, the second pivotal study in the US registration package, is guided to Q4 2026 — a quarter, not a date, so there is nothing firm enough to score."
   },
   {
    "date": "2026-12-31",
-   "title": "Gresham House Energy Storage Fund — formal sale process",
-   "note": "The board reversed its opposition to a sale under pressure from PrimeStone Capital and launched a formal sale process on 2 Nov 2026, which opened an offer period over all 569.1m shares. NAV was 131.3p at 30 June 2026 against a share price around 102p in early November, and the Panel has confirmed that no Rule 29 valuation report is required until a firm offer is announced. No dated event: a formal sale process carries a dispensation from the Rule 2.6 clock, so there is nothing firm enough to score."
+   "title": "NextEnergy Solar Fund — formal sale process",
+   "note": "In an offer period since 15 July 2026, when the board launched a formal sale process over a discount to net asset value it described as having persisted for several years. NAV was £420.8m at 30 June 2026, or 73.2p a share, against a discount reported at about 41.6%, and the Panel has confirmed that no Rule 29 valuation report is required on that NAV unless and until a firm offer is announced. No dated event: the process carries a dispensation from the Rule 2.6 clock and no bidder has been named."
   },
   {
    "date": "2027-01-21",
    "title": "Dyne Therapeutics — z-rostudirsen BLA in Duchenne muscular dystrophy",
-   "note": "Accepted with priority review in July 2026 and carried on the aggregator calendars at 21 Jan 2027, seeking accelerated approval on dystrophin production. Outside the ten-week window, and the date wants confirming against Dyne's own filings before it comes into range."
+   "note": "Accepted with priority review in July 2026, seeking accelerated approval on dystrophin expression in exon 51 Duchenne, and Dyne's own third-quarter 2026 report still carries the 21 Jan 2027 action date — which is now inside the ten-week window. Left off this run for a reason that has nothing to do with the name: the only honest endpoints for it are 52-week extremes, the price feed was unreachable from the refresh environment, and a reference level is not something to estimate."
   },
   {
    "date": "2027-01-29",
@@ -1042,13 +1009,13 @@ window.__SCREEN__ = {
   },
   {
    "date": "2027-03-31",
-   "title": "Eleco — court sanction of Accel-KKR's 235p scheme",
-   "note": "The card resolved at the 27 Oct meetings, where 99.99% of the scheme shares voted were in favour and Conditions 2.1 and 2.2 were satisfied. The sanction hearing has not been listed; completion is guided to on or before Q1 2027, so the 235p is now a matter of court process and timing rather than of approval."
-  },
-  {
-   "date": "2027-03-31",
    "title": "Spire Healthcare — court sanction of Tulip UK Bidco's 250p scheme",
    "note": "The meetings on 30 Oct passed: 87.84% of voting shareholders and 99.90% of voting shares at the Court Meeting, 99.92% at the General Meeting, satisfying Conditions 2(a) and 2(b). The Panel's 11 Sep Rule 4.2 ruling still bars Bidco and its concert parties from acquiring further shares or revising the offer. Effective in Q4 2026 or Q1 2027."
+  },
+  {
+   "date": "2027-06-30",
+   "title": "SEGRO — Prologis's all-share offer",
+   "note": "Shareholders approved the scheme at the meetings on 28 Sep 2026, with 98.12% of the scheme shares voted in favour at the Court Meeting, on terms of 0.0920 new Prologis shares for each SEGRO share and a partial cash alternative. Completion is guided to the first half of 2027 and is conditional on Prologis obtaining a secondary London listing. Off the screen for the same reason as AkzoNobel/Axalta: a dollar-quoted share ratio against a sterling line is not a level the build can resolve into one honest number."
   }
  ],
  "resolved": [
@@ -1123,6 +1090,24 @@ window.__SCREEN__ = {
    "name": "Gamma Communications",
    "outcome": "The reconvened meetings carried. At the Court Meeting and General Meeting on 2 Nov the requisite majorities of scheme shareholders voted in favour of the scheme on Epiris's Bradbury Bidco offer, satisfying Conditions 2(a) and 2(b) of the scheme document. The first pair of meetings on 20 Oct had been adjourned on turnout, with proxies lodged for under 40% of the shares eligible to vote, and Epiris had declared the 1,120p cash offer final in the meantime.",
    "note": "The turnout problem the card was built on resolved in the holder's favour at the second attempt. The 1,120p is now a question of the outstanding clearances and court sanction rather than of shareholder approval, measured against the 732p close on 7 Apr 2026 that was the failure reference; completion has moved out to Q1 2027 from the first half."
+  },
+  {
+   "date": "2026-11-09",
+   "name": "Irish Residential Properties REIT",
+   "outcome": "Barings put up rather than shutting up. On 9 Nov 2026, the Rule 2.7 deadline, Ireland Residential Holdings — the Barings BidCo — announced a firm recommended cash offer by Irish scheme of arrangement: €1.3651 in cash for each eligible share plus a separate €0.0209 dividend payable on the dividend record date, €1.3860 in all, valuing the equity at about €731m. The board recommends it unanimously and BofA Securities, sole adviser to Barings and BidCo, confirmed sufficient resources. Completion needs shareholder approval, High Court sanction and regulatory clearances and is expected in the first quarter of 2027.",
+   "note": "The fifth proposal became the first firm offer, at the price the board had said it would recommend: €1.3860 including the dividend against the €1.386 the card carried as the upside reference, and within a fraction of a cent of the 138.8c net asset value that was the third level. The shares closed at €1.364 on 9 Nov, so a holder who waited for the announcement was left about 1.6% of gross package to collect and a court timetable to wait through."
+  },
+  {
+   "date": "2026-11-11",
+   "name": "easyJet",
+   "outcome": "Both meetings carried on 11 Nov. At the Court Meeting 97.07% of the scheme shares voted were in favour and 83.29% of those voting by number — 289 of 334 — with the shares voted representing 39.03% of the eligible share capital. The General Meeting passed the special resolution with 96.67% in favour: 247,835,560 for, 8,528,763 against and 387,424 withheld. To keep within the European ownership and control requirements easyJet suspended the voting rights attaching to 233,921,894 shares held by non-EU persons.",
+   "note": "The card said the spread had split in two and that the vote was the cheap half to handicap. It was: the resolutions carried on a turnout of under 40% of the register. The other half is untouched — completion still waits on the outstanding clearances and on court sanction, no hearing date has been set, and easyJet is still guiding to before the end of March 2027. Against Apollo's 715p and the sub-400p level of May 2026, the execution leg is gone and the ownership question is not."
+  },
+  {
+   "date": "2026-11-14",
+   "name": "Summit Therapeutics",
+   "outcome": "A complete response letter. Summit announced on 15 Nov, the day after the 14 Nov goal date, that the FDA would not approve ivonescimab with chemotherapy in EGFR-mutant non-squamous NSCLC after a third-generation TKI. The agency's objection was the one the filing had always carried: progression-free survival was significantly improved but overall survival was not, and reviewers wrote that the absence of a survival benefit does not support a positive benefit-risk profile in support of approval. No new action date was given. Summit continues to argue that the updated overall-survival analysis, with lower death rates in both western and Asian subgroups, validates the drug.",
+   "note": "The card's kill fact did not fire and that was the bad outcome, not the good one: there was no extension and no advisory committee, so the agency simply answered on the date with the objection that had been visible since April 2025. The hedge the previous version of this card had — a HARMONi-3 readout to fall back on — had already been removed when Summit stopped guiding it, which is why everything landed on one date. The indicative endpoints were the $29.23 high and the $12.07 low set on the original survival miss."
   }
  ]
 };
